@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { 
-  Map as MapIcon, Accessibility, Coffee, Info,
+  Map as MapIcon, Accessibility, Coffee, Music, TriangleAlert, Info,
   Store, Bath, ShieldAlert, Heart, Mic, Ear, Users
 } from "lucide-react";
 import { PanStripe } from "../components/PanStripe";
@@ -221,7 +221,7 @@ export function Map() {
                         className="transition-all duration-300 group-hover:scale-110 shadow-xl"
                       />
                       <foreignObject x="-10" y="-10" width="20" height="20" style={{ pointerEvents: 'none' }}>
-                        <div className="flex items-center justify-center w-full h-full text-white" style={{ color: color }}>
+                        <div xmlns="http://www.w3.org/1999/xhtml" className="flex items-center justify-center w-full h-full text-white" style={{ color: color }}>
                            {poiIcons[poi.type]}
                         </div>
                       </foreignObject>

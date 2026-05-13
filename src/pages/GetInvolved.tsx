@@ -1,5 +1,5 @@
 import { ArrowRight, Info } from "lucide-react";
-import { EVENTBRITE_URL } from "../lib/eventLinks";
+import { ReactNode } from "react";
 
 function InputField({ label, type = "text", placeholder, options }: { label: string, type?: string, placeholder?: string, options?: string[] }) {
   return (
@@ -79,9 +79,9 @@ export function GetInvolved() {
             
             <InputField label="Message" type="textarea" placeholder="Tell us about yourself and how you'd like to be involved..." />
             
-            <a href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer" className="w-full bg-pride-black text-pride-white py-4 font-sans font-bold text-sm tracking-wide uppercase hover:bg-pride-teal transition-colors flex items-center justify-center gap-3">
+            <button className="w-full bg-pride-black text-pride-white py-4 font-sans font-bold text-sm tracking-wide uppercase hover:bg-pride-teal transition-colors flex items-center justify-center gap-3">
               Submit Inquiry <ArrowRight size={16} />
-            </a>
+            </button>
             <p className="text-[11px] text-pride-muted text-center flex items-center justify-center gap-2">
               <Info size={12}/> We typically respond within 48 hours.
             </p>

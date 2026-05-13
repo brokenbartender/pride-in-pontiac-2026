@@ -3,7 +3,6 @@ import { ArrowRight, BarChart3, Building2, Eye, ShieldCheck, Target, Users, Chec
 import { GenderqueerStripe } from "../components/GenderqueerStripe";
 import { motion } from "motion/react";
 import { Sparkles } from "../components/Sparkles";
-import { EVENTBRITE_URL } from "../lib/eventLinks";
 
 export function Sponsors() {
   const containerVariants = {
@@ -50,8 +49,8 @@ export function Sponsors() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6">
-            <a href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer" className="bg-pride-gold text-pride-black px-10 py-5 font-bold tracking-wide uppercase text-sm hover:bg-pride-white transition-colors flex items-center justify-center gap-3 w-fit">
-              Reserve on Eventbrite <ArrowRight size={18} />
+            <a href="mailto:baentertainmentMI@gmail.com?subject=Corporate%20Sponsorship%20Inquiry" className="bg-pride-gold text-pride-black px-10 py-5 font-bold tracking-wide uppercase text-sm hover:bg-pride-white transition-colors flex items-center justify-center gap-3 w-fit">
+              Request a Contract <ArrowRight size={18} />
             </a>
             <a href="#tiers" className="bg-transparent border border-pride-white/20 text-pride-white px-10 py-5 font-bold tracking-wide uppercase text-sm hover:bg-pride-white/10 transition-colors flex items-center justify-center w-fit">
               View Sponsorship Tiers
@@ -176,7 +175,7 @@ export function Sponsors() {
                 <li className="flex items-start gap-3"><Check size={18} className="text-pride-gold mt-0.5 shrink-0" /> <span className="text-pride-white/90">Verbal stage recognition directly from headliners</span></li>
                 <li className="flex items-start gap-3"><Check size={18} className="text-pride-gold mt-0.5 shrink-0" /> <span className="text-pride-white/90">First right of refusal for 2027 (Scale upgrade)</span></li>
               </ul>
-              <a href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer" className="w-full text-center bg-pride-gold text-pride-black py-4 font-bold uppercase tracking-wider text-sm hover:bg-pride-white transition-colors relative z-10">Select Tier</a>
+              <a href="mailto:baentertainmentMI@gmail.com?subject=Title%20Sponsorship%20Commitment" className="w-full text-center bg-pride-gold text-pride-black py-4 font-bold uppercase tracking-wider text-sm hover:bg-pride-white transition-colors relative z-10">Select Tier</a>
             </motion.div>
 
             {/* Gold Tier */}
@@ -192,7 +191,7 @@ export function Sponsors() {
                 <li className="flex items-start gap-3"><Check size={18} className="text-pride-gold mt-0.5 shrink-0" /> <span className="text-pride-muted">Minimum 3 dedicated social media spotlights</span></li>
                 <li className="flex items-start gap-3"><Check size={18} className="text-pride-gold mt-0.5 shrink-0" /> <span className="text-pride-muted">VIP access for 2 guests</span></li>
               </ul>
-              <a href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer" className="w-full text-center bg-pride-black text-pride-white py-4 font-bold uppercase tracking-wider text-sm hover:bg-pride-gold hover:text-pride-black transition-colors">Select Tier</a>
+              <a href="mailto:baentertainmentMI@gmail.com?subject=Gold%20Sponsorship%20Commitment" className="w-full text-center bg-pride-black text-pride-white py-4 font-bold uppercase tracking-wider text-sm hover:bg-pride-gold hover:text-pride-black transition-colors">Select Tier</a>
             </motion.div>
 
             {/* Silver & Community */}
@@ -206,7 +205,7 @@ export function Sponsors() {
                   <li>&mdash; Social media group shoutout</li>
                   <li>&mdash; Vendor table/footprint</li>
                 </ul>
-                <a href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer" className="font-bold text-sm tracking-widest text-pride-ink hover:text-pride-gold uppercase flex items-center gap-2">Reserve Slot <ArrowRight size={14}/></a>
+                <a href="mailto:baentertainmentMI@gmail.com?subject=Silver%20Sponsorship" className="font-bold text-sm tracking-widest text-pride-ink hover:text-pride-gold uppercase flex items-center gap-2">Reserve Slot <ArrowRight size={14}/></a>
               </div>
 
               <div className="bg-pride-white text-pride-ink border border-pride-black/10 p-8 shadow-sm flex-grow">
@@ -218,7 +217,7 @@ export function Sponsors() {
                   <li>&mdash; Perfect for local small businesses</li>
                   <li>&mdash; Includes basic marketplace booth</li>
                 </ul>
-                <a href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer" className="font-bold text-sm tracking-widest text-pride-rose hover:text-pride-ink uppercase flex items-center gap-2">Reserve Slot <ArrowRight size={14}/></a>
+                <a href="mailto:baentertainmentMI@gmail.com?subject=Community%20Partner%20Sponsorship" className="font-bold text-sm tracking-widest text-pride-rose hover:text-pride-ink uppercase flex items-center gap-2">Reserve Slot <ArrowRight size={14}/></a>
               </div>
             </motion.div>
           </motion.div>

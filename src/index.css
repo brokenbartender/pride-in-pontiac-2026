@@ -4,4 +4,30 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Playfair Display", ui-serif, Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Pride in Pontiac Brand Colors */
+  --color-pride-gold: #c8922a;
+  --color-pride-gold-light: #ffd800;
+  --color-pride-black: #000000;
+  --color-pride-white: #ffffff;
+  --color-pride-cream: #faf9f6;
+  --color-pride-ink: #0a0a0a;
+  --color-pride-rose: #d91b76;
+  --color-pride-muted: #a3a3a3;
+  --color-pride-violet: #3d1a78;
+  --color-pride-teal: #078d70;
+}
+
+@utility text-rainbow {
+  background: linear-gradient(
+    to right,
+    #ef7627,
+    #ffd800,
+    #00a651,
+    #00aeef,
+    #9b4f96
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

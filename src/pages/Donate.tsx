@@ -1,5 +1,4 @@
 import { Heart, Activity, HeartHandshake, ShieldCheck } from "lucide-react";
-import { EVENTBRITE_URL } from "../lib/eventLinks";
 
 export function Donate() {
   return (
@@ -14,17 +13,17 @@ export function Donate() {
           <div className="bg-pride-white/10 border border-pride-white/20 p-8 hover:bg-pride-white/15 transition-colors">
              <h3 className="font-serif font-bold text-2xl mb-4">One-Time Donation</h3>
              <p className="text-pride-white/70 mb-6 font-sans text-sm">Make a direct impact today. Help us lock down essential logistics and infrastructure.</p>
-             <a href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer" className="block w-full bg-pride-gold text-pride-black py-4 font-bold uppercase tracking-wider text-sm hover:bg-pride-white transition-colors text-center">
+             <button className="w-full bg-pride-gold text-pride-black py-4 font-bold uppercase tracking-wider text-sm hover:bg-pride-white transition-colors">
                Donate Once
-             </a>
+             </button>
           </div>
           <div className="bg-pride-white/10 border border-pride-gold/30 p-8 hover:bg-pride-white/15 transition-colors relative">
              <div className="absolute top-0 right-0 bg-pride-gold text-pride-black text-[10px] font-mono font-bold px-3 py-1 uppercase tracking-widest translate-x-2 -translate-y-2">Sustainer</div>
              <h3 className="font-serif font-bold text-2xl mb-4">Monthly Partner</h3>
              <p className="text-pride-white/70 mb-6 font-sans text-sm">Become a monthly sustainer to help us plan year-round community events.</p>
-             <a href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer" className="block w-full bg-pride-gold text-pride-black py-4 font-bold uppercase tracking-wider text-sm hover:bg-pride-white transition-colors text-center">
+             <button className="w-full bg-pride-gold text-pride-black py-4 font-bold uppercase tracking-wider text-sm hover:bg-pride-white transition-colors">
                Donate Monthly
-             </a>
+             </button>
           </div>
         </div>
 
