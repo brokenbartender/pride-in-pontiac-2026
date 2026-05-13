@@ -4,6 +4,7 @@ import { ArrowRight, MapPin, Calendar, Heart, Mail, CheckCircle } from "lucide-r
 import { PrideStripe } from "../components/PrideStripe";
 import { CountdownTimer } from "../components/CountdownTimer";
 import { Sparkles } from "../components/Sparkles";
+import { EVENTBRITE_URL } from "../lib/eventLinks";
 
 export function Home() {
   return (
@@ -62,9 +63,9 @@ export function Home() {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="flex flex-col sm:flex-row gap-4 mt-8"
           >
-            <button className="bg-pride-gold text-pride-black px-8 py-4 font-sans font-semibold text-sm hover:bg-pride-white transition-colors flex items-center justify-center gap-2 group shadow-xl">
+            <a href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer" className="bg-pride-gold text-pride-black px-8 py-4 font-sans font-semibold text-sm hover:bg-pride-white transition-colors flex items-center justify-center gap-2 group shadow-xl">
               Get Tickets <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
             <Link to="/sponsors" className="bg-pride-white/10 text-pride-white border border-pride-white/20 px-8 py-4 font-sans font-medium text-sm hover:bg-pride-white hover:text-pride-black transition-colors flex items-center justify-center gap-2">
               Become a Sponsor
             </Link>
@@ -231,9 +232,9 @@ export function Home() {
               </div>
               <h3 className="font-serif font-bold text-2xl mb-3 relative z-10">Attend Pride</h3>
               <p className="text-sm text-pride-white/60 leading-relaxed mb-8 relative z-10">GA starts at just $15. VIP packages available with reserved seating & meet and greets. Secure your spot at Pontiac's first pride.</p>
-              <button className="bg-pride-gold text-pride-black px-6 py-3 font-sans font-medium text-sm w-full relative z-10 hover:bg-pride-white transition-colors text-center shadow-lg">
+              <a href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer" className="block bg-pride-gold text-pride-black px-6 py-3 font-sans font-medium text-sm w-full relative z-10 hover:bg-pride-white transition-colors text-center shadow-lg">
                 Buy Tickets Now
-              </button>
+              </a>
             </div>
           </div>
         </div>

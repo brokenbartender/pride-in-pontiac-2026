@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Ticket, Users, QrCode, Heart, ShieldCheck, ArrowRight, ShieldAlert, Star } from "lucide-react";
 import { TransgenderStripe } from "../components/TransgenderStripe";
 import { FAQAccordion } from "../components/FAQAccordion";
+import { EVENTBRITE_URL, SPONSOR_EMAIL } from "../lib/eventLinks";
 
 export function Tickets() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
@@ -10,15 +11,15 @@ export function Tickets() {
   const faqs = [
     {
       question: "Are tickets required for entry?",
-      answer: "Yes, all attendees must have a QR code pass to enter The Crofoot complex. General Admission is free, but you must register in advance to receive your pass. We offer paid supporter passes, but no one will be turned away for lack of funds."
+      answer: "Yes, all attendees need an Eventbrite ticket or QR code for entry. Early Bird GA, standard GA, VIP supporter admission, vendor tables, and sponsor packages are handled through Eventbrite."
     },
     {
       question: "How do I access the venue?",
-      answer: "Scan your QR code pass at the main entrance. VIP/Pride Patrons will have a separate expedited entry line. You can add your pass to Apple Wallet or Google Wallet, or have it ready in your email."
+      answer: "Buy through Eventbrite and bring the QR code in your email or Eventbrite app. VIP supporter entry details will be announced as the final venue plan is confirmed."
     },
     {
       question: "Are there age restrictions?",
-      answer: "Pride in Pontiac is an all-ages event during the day. Certain evening events after 9:00 PM may transition to 18+ or 21+. Please check the schedule for specific age restrictions on programming."
+      answer: "Programming and age policies are being finalized with the venue. Any 18+ or 21+ restrictions will be announced before the event."
     },
     {
       question: "Is there re-entry?",
@@ -37,15 +38,15 @@ export function Tickets() {
             <h1 className="font-serif font-black text-5xl md:text-7xl mb-6">Pride in Pontiac 2026</h1>
             <p className="text-xl md:text-2xl text-white/80 font-light mb-4">August 14 &middot; The Crofoot</p>
             <p className="text-lg text-white/60 mb-8 max-w-xl">
-              Register for your access pass to join Michigan's newest LGBTQ+ celebration. 
-              Help manage capacity and secure early entry by making a donation.
+              Buy your Eventbrite ticket for Michigan's newest LGBTQ+ Pride celebration. 
+              Early Bird, GA, VIP supporter, vendor, and sponsor options are available now.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href="#get-tickets" className="bg-[#FFD800] text-[#0A0A0A] font-bold uppercase tracking-widest py-4 px-8 hover:bg-white transition-colors text-center shrink-0">
-                Get Your Pass
+              <a href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer" className="bg-[#FFD800] text-[#0A0A0A] font-bold uppercase tracking-widest py-4 px-8 hover:bg-white transition-colors text-center shrink-0">
+                Buy on Eventbrite
               </a>
-              <a href="#community" className="border-2 border-white text-white font-bold uppercase tracking-widest py-4 px-8 hover:bg-white/10 transition-colors text-center shrink-0">
-                Community Access
+              <a href={SPONSOR_EMAIL} className="border-2 border-white text-white font-bold uppercase tracking-widest py-4 px-8 hover:bg-white/10 transition-colors text-center shrink-0">
+                Questions?
               </a>
             </div>
           </div>
@@ -65,9 +66,9 @@ export function Tickets() {
       <section id="get-tickets" className="py-24 px-6 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-serif font-black text-4xl md:text-5xl mb-4">Get Your Pass</h2>
+            <h2 className="font-serif font-black text-4xl md:text-5xl mb-4">Get Your Tickets</h2>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              Select your level of support. Your contribution directly funds performers, accessibility, and keeping Pride free for those who need it.
+              Select your level of support on Eventbrite. Your purchase helps prove demand, fund production, and keep the first Pride in Pontiac moving.
             </p>
           </div>
 
@@ -75,18 +76,18 @@ export function Tickets() {
             {/* GA */}
             <div className="bg-white border border-black/10 rounded-2xl p-8 shadow-lg flex flex-col mt-8">
                <div className="text-[#21B1FF] mb-4"><Ticket size={32} /></div>
-               <h3 className="font-serif font-bold text-3xl mb-2">General Admission</h3>
-               <div className="font-sans font-bold text-4xl mb-6">Free</div>
+               <h3 className="font-serif font-bold text-3xl mb-2">Early Bird GA</h3>
+               <div className="font-sans font-bold text-4xl mb-6">$15</div>
                <p className="text-gray-500 text-sm mb-8 flex-1">
-                 Full access to the festival, including main stage and vendor areas. Must RSVP to manage venue capacity.
+                 Limited first-wave pricing for people who help prove demand early. Standard GA opens at $20 after the early-bird window.
                </p>
                <ul className="space-y-3 mb-8 text-sm font-medium">
                  <li className="flex items-center gap-2"><ShieldCheck size={16} className="text-green-600"/> QR Access Pass</li>
                  <li className="flex items-center gap-2"><ShieldCheck size={16} className="text-green-600"/> Entry to all public zones</li>
                </ul>
-               <button className="w-full bg-[#0A0A0A] text-white font-bold uppercase tracking-widest py-3 rounded-lg hover:bg-black transition-colors mt-auto">
-                 RSVP Free
-               </button>
+               <a href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer" className="w-full bg-[#0A0A0A] text-white font-bold uppercase tracking-widest py-3 rounded-lg hover:bg-black transition-colors mt-auto text-center">
+                 Buy Early Bird
+               </a>
             </div>
 
             {/* Supporter */}
@@ -95,37 +96,37 @@ export function Tickets() {
                   Most Impactful
                </div>
                <div className="text-[#FFD800] mb-4"><Heart size={32} /></div>
-               <h3 className="font-serif font-bold text-3xl mb-2">Supporter Pass</h3>
-               <div className="font-sans font-bold text-4xl mb-2">$15<span className="text-lg text-gray-500 font-normal"> /suggested</span></div>
+               <h3 className="font-serif font-bold text-3xl mb-2">General Admission</h3>
+               <div className="font-sans font-bold text-4xl mb-2">$20</div>
                <p className="text-gray-500 text-sm mb-8 flex-1">
-                 Help us fund the event! Includes GA access plus a physical supporter badge.
+                 Standard admission once the early-bird allotment closes. Simple, accessible entry for the full Pride in Pontiac experience.
                </p>
                <ul className="space-y-3 mb-8 text-sm font-medium">
-                 <li className="flex items-center gap-2"><ShieldCheck size={16} className="text-[#FFD800]"/> All GA benefits</li>
-                 <li className="flex items-center gap-2"><ShieldCheck size={16} className="text-[#FFD800]"/> Limited edition physical badge</li>
-                 <li className="flex items-center gap-2"><ShieldCheck size={16} className="text-[#FFD800]"/> Funds equitable access</li>
+                 <li className="flex items-center gap-2"><ShieldCheck size={16} className="text-[#FFD800]"/> Eventbrite QR ticket</li>
+                 <li className="flex items-center gap-2"><ShieldCheck size={16} className="text-[#FFD800]"/> Full event admission</li>
+                 <li className="flex items-center gap-2"><ShieldCheck size={16} className="text-[#FFD800]"/> Supports year-one launch</li>
                </ul>
-               <button className="w-full bg-[#FFD800] text-[#0A0A0A] font-bold uppercase tracking-widest py-3 rounded-lg hover:bg-[#E6C300] transition-colors mt-auto">
-                 Buy Pass & Donate
-               </button>
+               <a href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer" className="w-full bg-[#FFD800] text-[#0A0A0A] font-bold uppercase tracking-widest py-3 rounded-lg hover:bg-[#E6C300] transition-colors mt-auto text-center">
+                 Buy GA
+               </a>
             </div>
 
             {/* VIP */}
             <div className="bg-[#111] text-white border border-white/10 rounded-2xl p-8 shadow-lg flex flex-col mt-8">
                <div className="text-[#FF218C] mb-4"><Star size={32} /></div>
-               <h3 className="font-serif font-bold text-3xl mb-2">Pride Patron</h3>
+               <h3 className="font-serif font-bold text-3xl mb-2">VIP Supporter</h3>
                <div className="font-sans font-bold text-4xl mb-6">$50</div>
                <p className="text-white/70 text-sm mb-8 flex-1">
-                 For sustaining supporters. Enjoy priority access and exclusive perks.
+                 Premium supporter admission for guests who want to help strengthen year one and keep general admission accessible.
                </p>
                <ul className="space-y-3 mb-8 text-sm font-medium text-white/90">
-                 <li className="flex items-start gap-2"><ShieldCheck size={16} className="text-[#FF218C] shrink-0 mt-0.5"/> Priority dedicated entry line</li>
-                 <li className="flex items-start gap-2"><ShieldCheck size={16} className="text-[#FF218C] shrink-0 mt-0.5"/> 2 complimentary drink tickets</li>
-                 <li className="flex items-start gap-2"><ShieldCheck size={16} className="text-[#FF218C] shrink-0 mt-0.5"/> VIP Lounge access (if available)</li>
+                 <li className="flex items-start gap-2"><ShieldCheck size={16} className="text-[#FF218C] shrink-0 mt-0.5"/> Eventbrite VIP QR ticket</li>
+                 <li className="flex items-start gap-2"><ShieldCheck size={16} className="text-[#FF218C] shrink-0 mt-0.5"/> Helps subsidize accessible GA pricing</li>
+                 <li className="flex items-start gap-2"><ShieldCheck size={16} className="text-[#FF218C] shrink-0 mt-0.5"/> VIP details announced as confirmed</li>
                </ul>
-               <button className="w-full bg-[#FF218C] text-white font-bold uppercase tracking-widest py-3 rounded-lg hover:bg-[#D91B76] transition-colors mt-auto">
-                 Become a Patron
-               </button>
+               <a href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer" className="w-full bg-[#FF218C] text-white font-bold uppercase tracking-widest py-3 rounded-lg hover:bg-[#D91B76] transition-colors mt-auto text-center">
+                 Buy VIP
+               </a>
             </div>
           </div>
         </div>
@@ -148,12 +149,12 @@ export function Tickets() {
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-black/5">
                    <h4 className="font-bold uppercase tracking-widest text-xs mb-2 text-[#21B1FF]">Youth & Low Income</h4>
                    <p className="text-sm text-gray-500 mb-4">Reserved free passes are guaranteed for LGBTQ+ youth under 21 and anyone experiencing financial hardship.</p>
-                   <a href="#" className="flex items-center gap-1 text-sm font-bold hover:text-[#21B1FF] transition-colors">Request Access <ArrowRight size={14}/></a>
+                   <a href={SPONSOR_EMAIL} className="flex items-center gap-1 text-sm font-bold hover:text-[#21B1FF] transition-colors">Request Access <ArrowRight size={14}/></a>
                 </div>
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-black/5">
                    <h4 className="font-bold uppercase tracking-widest text-xs mb-2 text-[#21B1FF]">Partner Organizations</h4>
                    <p className="text-sm text-gray-500 mb-4">Are you a local non-profit or community group? Claim your block of free passes for your members.</p>
-                   <a href="#" className="flex items-center gap-1 text-sm font-bold hover:text-[#21B1FF] transition-colors">Register Org <ArrowRight size={14}/></a>
+                   <a href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-sm font-bold hover:text-[#21B1FF] transition-colors">Vendor/Sponsor Tickets <ArrowRight size={14}/></a>
                 </div>
              </div>
           </div>

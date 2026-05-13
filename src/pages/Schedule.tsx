@@ -1,9 +1,43 @@
-import { PrideStripe } from "../components/PrideStripe";
 import { GayMenStripe } from "../components/GayMenStripe";
-import { Clock, MapPin, CheckCircle2 } from "lucide-react";
+import { CheckCircle2, MapPin } from "lucide-react";
+import { useState } from "react";
 import { FAQAccordion } from "../components/FAQAccordion";
 
 export function Schedule() {
+  const [openFAQ, setOpenFAQ] = useState<number | null>(0);
+  const faqs = [
+    {
+      question: "What is the timeline for the day?",
+      answer:
+        "The daytime community marketplace runs from 1:00 PM to 6:00 PM. The venue transitions between 6:00 PM and 7:00 PM. Evening programming follows after the reset window."
+    },
+    {
+      question: "What are the age restrictions?",
+      answer:
+        "Programming and age policies are being finalized with the venue. Any 18+ or 21+ restrictions will be announced before the event."
+    },
+    {
+      question: "Where should I park?",
+      answer:
+        "There are multiple paid surface lots adjacent to The Crofoot, as well as metered street parking throughout downtown Pontiac. Ride-sharing is encouraged."
+    },
+    {
+      question: "Is The Crofoot accessible?",
+      answer:
+        "The main floor venues and core public areas are accessible. Contact the organizers ahead of time for specific accommodation requests."
+    },
+    {
+      question: "Are there ins and outs?",
+      answer:
+        "Re-entry details will be announced with the final ticketing and venue operations plan."
+    },
+    {
+      question: "What items are prohibited?",
+      answer:
+        "Standard venue rules apply: no weapons, no outside alcohol, no illegal substances, and no large bags that slow entry screening."
+    }
+  ];
+
   return (
     <div className="bg-pride-violet text-pride-white min-h-screen pb-32">
       {/* Header */}
@@ -101,32 +135,17 @@ export function Schedule() {
             <p className="text-pride-white/60">Everything you need to know before attending Pride in Pontiac.</p>
           </div>
           
-          <FAQAccordion faqs={[
-            {
-              q: "What is the timeline for the day?",
-              a: "The daytime community marketplace runs from 1:00 PM to 6:00 PM. The venue transitions between 6:00 PM and 7:00 PM. Evening 21+ performances begin inside the Pike Room at 8:00 PM."
-            },
-            {
-              q: "What are the age restrictions?",
-              a: "The daytime programming (1:00 PM to 6:00 PM) is strictly 18+. The evening headlining show (8:00 PM onwards) is strictly 21+ as full bar service is provided."
-            },
-            {
-              q: "Where should I park?",
-              a: <span>There are multiple paid surface lots directly adjacent to <a href="https://thecrofoot.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-pride-gold transition-colors">The Crofoot</a>, as well as metered street parking throughout downtown Pontiac. The primary lot is located immediately behind the venue on W Pike St.</span>
-            },
-            {
-              q: "Is The Crofoot accessible?",
-              a: "Yes. The main floor venues including the Pike Room, Vernors Room, and outdoor Courtyard are wheelchair accessible. Accessible restrooms are located on the main floor. Please contact us ahead of time if you need specific accommodations so we can reserve seamless viewing."
-            },
-            {
-              q: "Are there ins and outs?",
-              a: "Yes, you will receive a wristband upon entry which allows ins and outs throughout the course of the programming block your ticket covers."
-            },
-            {
-              q: "What items are prohibited?",
-              a: "Standard venue rules apply: No outside food or drinks, no weapons, no illegal substances, and no large backpacks. Small clear bags are recommended to speed up security checks at entry."
-            }
-          ]} />
+          <div className="space-y-2">
+            {faqs.map((faq, index) => (
+              <FAQAccordion
+                key={faq.question}
+                question={faq.question}
+                answer={faq.answer}
+                isOpen={openFAQ === index}
+                onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
