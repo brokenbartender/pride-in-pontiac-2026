@@ -20,7 +20,7 @@ import { Resources } from "./pages/Resources";
 
 export function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/pride-in-pontiac-2026">
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
