@@ -118,7 +118,7 @@ export function About() {
           </div>
 
           <div className="mt-16 text-center">
-            <Link to="/get-involved" className="inline-block bg-pride-black text-pride-white px-10 py-5 font-sans font-bold text-sm tracking-wider uppercase hover:bg-pride-gold hover:text-pride-black transition-colors">
+            <Link to="/sponsors" className="inline-block bg-pride-black text-pride-white px-10 py-5 font-sans font-bold text-sm tracking-wider uppercase hover:bg-pride-gold hover:text-pride-black transition-colors">
               Stand with Pontiac
             </Link>
           </div>

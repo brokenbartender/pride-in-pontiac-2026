@@ -4,6 +4,7 @@ import { ArrowRight, MapPin, Calendar, Heart, Mail, CheckCircle } from "lucide-r
 import { PrideStripe } from "../components/PrideStripe";
 import { CountdownTimer } from "../components/CountdownTimer";
 import { Sparkles } from "../components/Sparkles";
+import { EVENTBRITE_URL } from "../lib/eventLinks";
 
 export function Home() {
   return (
@@ -62,9 +63,9 @@ export function Home() {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="flex flex-col sm:flex-row gap-4 mt-8"
           >
-            <button className="bg-pride-gold text-pride-black px-8 py-4 font-sans font-semibold text-sm hover:bg-pride-white transition-colors flex items-center justify-center gap-2 group shadow-xl">
+            <a href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer" className="bg-pride-gold text-pride-black px-8 py-4 font-sans font-semibold text-sm hover:bg-pride-white transition-colors flex items-center justify-center gap-2 group shadow-xl">
               Get Tickets <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
             <Link to="/sponsors" className="bg-pride-white/10 text-pride-white border border-pride-white/20 px-8 py-4 font-sans font-medium text-sm hover:bg-pride-white hover:text-pride-black transition-colors flex items-center justify-center gap-2">
               Become a Sponsor
             </Link>
@@ -214,8 +215,8 @@ export function Home() {
               </span>
             </Link>
 
-            <Link to="/get-involved" className="group block bg-pride-white p-10 border border-pride-black/10 hover:border-pride-teal hover:shadow-xl transition-all">
-              <div className="w-12 h-12 bg-pride-cream rounded-full flex items-center justify-center text-pride-teal mb-6 group-hover:scale-110 transition-transform">
+            <Link to="/vendors" className="group block bg-pride-white p-10 border border-pride-black/10 hover:border-pride-teal hover:shadow-xl transition-all">
+<div className="w-12 h-12 bg-pride-cream rounded-full flex items-center justify-center text-pride-teal mb-6 group-hover:scale-110 transition-transform">
                 <MapPin size={24} />
               </div>
               <h3 className="font-serif font-bold text-2xl mb-3">Become a Vendor</h3>
