@@ -16,6 +16,7 @@ import { Contact } from "./pages/Contact";
 import { GetInvolved } from "./pages/GetInvolved";
 import { Operations } from "./pages/Operations";
 import { CodeOfConduct } from "./pages/CodeOfConduct";
+import { Resources } from "./pages/Resources";
 
 export function App() {
   return (
@@ -38,6 +39,7 @@ export function App() {
           <Route path="/get-involved" element={<GetInvolved />} />
           <Route path="/operations" element={<Operations />} />
           <Route path="/code-of-conduct" element={<CodeOfConduct />} />
+          <Route path="/resources" element={<Resources />} />
         </Route>
       </Routes>
     </BrowserRouter>

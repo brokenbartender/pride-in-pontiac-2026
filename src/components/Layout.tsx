@@ -24,6 +24,7 @@ export function Layout() {
     { label: "Vendors", path: "/vendors" },
     { label: "Volunteers", path: "/volunteers" },
     { label: "Performers", path: "/performers" },
+    { label: "Resources", path: "/resources" },
     { label: "Donate", path: "/donate" },
     { label: "Accessibility", path: "/accessibility" },
     { label: "Contact", path: "/contact" },
@@ -165,6 +166,7 @@ export function Layout() {
                   <Link to="/event-info" className="hover:text-pride-white transition-colors w-fit">Event Info</Link>
                   <Link to="/schedule" className="hover:text-pride-white transition-colors w-fit">Schedule</Link>
                   <Link to="/map" className="hover:text-pride-white transition-colors w-fit">Map</Link>
+                  <Link to="/resources" className="hover:text-pride-white transition-colors w-fit">Resources</Link>
                   <Link to="/accessibility" className="hover:text-pride-white transition-colors w-fit">Accessibility</Link>
                   <Link to="/operations" className="hover:text-pride-white transition-colors w-fit">Operations</Link>
                 </div>
