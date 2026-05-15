@@ -11,7 +11,7 @@ export function Tickets() {
   const faqs = [
     {
       question: "What time does the event start?",
-      answer: "Doors open at noon. Entry is free from 12–3 PM — no ticket needed, just walk up. GA tickets ($12 early bird / $15 general) are required for anyone arriving after 3 PM. At 7 PM GA closes and entry is $25 through close at 1 AM."
+      answer: "Doors open at noon. Entry is free from 12–3 PM — no ticket needed, just walk up. All ages welcome during this window. After 3 PM, entry requires a GA ticket ($12 early bird / $15 general) and guests must be 18+. At 7 PM GA closes, entry is $25, and the event is 21+ only through close at 1 AM."
     },
     {
       question: "I got a free wristband at noon — do I have to leave at 3 PM?",
@@ -61,7 +61,7 @@ export function Tickets() {
     {
       time: "3:00 PM",
       label: "Free Admission Closes",
-      detail: "New arrivals need a GA ticket ($12 early bird / $15) · free wristband holders stay all night",
+      detail: "New arrivals need a GA ticket ($12 early bird / $15) and must be 18+ · free wristband holders stay all night",
       color: "text-[#FFD800]",
       border: "border-[#FFD800]",
     },
@@ -178,7 +178,7 @@ export function Tickets() {
             Get Your<br /><span className="text-[#FFD800]">Tickets.</span>
           </h1>
           <p className="text-white/60 mb-10 max-w-xl text-lg">
-            Pride Patron early access at 11 AM. Free noon–3 PM. GA $12–$15 from 3–7 PM. $25 after 7. No sweeps — once you're in, you're in all night.
+            Pride Patron early access at 11 AM. Free & all ages noon–3 PM. GA $12–$15 from 3–7 PM (18+). $25 after 7 (21+). No sweeps — once you're in, you're in all night.
           </p>
           <div className="flex flex-wrap gap-4">
             <a
@@ -217,7 +217,7 @@ export function Tickets() {
             ))}
           </div>
           <p className="text-white/30 text-xs font-mono mt-4">
-            Pride Patron 11 AM · Free & all ages 12–3 PM · Ticketed 3–7 PM · 21+ only after 7 PM with valid ID
+            Pride Patron 11 AM · Free & all ages 12–3 PM · 18+ ticketed 3–7 PM · 21+ only after 7 PM with valid ID
           </p>
         </div>
       </section>
