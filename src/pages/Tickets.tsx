@@ -31,7 +31,7 @@ export function Tickets() {
     },
     {
       question: "What does Pride Patron VIP include?",
-      answer: "Pride Patron is $40 and presale only — no VIP at the door. Includes reserved VIP lounge seating, one complimentary drink ticket, and meet & greet access with performers. Extremely limited."
+      answer: "Pride Patron is $40 and presale only — no VIP at the door. Includes 11 AM early access (one hour before general doors), reserved VIP lounge seating, one complimentary drink ticket, and meet & greet access with performers. Extremely limited."
     },
     {
       question: "Is there re-entry?",
@@ -45,9 +45,16 @@ export function Tickets() {
 
   const timeline = [
     {
+      time: "11:00 AM",
+      label: "Pride Patron Early Access",
+      detail: "VIP ticket holders only · exclusive hour before general doors · meet performers, skip the crowd",
+      color: "text-pride-gold",
+      border: "border-pride-gold",
+    },
+    {
       time: "12:00 PM",
-      label: "Doors Open — Free Entry",
-      detail: "Walk up, no ticket needed · all ages · free wristband at door",
+      label: "Official Kickoff — Doors Open",
+      detail: "General doors open · free entry · all ages · free wristband at door",
       color: "text-[#21B1FF]",
       border: "border-[#21B1FF]",
     },
@@ -143,12 +150,12 @@ export function Tickets() {
       wasPrice: null,
       badge: "VIP",
       sub: "Presale only · extremely limited",
-      desc: "The full experience. Reserved VIP lounge, drink ticket, and meet & greet with performers. No VIP at the door.",
+      desc: "The full experience. 11 AM early access before general doors, reserved VIP lounge, drink ticket, and meet & greet. No VIP at the door.",
       perks: [
+        "11 AM early access — 1 hr before general doors",
         "Reserved VIP lounge seating",
         "1 complimentary drink ticket",
         "Meet & greet with performers",
-        "Priority entry",
         "Presale only — no door VIP",
       ],
       cta: "Buy Pride Patron — $40",
@@ -171,7 +178,7 @@ export function Tickets() {
             Get Your<br /><span className="text-[#FFD800]">Tickets.</span>
           </h1>
           <p className="text-white/60 mb-10 max-w-xl text-lg">
-            Free noon–3 PM. GA $12–$15 from 3–7 PM. $25 after 7. No sweeps — once you're in, you're in all night.
+            Pride Patron early access at 11 AM. Free noon–3 PM. GA $12–$15 from 3–7 PM. $25 after 7. No sweeps — once you're in, you're in all night.
           </p>
           <div className="flex flex-wrap gap-4">
             <a
@@ -210,7 +217,7 @@ export function Tickets() {
             ))}
           </div>
           <p className="text-white/30 text-xs font-mono mt-4">
-            Free & all ages 12–3 PM · All ages with ticket 3–7 PM · 21+ only after 7 PM with valid ID
+            Pride Patron 11 AM · Free & all ages 12–3 PM · Ticketed 3–7 PM · 21+ only after 7 PM with valid ID
           </p>
         </div>
       </section>
