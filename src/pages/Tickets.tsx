@@ -26,6 +26,10 @@ export function Tickets() {
       answer: "Pride Patron is $40 and is presale only — no VIP at the door. Includes reserved seating in the VIP lounge, one drink ticket, and meet & greet access with performers. Extremely limited."
     },
     {
+      question: "What happens to GA ticket holders at the 8:30 PM sweep?",
+      answer: "At 8:30 PM we do a wristband check. GA ticket holders can pay $25 at the door to upgrade to a Late Night wristband and stay for the headlining show, or exit the venue. The event goes 21+ only at this point and ID is required."
+    },
+    {
       question: "Is there re-entry?",
       answer: "Yes, with a valid wristband that matches your ticket tier. Wristbands are checked at re-entry."
     },
@@ -38,9 +42,8 @@ export function Tickets() {
   const timeline = [
     { time: "12:00 PM", label: "Doors Open", detail: "Walk up, no ticket needed — free community block, all ages", color: "text-[#21B1FF]", border: "border-[#21B1FF]" },
     { time: "6:00 PM", label: "GA Begins", detail: "GA wristband required to enter or stay · $12 early bird / $15 general", color: "text-[#FFD800]", border: "border-[#FFD800]" },
-    { time: "8:30 PM", label: "Wristband Sweep", detail: "21+ check begins · Late Night wristband required to stay", color: "text-[#FF218C]", border: "border-[#FF218C]" },
-    { time: "9:00 PM", label: "Late Night Show", detail: "$25 · 21+ only with valid ID · headlining performers", color: "text-purple-400", border: "border-purple-400" },
-    { time: "Close", label: "Pride Patron VIP", detail: "Reserved lounge · drink ticket · meet & greet · presale only", color: "text-pride-gold", border: "border-pride-gold" },
+    { time: "8:30 PM", label: "Wristband Sweep", detail: "GA holders: upgrade to Late Night ($25) to stay, or exit · 21+ check begins", color: "text-[#FF218C]", border: "border-[#FF218C]" },
+    { time: "9:00 PM", label: "Late Night Show", detail: "$25 · 21+ only with valid ID · headlining performers · Pride Patron VIP lounge open", color: "text-purple-400", border: "border-purple-400" },
   ];
 
   const tiers = [
@@ -55,7 +58,7 @@ export function Tickets() {
         "Entry from 6 PM through close",
         "Full festival & vendor access",
         "Save $3 vs regular GA",
-        "Valid through wristband sweep",
+        "Upgrade to Late Night ($25) at 8:30 sweep or exit",
       ],
       cta: "Get Early Bird — $12",
       href: EVENTBRITE_URL,
@@ -73,7 +76,7 @@ export function Tickets() {
       perks: [
         "Entry from 6 PM through close",
         "Full festival & vendor access",
-        "Valid through wristband sweep",
+        "Upgrade to Late Night ($25) at 8:30 sweep or exit",
       ],
       cta: "Buy GA — $15",
       href: EVENTBRITE_URL,
@@ -167,7 +170,7 @@ export function Tickets() {
               </div>
             ))}
           </div>
-          <p className="text-white/30 text-xs font-mono mt-4">Daytime (12–8:30 PM) is all ages. 9 PM onward is 21+ only with valid ID.</p>
+          <p className="text-white/30 text-xs font-mono mt-4">Free & all ages 12–6 PM · Ticketed & all ages 6–8:30 PM · 21+ only from 9 PM with valid ID</p>
         </div>
       </section>
 
