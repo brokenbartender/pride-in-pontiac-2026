@@ -11,7 +11,7 @@ export function Tickets() {
   const faqs = [
     {
       question: "What time does the event start?",
-      answer: "Doors open at noon. The community portion runs 12–8:30 PM. The evening show starts at 9 PM and is 21+ only. GA tickets ($12 early bird / $15 general) get you in from 2 PM through close."
+      answer: "Doors open at noon. The event is free to attend until 6 PM. GA tickets ($12 early bird / $15 general) are required from 6 PM through close. The evening show starts at 9 PM and is 21+ only."
     },
     {
       question: "What's the Early Bird deal?",
@@ -36,8 +36,8 @@ export function Tickets() {
   ];
 
   const timeline = [
-    { time: "12:00 PM", label: "Doors Open", detail: "Walk up, no ticket needed — enjoy the community portion of the day", color: "text-[#21B1FF]", border: "border-[#21B1FF]" },
-    { time: "2:00 PM", label: "GA Begins", detail: "GA wristband required to enter or stay · $12 early bird / $15 general", color: "text-[#FFD800]", border: "border-[#FFD800]" },
+    { time: "12:00 PM", label: "Doors Open", detail: "Walk up, no ticket needed — free community block, all ages", color: "text-[#21B1FF]", border: "border-[#21B1FF]" },
+    { time: "6:00 PM", label: "GA Begins", detail: "GA wristband required to enter or stay · $12 early bird / $15 general", color: "text-[#FFD800]", border: "border-[#FFD800]" },
     { time: "8:30 PM", label: "Wristband Sweep", detail: "21+ check begins · Late Night wristband required to stay", color: "text-[#FF218C]", border: "border-[#FF218C]" },
     { time: "9:00 PM", label: "Late Night Show", detail: "$25 · 21+ only with valid ID · headlining performers", color: "text-purple-400", border: "border-purple-400" },
     { time: "Close", label: "Pride Patron VIP", detail: "Reserved lounge · drink ticket · meet & greet · presale only", color: "text-pride-gold", border: "border-pride-gold" },
@@ -50,9 +50,9 @@ export function Tickets() {
       wasPrize: "$15",
       badge: "Best Deal",
       sub: "Online only · limited quantity",
-      desc: "Lock in the lowest price before they're gone. Full GA access from 2 PM through close.",
+      desc: "Lock in the lowest price before they're gone. Full GA access from 6 PM through close.",
       perks: [
-        "Entry from 2 PM through close",
+        "Entry from 6 PM through close",
         "Full festival & vendor access",
         "Save $3 vs regular GA",
         "Valid through wristband sweep",
@@ -69,9 +69,9 @@ export function Tickets() {
       wasPrize: null,
       badge: null,
       sub: "Online · available until day of",
-      desc: "Standard GA ticket. Full access from 2 PM through the evening show.",
+      desc: "Standard GA ticket. Full access from 6 PM through the evening show.",
       perks: [
-        "Entry from 2 PM through close",
+        "Entry from 6 PM through close",
         "Full festival & vendor access",
         "Valid through wristband sweep",
       ],
@@ -132,7 +132,7 @@ export function Tickets() {
           <h1 className="font-serif font-black text-5xl md:text-7xl mb-4 leading-none">
             Get Your<br /><span className="text-[#FFD800]">Tickets.</span>
           </h1>
-          <p className="text-white/60 mb-10 max-w-xl text-lg">Early Bird GA is $12 — save $3 before they sell out. VIP is presale only and extremely limited.</p>
+          <p className="text-white/60 mb-10 max-w-xl text-lg">Free until 6 PM. GA kicks in at 6 — grab the $12 Early Bird before they sell out. VIP is presale only and extremely limited.</p>
           <div className="flex flex-wrap gap-4">
             <a
               href={EVENTBRITE_URL}
