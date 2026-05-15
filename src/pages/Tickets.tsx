@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Ticket, Users, ShieldCheck, ArrowRight, ShieldAlert, Star, Clock, DoorOpen } from "lucide-react";
+import { ShieldCheck, ArrowRight, Star, Clock, ExternalLink, Users, Building2 } from "lucide-react";
 import { TransgenderStripe } from "../components/TransgenderStripe";
 import { FAQAccordion } from "../components/FAQAccordion";
 import { EVENTBRITE_URL } from "../lib/eventLinks";
@@ -10,53 +10,54 @@ export function Tickets() {
 
   const faqs = [
     {
-      question: "Is there really free entry?",
-      answer: "Yes — from 12:00 PM to 2:00 PM, entry is completely free with no ticket required. You'll receive a wristband at the door. At 2 PM the free block ends and a GA ticket ($12 early bird / $15 general) is required to stay or re-enter."
+      question: "What time does the event start?",
+      answer: "Doors open at noon. The community portion runs 12–8:30 PM. The evening show starts at 9 PM and is 21+ only. GA tickets ($12 early bird / $15 general) get you in from 2 PM through close."
     },
     {
-      question: "What happens at 8:30 PM?",
-      answer: "We do a wristband sweep. Free wristband holders must either pay $25 to upgrade and stay for the evening show, or exit the venue. The event transitions to 21+ only at this point and ID is required at the door."
+      question: "What's the Early Bird deal?",
+      answer: "Early Bird GA is $12 — that's $3 off the regular $15 price. Limited quantity. Once they're gone, they're gone. Buy now on Eventbrite to lock in the lower price."
     },
     {
       question: "Can I come just for the evening show?",
-      answer: "Yes. Late Night entry is $25 at the door after 9 PM or online in advance. You must be 21+ and have a valid wristband. ID required."
+      answer: "Yes. Late Night entry is $25. You must be 21+ with a valid ID. Available online in advance or at the door after 9 PM."
     },
     {
-      question: "What does VIP include?",
-      answer: "VIP is presale only — no VIP at the door. Includes reserved seating, one drink ticket, and meet & greet access with performers. Only available online in advance."
+      question: "What does VIP / Pride Patron include?",
+      answer: "Pride Patron is $40 and is presale only — no VIP at the door. Includes reserved seating in the VIP lounge, one drink ticket, and meet & greet access with performers. Extremely limited."
     },
     {
       question: "Is there re-entry?",
-      answer: "Yes, with a valid wristband that matches your ticket tier. Free wristbands are not valid for re-entry after 2 PM without upgrading to a GA or Late Night ticket."
+      answer: "Yes, with a valid wristband that matches your ticket tier. Wristbands are checked at re-entry."
+    },
+    {
+      question: "My button isn't opening Eventbrite — what do I do?",
+      answer: "Your browser may be blocking popups. If the button doesn't open, go directly to Eventbrite.com and search 'Pride in Pontiac 2026', or copy this link: eventbrite.com/e/pride-in-pontiac-2026-still-here-still-proud-tickets-1989365764554"
     }
   ];
 
   const timeline = [
-    { time: "12:00 – 2:00 PM", label: "Free Community Block", detail: "Free wristband at door · all ages · no ticket required", color: "text-[#21B1FF]", border: "border-[#21B1FF]" },
-    { time: "2:00 – 8:30 PM", label: "General Admission Open", detail: "GA wristband required · $12 early bird / $15 general · stay all night", color: "text-[#FFD800]", border: "border-[#FFD800]" },
-    { time: "8:30 PM", label: "Wristband Sweep", detail: "Free holders: pay $25 to stay OR exit · 21+ check begins", color: "text-[#FF218C]", border: "border-[#FF218C]" },
-    { time: "9:00 PM – Close", label: "Late Night", detail: "$25 at door · 21+ only · wristband required", color: "text-purple-400", border: "border-purple-400" },
+    { time: "12:00 PM", label: "Doors Open", detail: "Walk up, no ticket needed — enjoy the community portion of the day", color: "text-[#21B1FF]", border: "border-[#21B1FF]" },
+    { time: "2:00 PM", label: "GA Begins", detail: "GA wristband required to enter or stay · $12 early bird / $15 general", color: "text-[#FFD800]", border: "border-[#FFD800]" },
+    { time: "8:30 PM", label: "Wristband Sweep", detail: "21+ check begins · Late Night wristband required to stay", color: "text-[#FF218C]", border: "border-[#FF218C]" },
+    { time: "9:00 PM", label: "Late Night Show", detail: "$25 · 21+ only with valid ID · headlining performers", color: "text-purple-400", border: "border-purple-400" },
+    { time: "Close", label: "Pride Patron VIP", detail: "Reserved lounge · drink ticket · meet & greet · presale only", color: "text-pride-gold", border: "border-pride-gold" },
   ];
 
   const tiers = [
     {
-      label: "Free Community",
-      price: "$0",
-      sub: "12 PM – 2 PM only",
-      desc: "Walk up, get a wristband, enjoy the community block. No ticket needed. Must exit or upgrade at 2 PM sweep.",
-      perks: ["Wristband at door", "Full vendor & health resource access", "All ages welcome"],
-      cta: "Free — Walk Up",
-      href: null,
-      accent: "#21B1FF",
-      dark: false,
-    },
-    {
       label: "GA Early Bird",
       price: "$12",
-      sub: "Online only · limited qty",
-      desc: "Gets you in from 2 PM through close. Best price available — grab it before they're gone.",
-      perks: ["Entry from 2 PM through close", "Full festival access", "Valid through wristband sweep"],
-      cta: "Buy Early Bird",
+      wasPrize: "$15",
+      badge: "Best Deal",
+      sub: "Online only · limited quantity",
+      desc: "Lock in the lowest price before they're gone. Full GA access from 2 PM through close.",
+      perks: [
+        "Entry from 2 PM through close",
+        "Full festival & vendor access",
+        "Save $3 vs regular GA",
+        "Valid through wristband sweep",
+      ],
+      cta: "Get Early Bird — $12",
       href: EVENTBRITE_URL,
       accent: "#FFD800",
       dark: false,
@@ -65,35 +66,58 @@ export function Tickets() {
     {
       label: "GA General",
       price: "$15",
-      sub: "Online",
-      desc: "Standard GA ticket. Entry from 2 PM through close, full festival access.",
-      perks: ["Entry from 2 PM through close", "Full festival access", "Valid through wristband sweep"],
-      cta: "Buy GA Ticket",
+      wasPrize: null,
+      badge: null,
+      sub: "Online · available until day of",
+      desc: "Standard GA ticket. Full access from 2 PM through the evening show.",
+      perks: [
+        "Entry from 2 PM through close",
+        "Full festival & vendor access",
+        "Valid through wristband sweep",
+      ],
+      cta: "Buy GA — $15",
       href: EVENTBRITE_URL,
       accent: "#FFD800",
       dark: false,
+      featured: false,
     },
     {
       label: "Late Night",
       price: "$25",
-      sub: "Door after 9 PM · 21+ only",
-      desc: "Come for the evening headlining show. At door after 9 PM or purchase online in advance. ID required.",
-      perks: ["Entry from 9 PM", "Evening drag show access", "21+ required · ID checked"],
-      cta: "Buy Late Night",
+      wasPrize: null,
+      badge: null,
+      sub: "21+ only · ID required",
+      desc: "Come for the evening headlining show. Online or at door after 9 PM.",
+      perks: [
+        "Entry from 9 PM",
+        "Headlining drag performances",
+        "21+ required · valid ID checked",
+      ],
+      cta: "Buy Late Night — $25",
       href: EVENTBRITE_URL,
       accent: "#FF218C",
       dark: false,
+      featured: false,
     },
     {
-      label: "VIP — Presale Only",
+      label: "Pride Patron",
       price: "$40",
-      sub: "No door VIP · online only",
-      desc: "Reserved seating, one drink ticket, and meet & greet with performers. Extremely limited.",
-      perks: ["Reserved seating", "1 drink ticket", "Meet & greet access", "Priority entry"],
-      cta: "Buy VIP",
+      wasPrize: null,
+      badge: "VIP",
+      sub: "Presale only · extremely limited",
+      desc: "The full experience. Reserved lounge seating, drink ticket, and meet & greet with performers. No VIP at the door.",
+      perks: [
+        "Reserved VIP lounge seating",
+        "1 complimentary drink ticket",
+        "Meet & greet with performers",
+        "Priority entry",
+        "Presale only — no door VIP",
+      ],
+      cta: "Buy Pride Patron — $40",
       href: EVENTBRITE_URL,
-      accent: "#FF218C",
+      accent: "#c8922a",
       dark: true,
+      featured: false,
     },
   ];
 
@@ -104,24 +128,32 @@ export function Tickets() {
       {/* Hero */}
       <section className="bg-[#0A0A0A] text-white pt-24 pb-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <h1 className="font-serif font-black text-5xl md:text-7xl mb-4">Pride in Pontiac 2026</h1>
-          <p className="text-xl text-white/70 mb-2">August 14 · The Crofoot · Pontiac, MI</p>
-          <p className="text-white/50 mb-10 max-w-xl">Free from noon. Ticketed from 2 PM. Late night 21+ from 9 PM. One day, three experiences.</p>
+          <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-white/40 mb-4">August 14, 2026 · The Crofoot · Pontiac, MI</p>
+          <h1 className="font-serif font-black text-5xl md:text-7xl mb-4 leading-none">
+            Get Your<br /><span className="text-[#FFD800]">Tickets.</span>
+          </h1>
+          <p className="text-white/60 mb-10 max-w-xl text-lg">Early Bird GA is $12 — save $3 before they sell out. VIP is presale only and extremely limited.</p>
           <div className="flex flex-wrap gap-4">
-            <a href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer"
-              className="bg-[#FFD800] text-[#0A0A0A] font-bold uppercase tracking-widest py-4 px-8 hover:bg-white transition-colors">
-              Get Tickets on Eventbrite
+            <a
+              href={EVENTBRITE_URL}
+              onClick={(e) => { e.preventDefault(); window.open(EVENTBRITE_URL, '_blank', 'noopener,noreferrer'); }}
+              className="bg-[#FFD800] text-[#0A0A0A] font-bold uppercase tracking-widest py-4 px-8 hover:bg-white transition-colors flex items-center gap-2 cursor-pointer"
+            >
+              Buy on Eventbrite <ExternalLink size={16} />
             </a>
-            <a href="#timeline"
-              className="border-2 border-white text-white font-bold uppercase tracking-widest py-4 px-8 hover:bg-white/10 transition-colors">
+            <a href="#event-flow"
+              className="border-2 border-white/30 text-white font-bold uppercase tracking-widest py-4 px-8 hover:bg-white/10 transition-colors">
               See Event Flow
             </a>
           </div>
+          <p className="mt-4 text-white/30 text-xs font-mono">
+            Having trouble? Go to eventbrite.com and search "Pride in Pontiac 2026"
+          </p>
         </div>
       </section>
 
       {/* Timeline */}
-      <section id="timeline" className="py-20 px-6 bg-[#0A0A0A] border-t border-white/10">
+      <section id="event-flow" className="py-20 px-6 bg-[#0A0A0A] border-t border-white/10">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-serif font-black text-3xl text-white mb-12 flex items-center gap-3">
             <Clock size={28} className="text-[#FFD800]" /> Event Flow — August 14
@@ -129,13 +161,13 @@ export function Tickets() {
           <div className="space-y-0">
             {timeline.map((item, i) => (
               <div key={i} className={`border-l-4 ${item.border} pl-6 pb-10 relative`}>
-                <div className={`absolute -left-2 top-0 w-4 h-4 rounded-full bg-current ${item.color}`} style={{ backgroundColor: item.color.replace("text-[", "").replace("]", "") }} />
                 <p className={`font-mono text-xs uppercase tracking-widest mb-1 ${item.color}`}>{item.time}</p>
                 <p className="font-serif font-bold text-white text-xl mb-1">{item.label}</p>
                 <p className="text-white/60 text-sm">{item.detail}</p>
               </div>
             ))}
           </div>
+          <p className="text-white/30 text-xs font-mono mt-4">Daytime (12–8:30 PM) is all ages. 9 PM onward is 21+ only with valid ID.</p>
         </div>
       </section>
 
@@ -144,109 +176,177 @@ export function Tickets() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-serif font-black text-4xl md:text-5xl mb-4">Choose Your Experience</h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              Free to start. Pay to stay. VIP to go all in.
-            </p>
+            <p className="text-gray-500 text-lg">Early Bird ends when they sell out. VIP ends before the event.</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {tiers.map((tier) => (
-              <div key={tier.label}
-                className={`rounded-2xl p-8 flex flex-col border-2 shadow-lg ${tier.featured ? "shadow-2xl scale-105 z-10" : ""} ${tier.dark ? "bg-[#111] text-white border-white/10" : "bg-white border-black/10"}`}
+              <div
+                key={tier.label}
+                className={`p-8 flex flex-col border-2 shadow-sm relative ${
+                  tier.featured ? "border-[#FFD800] shadow-[0_0_30px_rgba(255,216,0,0.15)]" : ""
+                } ${tier.dark ? "bg-[#111] text-white border-white/10" : "bg-white border-black/10"}`}
               >
-                {tier.featured && (
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#0A0A0A] text-xs font-bold uppercase tracking-widest px-4 py-1 rounded-full whitespace-nowrap"
-                    style={{ backgroundColor: tier.accent }}>
-                    Best Value
+                {tier.badge && (
+                  <div
+                    className="absolute -top-3 left-6 text-[10px] font-mono font-bold uppercase tracking-widest px-3 py-1"
+                    style={{ backgroundColor: tier.accent, color: tier.dark ? 'white' : '#0A0A0A' }}
+                  >
+                    {tier.badge}
                   </div>
                 )}
-                <div className="relative">
-                  <p className="font-mono text-[10px] uppercase tracking-widest mb-1" style={{ color: tier.accent }}>{tier.sub}</p>
-                  <h3 className="font-serif font-bold text-2xl mb-1">{tier.label}</h3>
-                  <div className="font-sans font-black text-4xl mb-4">{tier.price}</div>
-                  <p className={`text-sm mb-6 flex-1 ${tier.dark ? "text-white/60" : "text-gray-500"}`}>{tier.desc}</p>
-                  <ul className="space-y-2 mb-8">
-                    {tier.perks.map((perk) => (
-                      <li key={perk} className={`flex items-start gap-2 text-sm font-medium ${tier.dark ? "text-white/80" : ""}`}>
-                        <ShieldCheck size={16} className="shrink-0 mt-0.5" style={{ color: tier.accent }} />
-                        {perk}
-                      </li>
-                    ))}
-                  </ul>
-                  {tier.href ? (
-                    <a href={tier.href} target="_blank" rel="noopener noreferrer"
-                      className="w-full py-3 rounded-lg font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-2 transition-colors mt-auto text-white"
-                      style={{ backgroundColor: tier.accent, color: tier.dark || tier.accent === "#FF218C" ? "white" : "#0A0A0A" }}>
-                      {tier.cta} <ArrowRight size={14} />
-                    </a>
-                  ) : (
-                    <div className="w-full py-3 rounded-lg font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-2 bg-black/10 text-black/50 mt-auto cursor-default">
-                      <DoorOpen size={14} /> {tier.cta}
-                    </div>
+
+                <p className="font-mono text-[10px] uppercase tracking-widest mb-2 mt-2" style={{ color: tier.accent }}>{tier.sub}</p>
+                <h3 className="font-serif font-bold text-xl mb-3">{tier.label}</h3>
+
+                <div className="flex items-baseline gap-2 mb-1">
+                  <span className="font-sans font-black text-4xl">{tier.price}</span>
+                  {tier.wasPrize && (
+                    <span className="text-gray-400 line-through text-lg">{tier.wasPrize}</span>
                   )}
                 </div>
+                {tier.wasPrize && (
+                  <p className="text-xs font-mono text-[#078d70] font-bold mb-4">You save $3 — limited qty</p>
+                )}
+
+                <p className={`text-sm mb-6 flex-1 leading-relaxed ${tier.dark ? "text-white/60" : "text-gray-500"}`}>{tier.desc}</p>
+
+                <ul className="space-y-2 mb-8">
+                  {tier.perks.map((perk) => (
+                    <li key={perk} className={`flex items-start gap-2 text-sm font-medium ${tier.dark ? "text-white/80" : ""}`}>
+                      <ShieldCheck size={15} className="shrink-0 mt-0.5" style={{ color: tier.accent }} />
+                      {perk}
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href={tier.href}
+                  onClick={(e) => { e.preventDefault(); window.open(tier.href!, '_blank', 'noopener,noreferrer'); }}
+                  className="w-full py-3 font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-2 transition-colors mt-auto cursor-pointer hover:opacity-90"
+                  style={{
+                    backgroundColor: tier.accent,
+                    color: tier.accent === '#FFD800' ? '#0A0A0A' : 'white',
+                  }}
+                >
+                  {tier.cta} <ArrowRight size={14} />
+                </a>
               </div>
             ))}
           </div>
+
+          <p className="text-center text-gray-400 text-xs font-mono mt-8">
+            All tickets sold on Eventbrite. If the button doesn't open, go to eventbrite.com and search "Pride in Pontiac 2026".
+          </p>
         </div>
       </section>
 
-      {/* Community Access */}
-      <section className="py-20 px-6 bg-[#21B1FF]/10 border-y border-[#21B1FF]/20">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
-          <div className="md:w-1/3">
-            <div className="bg-[#21B1FF] text-white w-20 h-20 rounded-full flex items-center justify-center mb-6 shadow-lg">
-              <Users size={40} />
-            </div>
-            <h2 className="font-serif font-black text-4xl mb-4">Community Access</h2>
-          </div>
-          <div className="md:w-2/3">
-            <p className="text-lg text-[#0A0A0A]/80 mb-6 font-medium">
-              Cost should never be a barrier to Pride. A limited number of complimentary tickets are available for LGBTQ+ youth and community members experiencing financial hardship.
-            </p>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-black/5">
-                <h4 className="font-bold uppercase tracking-widest text-xs mb-2 text-[#21B1FF]">Youth & Low Income</h4>
-                <p className="text-sm text-gray-500 mb-4">Reserved complimentary passes for LGBTQ+ youth under 21 and anyone facing financial hardship.</p>
-                <a href="mailto:baentertainmentMI@gmail.com?subject=Community%20Access%20Request" className="flex items-center gap-1 text-sm font-bold hover:text-[#21B1FF] transition-colors">Request Access <ArrowRight size={14} /></a>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-black/5">
-                <h4 className="font-bold uppercase tracking-widest text-xs mb-2 text-[#21B1FF]">Partner Organizations</h4>
-                <p className="text-sm text-gray-500 mb-4">Local nonprofits and community groups can claim a block of passes for their members.</p>
-                <a href="mailto:baentertainmentMI@gmail.com?subject=Organization%20Pass%20Block%20Request" className="flex items-center gap-1 text-sm font-bold hover:text-[#21B1FF] transition-colors">Register Org <ArrowRight size={14} /></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Staff / Vendors / Sponsors */}
-      <section className="py-20 px-6">
+      {/* Community Partnership — replaces Community Access */}
+      <section className="py-20 px-6 bg-[#0A0A0A] text-white">
         <div className="max-w-5xl mx-auto">
-          <div className="flex flex-col items-center text-center mb-12">
-            <ShieldAlert className="text-gray-400 mb-4 w-12 h-12" />
-            <h2 className="font-serif font-bold text-3xl mb-2">Staff, Vendors & Sponsors</h2>
-            <p className="text-gray-500 max-w-xl">Participating in or producing the event? Use the portals below.</p>
+          <div className="flex items-center gap-4 mb-10">
+            <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-white/40">For Organizations</span>
+            <div className="flex-1 h-px bg-white/10" />
           </div>
+
+          <h2 className="font-serif font-black text-4xl md:text-5xl mb-4">
+            Become a Community Partner.
+          </h2>
+          <p className="text-white/60 max-w-2xl mb-12 text-lg">
+            Nonprofits, community groups, and advocacy organizations: partner with Pride in Pontiac and get your work in front of our audience. No cash required — just bring your presence.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="border border-white/10 p-8 hover:border-pride-gold/40 transition-colors">
+              <Users size={28} className="text-pride-gold mb-4" />
+              <h3 className="font-serif font-bold text-xl mb-2">Tabling Partner</h3>
+              <p className="text-white/60 text-sm mb-4 leading-relaxed">
+                Set up a table at the event and connect directly with attendees. Ideal for nonprofits, health organizations, advocacy groups, and community services. You bring your materials — we bring the audience.
+              </p>
+              <ul className="space-y-2 mb-6">
+                {["Listed on our website as a Community Partner", "Table space at the event", "Mentioned in event announcements", "Added to our Resources page"].map(p => (
+                  <li key={p} className="flex items-start gap-2 text-sm text-white/70">
+                    <ShieldCheck size={14} className="shrink-0 mt-0.5 text-pride-gold" />
+                    {p}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="mailto:baentertainmentMI@gmail.com?subject=Community%20Tabling%20Partner%20Application&body=Organization%20name%3A%0AContact%20name%3A%0AWhat%20you%20do%3A%0AHow%20you%27d%20promote%20the%20event%20to%20your%20network%3A%0A"
+                className="inline-flex items-center gap-2 bg-pride-gold text-pride-black px-6 py-3 font-bold text-sm uppercase tracking-wider hover:bg-white transition-colors"
+              >
+                Apply to Table <ArrowRight size={14} />
+              </a>
+            </div>
+
+            <div className="border border-white/10 p-8 hover:border-pride-gold/40 transition-colors">
+              <Building2 size={28} className="text-pride-gold mb-4" />
+              <h3 className="font-serif font-bold text-xl mb-2">Media & Outreach Partner</h3>
+              <p className="text-white/60 text-sm mb-4 leading-relaxed">
+                Promote Pride in Pontiac to your community — email lists, social media, flyers, newsletters. In exchange, we promote you to ours. No table, no cost, pure reach exchange.
+              </p>
+              <ul className="space-y-2 mb-6">
+                {["Listed on our website as a Community Partner", "Cross-promoted on our social channels", "Added to our Resources page", "Featured in our event program"].map(p => (
+                  <li key={p} className="flex items-start gap-2 text-sm text-white/70">
+                    <ShieldCheck size={14} className="shrink-0 mt-0.5 text-pride-gold" />
+                    {p}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="mailto:baentertainmentMI@gmail.com?subject=Media%20%26%20Outreach%20Partner%20Application&body=Organization%20name%3A%0AContact%20name%3A%0AYour%20audience%20size%20%26%20channels%3A%0AHow%20you%27d%20promote%20the%20event%3A%0A"
+                className="inline-flex items-center gap-2 bg-pride-gold text-pride-black px-6 py-3 font-bold text-sm uppercase tracking-wider hover:bg-white transition-colors"
+              >
+                Apply to Partner <ArrowRight size={14} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Staff / Vendors / Sponsors — cleaned up */}
+      <section className="py-20 px-6 bg-pride-cream border-t border-pride-black/10">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-center gap-4 mb-10">
+            <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-pride-muted">Participating in the Event</span>
+            <div className="flex-1 h-px bg-pride-black/10" />
+          </div>
+          <h2 className="font-serif font-bold text-3xl mb-2">Are You Part of the Team?</h2>
+          <p className="text-pride-muted mb-10">Registration and applications for everyone helping make this happen.</p>
+
           <div className="grid md:grid-cols-3 gap-6">
-            <Link to="/volunteers" className="block bg-black/5 hover:bg-black/10 transition-colors p-8 rounded-xl border border-black/10 text-center">
-              <h4 className="font-bold text-xl mb-2">Volunteers</h4>
-              <p className="text-sm text-gray-500">Sign up and get your shift details.</p>
+            <Link to="/volunteers" className="block bg-pride-white hover:shadow-md transition-shadow p-8 border border-pride-black/10 group">
+              <Star size={24} className="text-pride-gold mb-4" />
+              <h4 className="font-serif font-bold text-xl mb-2 group-hover:text-pride-gold transition-colors">Volunteers</h4>
+              <p className="text-sm text-pride-muted mb-4">Sign up to volunteer. You'll receive shift details and check-in instructions by email before the event.</p>
+              <span className="inline-flex items-center gap-1 text-sm font-bold text-pride-gold">
+                Volunteer Sign-Up <ArrowRight size={14} />
+              </span>
             </Link>
-            <Link to="/vendors" className="block bg-black/5 hover:bg-black/10 transition-colors p-8 rounded-xl border border-black/10 text-center">
-              <h4 className="font-bold text-xl mb-2">Vendors</h4>
-              <p className="text-sm text-gray-500">Apply for a marketplace booth.</p>
+
+            <Link to="/vendors" className="block bg-pride-white hover:shadow-md transition-shadow p-8 border border-pride-black/10 group">
+              <Building2 size={24} className="text-pride-gold mb-4" />
+              <h4 className="font-serif font-bold text-xl mb-2 group-hover:text-pride-gold transition-colors">Vendors</h4>
+              <p className="text-sm text-pride-muted mb-4">Apply for a marketplace booth. Approved vendors will be contacted with setup times, load-in details, and payment.</p>
+              <span className="inline-flex items-center gap-1 text-sm font-bold text-pride-gold">
+                Vendor Application <ArrowRight size={14} />
+              </span>
             </Link>
-            <Link to="/sponsors" className="block bg-black/5 hover:bg-black/10 transition-colors p-8 rounded-xl border border-black/10 text-center">
-              <h4 className="font-bold text-xl mb-2">Sponsors</h4>
-              <p className="text-sm text-gray-500">View sponsorship tiers and benefits.</p>
+
+            <Link to="/sponsors" className="block bg-pride-white hover:shadow-md transition-shadow p-8 border border-pride-black/10 group">
+              <ShieldCheck size={24} className="text-pride-gold mb-4" />
+              <h4 className="font-serif font-bold text-xl mb-2 group-hover:text-pride-gold transition-colors">Sponsors</h4>
+              <p className="text-sm text-pride-muted mb-4">View sponsorship tiers and benefits. Contact us directly to discuss your package and what we can offer your brand.</p>
+              <span className="inline-flex items-center gap-1 text-sm font-bold text-pride-gold">
+                Sponsorship Info <ArrowRight size={14} />
+              </span>
             </Link>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="bg-black/5 py-20 px-6 border-t border-black/10">
+      <section className="bg-pride-white py-20 px-6 border-t border-pride-black/10">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-serif font-black text-4xl mb-12 text-center">Ticketing FAQ</h2>
           <div className="space-y-2">
