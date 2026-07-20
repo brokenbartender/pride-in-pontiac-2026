@@ -1,10 +1,23 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-import { ArrowRight, MapPin, Calendar, Heart, Mail, CheckCircle } from "lucide-react";
+import { ArrowRight, MapPin, Calendar, Heart, CheckCircle } from "lucide-react";
 import { PrideStripe } from "../components/PrideStripe";
 import { CountdownTimer } from "../components/CountdownTimer";
 import { Sparkles } from "../components/Sparkles";
 import { EVENTBRITE_URL } from "../lib/eventLinks";
+
+const PARTNERS = [
+  "B. Nektar Meadery",
+  "HopCat",
+  "The Crofoot",
+  "Weiss Spirits",
+  "Joyology of Lake Orion",
+  "Flagstar Strand Theatre",
+  "Detroit Metro Times",
+  "Oakland County Blog",
+  "Pontiac City Council",
+  "Oakland County Health Division",
+];
 
 export function Home() {
   return (
@@ -240,33 +253,19 @@ export function Home() {
         </div>
       </section>
 
-      {/* Newsletter Signup */}
-      <section className="bg-pride-gold text-pride-black py-24 px-6 border-y border-pride-black/10">
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12">
-          <div className="flex-1 text-center md:text-left">
-            <h2 className="font-serif font-black text-4xl mb-4">Stay in the Loop</h2>
-            <p className="text-pride-black/80 font-medium">Join our mailing list to be the first to know about performer reveals, ticket drops, and special announcements leading up to August 14th.</p>
-          </div>
-          <div className="w-full md:w-auto flex-1">
-            <form className="flex flex-col sm:flex-row w-full shadow-xl" onSubmit={(e) => e.preventDefault()}>
-              <div className="relative flex-grow">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-pride-muted">
-                  <Mail size={18} />
-                </div>
-                <input 
-                  type="email" 
-                  placeholder="Enter your email address" 
-                  className="w-full bg-pride-white pl-12 pr-4 py-4 text-pride-ink focus:outline-none placeholder:text-pride-muted/50 rounded-none border-none"
-                  required
-                />
+      {/* Partner Wall */}
+      <section className="bg-pride-black text-pride-white py-24 px-6 border-y border-pride-black/10">
+        <div className="max-w-6xl mx-auto text-center">
+          <span className="font-mono text-xs tracking-widest uppercase text-pride-gold mb-4 block">Community Backed</span>
+          <h2 className="font-serif font-black text-3xl md:text-4xl mb-14">Proudly Backed By</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-x-8 gap-y-10">
+            {PARTNERS.map((name) => (
+              <div key={name} className="flex items-center justify-center px-2">
+                <span className="font-serif font-bold text-lg md:text-xl text-pride-white/80 hover:text-pride-gold transition-colors leading-snug">
+                  {name}
+                </span>
               </div>
-              <button 
-                type="submit" 
-                className="bg-pride-black text-pride-white font-sans font-bold uppercase tracking-widest text-xs px-8 py-4 hover:bg-pride-ink transition-colors rounded-none shrink-0 border-none"
-              >
-                Sign Up
-              </button>
-            </form>
+            ))}
           </div>
         </div>
       </section>
