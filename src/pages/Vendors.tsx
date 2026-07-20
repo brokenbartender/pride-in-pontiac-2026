@@ -1,23 +1,7 @@
-import { useState } from "react";
-import { Store, CheckCircle, ArrowRight } from "lucide-react";
+import { Store, CheckCircle } from "lucide-react";
 import { BiStripe } from "../components/BiStripe";
-import { WEB3FORMS_KEY, FormStatus, submitForm } from "../lib/web3forms";
 
 export function Vendors() {
-  const [status, setStatus] = useState<FormStatus>("idle");
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setStatus("loading");
-    try {
-      const { success } = await submitForm(e);
-      setStatus(success ? "success" : "error");
-      if (success) (e.target as HTMLFormElement).reset();
-    } catch {
-      setStatus("error");
-    }
-  };
-
   return (
     <div className="bg-pride-cream text-pride-ink min-h-screen py-24 px-6">
       <div className="max-w-4xl mx-auto border border-pride-black/10 bg-pride-white p-10 md:p-16 shadow-xl relative overflow-hidden">
@@ -76,145 +60,18 @@ export function Vendors() {
           </div>
         </div>
 
-        {status === "success" ? (
-          <div className="flex flex-col items-center py-12 text-center gap-4">
-            <CheckCircle size={48} className="text-pride-teal" />
-            <h3 className="font-serif font-bold text-2xl">Application received!</h3>
-            <p className="text-pride-muted max-w-sm">
-              We'll be in touch within 48 hours to confirm your spot and share
-              load-in details.
-            </p>
-          </div>
-        ) : (
-          <form className="space-y-8 border-t border-pride-black/10 pt-10" onSubmit={handleSubmit}>
-            <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
-            <input
-              type="hidden"
-              name="subject"
-              value="New Vendor Application — Pride in Pontiac 2026"
-            />
-            <input
-              type="hidden"
-              name="from_name"
-              value="Pride in Pontiac Website"
-            />
-
-            <h3 className="font-serif font-bold text-2xl">Vendor Application</h3>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="flex flex-col gap-2">
-                <label className="font-mono text-[10px] uppercase tracking-widest text-pride-ink/70 font-bold">
-                  Business / Organization Name
-                </label>
-                <input
-                  type="text"
-                  name="business_name"
-                  placeholder="Your business name"
-                  required
-                  className="bg-transparent border-b border-pride-black/20 py-3 text-pride-ink focus:outline-none focus:border-pride-teal transition-colors font-sans w-full"
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label className="font-mono text-[10px] uppercase tracking-widest text-pride-ink/70 font-bold">
-                  Contact Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your full name"
-                  required
-                  className="bg-transparent border-b border-pride-black/20 py-3 text-pride-ink focus:outline-none focus:border-pride-teal transition-colors font-sans w-full"
-                />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="flex flex-col gap-2">
-                <label className="font-mono text-[10px] uppercase tracking-widest text-pride-ink/70 font-bold">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="hello@yourbusiness.com"
-                  required
-                  className="bg-transparent border-b border-pride-black/20 py-3 text-pride-ink focus:outline-none focus:border-pride-teal transition-colors font-sans w-full"
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label className="font-mono text-[10px] uppercase tracking-widest text-pride-ink/70 font-bold">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="(555) 555-5555"
-                  className="bg-transparent border-b border-pride-black/20 py-3 text-pride-ink focus:outline-none focus:border-pride-teal transition-colors font-sans w-full"
-                />
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-2">
-              <label className="font-mono text-[10px] uppercase tracking-widest text-pride-ink/70 font-bold">
-                Vendor Type
-              </label>
-              <select
-                name="vendor_type"
-                required
-                className="bg-transparent border-b border-pride-black/20 py-3 text-pride-ink focus:outline-none focus:border-pride-teal transition-colors font-sans w-full appearance-none rounded-none"
-              >
-                <option value="" disabled>
-                  Select vendor type
-                </option>
-                <option>Retail / Merchandise</option>
-                <option>Art / Handmade Goods</option>
-                <option>Community / Nonprofit Organization</option>
-                <option>Health & Wellness</option>
-                <option>Other</option>
-              </select>
-            </div>
-
-            <div className="flex flex-col gap-2">
-              <label className="font-mono text-[10px] uppercase tracking-widest text-pride-ink/70 font-bold">
-                Do you need electricity?
-              </label>
-              <select
-                name="electricity"
-                className="bg-transparent border-b border-pride-black/20 py-3 text-pride-ink focus:outline-none focus:border-pride-teal transition-colors font-sans w-full appearance-none rounded-none"
-              >
-                <option value="No">No</option>
-                <option value="Yes">Yes (limited availability)</option>
-              </select>
-            </div>
-
-            <div className="flex flex-col gap-2">
-              <label className="font-mono text-[10px] uppercase tracking-widest text-pride-ink/70 font-bold">
-                Tell us about your business
-              </label>
-              <textarea
-                name="message"
-                placeholder="What will you be selling or offering? Are you LGBTQ+ and/or BIPOC owned?"
-                required
-                className="bg-transparent border-b border-pride-black/20 py-3 text-pride-ink focus:outline-none focus:border-pride-teal transition-colors font-sans w-full min-h-[100px] resize-y"
-              />
-            </div>
-
-            {status === "error" && (
-              <p className="text-sm text-red-500">
-                Something went wrong. Please try again or email baentertainmentMI@gmail.com directly.
-              </p>
-            )}
-
-            <button
-              type="submit"
-              disabled={status === "loading"}
-              className="inline-flex w-full md:w-auto bg-pride-black text-pride-white px-8 py-4 font-bold uppercase tracking-wider hover:bg-pride-teal transition-colors items-center justify-center gap-3 disabled:opacity-60"
-            >
-              {status === "loading" ? "Submitting..." : "Submit Application"}
-              {status !== "loading" && <ArrowRight size={18} />}
-            </button>
-          </form>
-        )}
+        <div className="border-t border-pride-black/10 pt-10">
+          <h3 className="font-serif font-bold text-2xl mb-6">Vendor Application</h3>
+          <iframe
+            src="https://tally.so/embed/PdkqL1?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy"
+            width="100%"
+            height="900"
+            frameBorder="0"
+            title="Pride in Pontiac Vendor Application"
+            className="w-full"
+          />
+        </div>
       </div>
     </div>
   );
