@@ -11,31 +11,35 @@ export function Tickets() {
   const faqs = [
     {
       question: "What time does the event start?",
-      answer: "Doors open at noon. Entry is free from 12–3 PM — no ticket needed, just walk up. All ages welcome during this window. After 3 PM, entry requires a GA ticket ($12 early bird / $15 general) and guests must be 18+. At 7 PM GA closes, entry is $25, and the event is 21+ only through close at 1 AM."
+      answer: "Doors open at noon. Entry is free from 12–3 PM — no ticket needed, just walk up. All ages welcome during this window. After 3 PM, entry requires a GA ticket ($20, or two for the price of one with our BOGO deal). Starting at 7:30 PM, entry is 18+. After 9 PM, walk-up door entry is available for $20 for anyone without a pre-purchased ticket."
     },
     {
       question: "I got a free wristband at noon — do I have to leave at 3 PM?",
       answer: "No. Free wristband holders are welcome to stay all night. The 3 PM cutoff is for new admissions only — anyone arriving after 3 PM needs a GA ticket. If you're already in, you're in."
     },
     {
-      question: "What's the Early Bird deal?",
-      answer: "Early Bird GA is $12 — $3 off the $15 door price. Limited quantity. Once they sell out, only $15 GA is available. Buy online on Eventbrite to lock in the lower price."
+      question: "What's the BOGO deal?",
+      answer: "Buy one GA or VIP ticket and get a second free — two tickets for the price of one. Great for bringing a friend. Available on both GA and VIP while supplies last."
     },
     {
       question: "What does GA get me?",
-      answer: "GA ($12 early bird / $15 general) gets you in from 3 PM. GA admission closes at 7 PM — after that, entry is $25. Once you're inside on a GA ticket, you're in for the night through close at 1 AM. No re-purchase, no sweep."
+      answer: "GA is $20 and gets you in from 3 PM through close at 2 AM. Once you're inside, you're in for the night — no re-purchase, no sweep."
     },
     {
-      question: "Can I come just for the evening show?",
-      answer: "Yes. Anyone arriving after 7 PM pays $25 at the door. Must be 21+ with a valid ID. You can also buy the Late Night ticket online in advance on Eventbrite."
+      question: "Can I come just for the evening?",
+      answer: "Yes. Anyone arriving after 9 PM without a pre-purchased ticket can pay $20 at the door. Starting at 7:30 PM, entry is 18+ with valid ID. You can also buy GA online in advance on Eventbrite to skip the door."
     },
     {
-      question: "What does Pride Patron VIP include?",
-      answer: "Pride Patron is $40 and presale only — no VIP at the door. Includes 11 AM early access (one hour before general doors), reserved VIP lounge seating, one complimentary drink ticket, and meet & greet access with performers. Extremely limited."
+      question: "What does VIP include?",
+      answer: "VIP is $40 and presale only — no VIP at the door. Includes 11 AM early access (one hour before general doors), reserved VIP lounge seating, one complimentary drink ticket, and meet & greet access with performers. Extremely limited, and eligible for the BOGO deal."
     },
     {
       question: "Is there re-entry?",
       answer: "Yes, with a valid wristband matching your ticket tier. Wristbands are checked at re-entry."
+    },
+    {
+      question: "What time does the event end?",
+      answer: "The event runs until 2 AM. Alise King closes out the night."
     },
     {
       question: "My button isn't opening Eventbrite — what do I do?",
@@ -46,7 +50,7 @@ export function Tickets() {
   const timeline = [
     {
       time: "11:00 AM",
-      label: "Pride Patron Early Access",
+      label: "VIP Early Access",
       detail: "VIP ticket holders only · exclusive hour before general doors · meet performers, skip the crowd",
       color: "text-pride-gold",
       border: "border-pride-gold",
@@ -61,28 +65,28 @@ export function Tickets() {
     {
       time: "3:00 PM",
       label: "Free Admission Closes",
-      detail: "New arrivals need a GA ticket ($12 early bird / $15) and must be 18+ · free wristband holders stay all night",
+      detail: "New arrivals need a GA ticket ($20, BOGO available) · free wristband holders stay all night",
       color: "text-[#FFD800]",
       border: "border-[#FFD800]",
     },
     {
-      time: "7:00 PM",
-      label: "GA Closes — $25 Entry",
-      detail: "New arrivals pay $25 through close · 21+ ID check begins · GA holders already inside stay",
+      time: "7:30 PM",
+      label: "Evening Transition — 18+",
+      detail: "New arrivals must be 18+ with valid ID from this point forward",
       color: "text-[#FF218C]",
       border: "border-[#FF218C]",
     },
     {
       time: "9:00 PM",
-      label: "Headlining Show",
-      detail: "Main stage performers · Pride Patron VIP lounge · full bar",
+      label: "Door Entry Opens — $20",
+      detail: "Walk-up entry at the door for $20 for anyone without a pre-purchased ticket · 18+ required",
       color: "text-purple-400",
       border: "border-purple-400",
     },
     {
-      time: "1:00 AM",
+      time: "2:00 AM",
       label: "Close",
-      detail: "Last call · event ends",
+      detail: "Alise King closes out the night · last call · event ends",
       color: "text-pride-gold",
       border: "border-pride-gold",
     },
@@ -90,75 +94,58 @@ export function Tickets() {
 
   const tiers = [
     {
-      label: "GA Early Bird",
-      price: "$12",
-      wasPrice: "$15",
-      badge: "Best Deal",
-      sub: "Online only · limited quantity",
-      desc: "Lowest price available. Entry from 3 PM, stay through close at 1 AM. Sells out — buy now to lock it in.",
+      label: "General Admission",
+      price: "$20",
+      wasPrice: null,
+      badge: "BOGO Available",
+      sub: "Online or at door · entry from 3 PM",
+      desc: "Entry from 3 PM through close at 2 AM. Once inside, you're in for the night — no re-purchase, no sweep. Buy one, get one free while supplies last.",
       perks: [
-        "Entry from 3 PM through 1 AM",
+        "Entry from 3 PM through 2 AM",
         "Full festival & vendor access",
-        "Save $3 vs door price",
+        "BOGO — two tickets for the price of one",
         "No re-purchase or sweep",
       ],
-      cta: "Get Early Bird — $12",
+      cta: "Get GA — $20",
       href: EVENTBRITE_URL,
       accent: "#FFD800",
       dark: false,
       featured: true,
     },
     {
-      label: "GA General",
-      price: "$15",
+      label: "Door Entry",
+      price: "$20",
       wasPrice: null,
       badge: null,
-      sub: "Online or at door · valid until 7 PM entry",
-      desc: "Standard GA. Entry from 3 PM through 7 PM. Once inside, you're in for the night — no re-purchase needed.",
+      sub: "18+ only · ID required · after 9 PM",
+      desc: "Come for the evening. Walk-up entry at the door for anyone arriving after 9 PM without a pre-purchased ticket. 18+ required.",
       perks: [
-        "Entry from 3 PM through 1 AM",
-        "Full festival & vendor access",
-        "No sweep — stay all night",
+        "Entry from 9 PM through 2 AM",
+        "Evening performances",
+        "18+ required · valid ID checked",
       ],
-      cta: "Buy GA — $15",
-      href: EVENTBRITE_URL,
-      accent: "#FFD800",
-      dark: false,
-      featured: false,
-    },
-    {
-      label: "After 7 PM",
-      price: "$25",
-      wasPrice: null,
-      badge: null,
-      sub: "21+ only · ID required · door or online",
-      desc: "Come for the show. Entry from 7 PM through close at 1 AM. Headlining performances, full bar, late night.",
-      perks: [
-        "Entry from 7 PM through 1 AM",
-        "Headlining drag performances",
-        "21+ required · valid ID checked",
-      ],
-      cta: "Buy After 7 PM — $25",
+      cta: "Buy GA in Advance — $20",
       href: EVENTBRITE_URL,
       accent: "#FF218C",
       dark: false,
       featured: false,
     },
     {
-      label: "Pride Patron",
+      label: "VIP",
       price: "$40",
       wasPrice: null,
-      badge: "VIP",
+      badge: "BOGO Available",
       sub: "Presale only · extremely limited",
-      desc: "The full experience. 11 AM early access before general doors, reserved VIP lounge, drink ticket, and meet & greet. No VIP at the door.",
+      desc: "The full experience. 11 AM early access before general doors, reserved VIP lounge, drink ticket, and meet & greet. No VIP at the door. Buy one, get one free while supplies last.",
       perks: [
         "11 AM early access — 1 hr before general doors",
         "Reserved VIP lounge seating",
         "1 complimentary drink ticket",
         "Meet & greet with performers",
+        "BOGO — two tickets for the price of one",
         "Presale only — no door VIP",
       ],
-      cta: "Buy Pride Patron — $40",
+      cta: "Buy VIP — $40",
       href: EVENTBRITE_URL,
       accent: "#c8922a",
       dark: true,
@@ -178,7 +165,7 @@ export function Tickets() {
             Get Your<br /><span className="text-[#FFD800]">Tickets.</span>
           </h1>
           <p className="text-white/60 mb-10 max-w-xl text-lg">
-            Pride Patron early access at 11 AM. Free & all ages noon–3 PM. GA $12–$15 from 3–7 PM (18+). $25 after 7 (21+). No sweeps — once you're in, you're in all night.
+            VIP early access at 11 AM. Free & all ages noon–3 PM. GA $20 from 3 PM (BOGO available). 18+ starting 7:30 PM. $20 door entry after 9 PM. Runs until 2 AM.
           </p>
           <div className="flex flex-wrap gap-4">
             <a
@@ -217,7 +204,7 @@ export function Tickets() {
             ))}
           </div>
           <p className="text-white/30 text-xs font-mono mt-4">
-            Pride Patron 11 AM · Free & all ages 12–3 PM · 18+ ticketed 3–7 PM · 21+ only after 7 PM with valid ID
+            VIP 11 AM · Free & all ages 12–3 PM · GA from 3 PM · 18+ starting 7:30 PM · $20 door entry after 9 PM · close 2 AM
           </p>
         </div>
       </section>
@@ -227,10 +214,10 @@ export function Tickets() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-serif font-black text-4xl md:text-5xl mb-4">Choose Your Experience</h2>
-            <p className="text-gray-500 text-lg">Early Bird sells out. VIP ends before the event. No sweeps at any tier.</p>
+            <p className="text-gray-500 text-lg">GA and VIP both eligible for BOGO. VIP ends before the event.</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {tiers.map((tier) => (
               <div
                 key={tier.label}
@@ -256,11 +243,8 @@ export function Tickets() {
                     <span className="text-gray-400 line-through text-lg">{tier.wasPrice}</span>
                   )}
                 </div>
-                {tier.wasPrice && (
-                  <p className="text-xs font-mono text-[#078d70] font-bold mb-4">You save $3 — limited qty</p>
-                )}
 
-                <p className={`text-sm mb-6 flex-1 leading-relaxed ${tier.dark ? "text-white/60" : "text-gray-500"}`}>{tier.desc}</p>
+                <p className={`text-sm mb-6 flex-1 leading-relaxed mt-4 ${tier.dark ? "text-white/60" : "text-gray-500"}`}>{tier.desc}</p>
 
                 <ul className="space-y-2 mb-8">
                   {tier.perks.map((perk) => (
