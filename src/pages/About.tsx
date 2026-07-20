@@ -1,6 +1,7 @@
-import { motion } from "motion/react";
 import { Link } from "react-router-dom";
+import { ArrowRight, Ticket, HeartHandshake, Building2, Gift } from "lucide-react";
 import { PrideStripe } from "../components/PrideStripe";
+import { EVENTBRITE_URL } from "../lib/eventLinks";
 
 export function About() {
   return (
@@ -86,40 +87,55 @@ export function About() {
         </blockquote>
       </section>
 
-      {/* Corporate Pride Retreat Context */}
+      {/* Stand with Pontiac — multi-path CTA */}
       <section className="bg-pride-rose text-pride-white py-24 px-6 mt-12 w-full">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center gap-4 mb-10">
-            <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-pride-white/60">Why Now</span>
-            <div className="flex-1 h-px bg-pride-white/20"></div>
-          </div>
-          
-          <h2 className="font-serif font-black text-4xl md:text-6xl mb-12">The Moment Is Ours.</h2>
-          
-          <div className="space-y-10">
-            <div className="flex gap-6 items-start">
-              <span className="text-pride-gold-light text-2xl">&diams;</span>
-              <p className="text-lg leading-relaxed text-pride-white/90">
-                <strong>Corporate Pride is retreating — local Pride is rising.</strong> Major national events saw sponsorships drop 40–50% in 2025 as large brands pulled back. Authentic, community-led local events are exactly where credible sponsors are moving. You're not competing with large-box retailers. You're replacing them.
-              </p>
-            </div>
-            <div className="flex gap-6 items-start">
-              <span className="text-pride-gold-light text-2xl">&diams;</span>
-              <p className="text-lg leading-relaxed text-pride-white/90">
-                <strong>The infrastructure is already in place.</strong> Venue confirmed. Date locked. Performers booked. Existing monthly show audience already primed. This event runs regardless.
-              </p>
-            </div>
-            <div className="flex gap-6 items-start">
-              <span className="text-pride-gold-light text-2xl">&diams;</span>
-              <p className="text-lg leading-relaxed text-pride-white/90">
-                <strong>Local visibility is essential.</strong> As LGBTQ+ protections come under pressure nationwide, visible, local community celebration becomes an act of presence. It is time for Pontiac to stand loud and proud again.
-              </p>
-            </div>
+        <div className="max-w-5xl mx-auto text-center">
+          <div className="flex items-center justify-center gap-4 mb-10">
+            <div className="w-12 h-px bg-pride-white/20"></div>
+            <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-pride-white/60">Be Part Of It</span>
+            <div className="w-12 h-px bg-pride-white/20"></div>
           </div>
 
-          <div className="mt-16 text-center">
-            <Link to="/sponsors" className="inline-block bg-pride-black text-pride-white px-10 py-5 font-sans font-bold text-sm tracking-wider uppercase hover:bg-pride-gold hover:text-pride-black transition-colors">
-              Stand with Pontiac
+          <h2 className="font-serif font-black text-4xl md:text-6xl mb-6">Stand with Pontiac.</h2>
+          <p className="text-lg text-pride-white/90 max-w-2xl mx-auto leading-relaxed mb-16">
+            This event runs because people show up for it — as attendees, volunteers, vendors, sponsors, and donors. However you want in, here's your next step.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-left">
+            <a href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer" className="group bg-pride-black/20 hover:bg-pride-black/30 border border-pride-white/10 p-6 transition-colors flex flex-col gap-4">
+              <Ticket size={22} className="text-pride-gold-light" />
+              <div>
+                <h3 className="font-serif font-bold text-lg mb-1">Get Tickets</h3>
+                <p className="text-sm text-pride-white/70">Secure your spot at Pontiac's first Pride.</p>
+              </div>
+              <span className="mt-auto font-mono text-[10px] uppercase tracking-widest text-pride-gold-light flex items-center gap-2 group-hover:gap-3 transition-all">Buy Now <ArrowRight size={12} /></span>
+            </a>
+
+            <Link to="/volunteers" className="group bg-pride-black/20 hover:bg-pride-black/30 border border-pride-white/10 p-6 transition-colors flex flex-col gap-4">
+              <HeartHandshake size={22} className="text-pride-gold-light" />
+              <div>
+                <h3 className="font-serif font-bold text-lg mb-1">Volunteer</h3>
+                <p className="text-sm text-pride-white/70">Help us run a safe, accessible event.</p>
+              </div>
+              <span className="mt-auto font-mono text-[10px] uppercase tracking-widest text-pride-gold-light flex items-center gap-2 group-hover:gap-3 transition-all">Sign Up <ArrowRight size={12} /></span>
+            </Link>
+
+            <Link to="/sponsors" className="group bg-pride-black/20 hover:bg-pride-black/30 border border-pride-white/10 p-6 transition-colors flex flex-col gap-4">
+              <Building2 size={22} className="text-pride-gold-light" />
+              <div>
+                <h3 className="font-serif font-bold text-lg mb-1">Sponsor</h3>
+                <p className="text-sm text-pride-white/70">Put your brand behind the community.</p>
+              </div>
+              <span className="mt-auto font-mono text-[10px] uppercase tracking-widest text-pride-gold-light flex items-center gap-2 group-hover:gap-3 transition-all">View Tiers <ArrowRight size={12} /></span>
+            </Link>
+
+            <Link to="/donate" className="group bg-pride-black/20 hover:bg-pride-black/30 border border-pride-white/10 p-6 transition-colors flex flex-col gap-4">
+              <Gift size={22} className="text-pride-gold-light" />
+              <div>
+                <h3 className="font-serif font-bold text-lg mb-1">Donate</h3>
+                <p className="text-sm text-pride-white/70">Every dollar closes the gap to the finish line.</p>
+              </div>
+              <span className="mt-auto font-mono text-[10px] uppercase tracking-widest text-pride-gold-light flex items-center gap-2 group-hover:gap-3 transition-all">Give Now <ArrowRight size={12} /></span>
             </Link>
           </div>
         </div>
