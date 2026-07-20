@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, BarChart3, Building2, Eye, ShieldCheck, Target, Users, Check, CreditCard } from "lucide-react";
+import { ArrowRight, BarChart3, Building2, Eye, ShieldCheck, Target, Users, Check, CreditCard, Megaphone } from "lucide-react";
 import { GenderqueerStripe } from "../components/GenderqueerStripe";
 import { motion } from "motion/react";
 import { Sparkles } from "../components/Sparkles";
@@ -9,6 +9,7 @@ import {
   SPONSOR_SILVER_CHECKOUT_URL,
   SPONSOR_COMMUNITY_150_CHECKOUT_URL,
   SPONSOR_COMMUNITY_250_CHECKOUT_URL,
+  SPONSOR_DIGITAL_100_CHECKOUT_URL,
 } from "../lib/eventLinks";
 
 export function Sponsors() {
@@ -210,14 +211,14 @@ export function Sponsors() {
               <a href="mailto:baentertainmentMI@gmail.com?subject=Gold%20Sponsorship%20Commitment" className="w-full text-center text-pride-muted hover:text-pride-ink text-xs font-mono uppercase tracking-widest mt-3">Or request an invoice</a>
             </motion.div>
 
-            {/* Silver & Community */}
-            <motion.div variants={itemVariants} className="flex flex-col gap-8">
-              <div className="bg-pride-white text-pride-ink border border-pride-black/10 p-8 shadow-sm flex-grow">
+            {/* Silver, Community & Digital */}
+            <motion.div variants={itemVariants} className="flex flex-col gap-6">
+              <div className="bg-pride-white text-pride-ink border border-pride-black/10 p-6 shadow-sm flex-grow">
                 <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-pride-muted mb-2 block">Brand Presence</span>
                 <h3 className="font-serif font-bold text-2xl mb-1">Silver Tier</h3>
                 <div className="font-serif font-black text-3xl mb-1 text-pride-ink">$500</div>
-                <p className="font-mono text-[9px] uppercase tracking-widest text-pride-muted mb-4 pb-4 border-b border-pride-black/10">Card checkout: $515.24 <span className="normal-case">(covers fee)</span></p>
-                <ul className="space-y-2 mb-6 text-sm text-pride-muted">
+                <p className="font-mono text-[9px] uppercase tracking-widest text-pride-muted mb-3 pb-3 border-b border-pride-black/10">Card checkout: $515.24 <span className="normal-case">(covers fee)</span></p>
+                <ul className="space-y-2 mb-4 text-sm text-pride-muted">
                   <li>&mdash; Standard logo placement</li>
                   <li>&mdash; Social media group shoutout</li>
                   <li>&mdash; Vendor table/footprint</li>
@@ -226,12 +227,12 @@ export function Sponsors() {
                 <a href="mailto:baentertainmentMI@gmail.com?subject=Silver%20Sponsorship" className="block text-pride-muted hover:text-pride-ink text-xs font-mono uppercase tracking-widest mt-2">Or request an invoice</a>
               </div>
 
-              <div className="bg-pride-white text-pride-ink border border-pride-black/10 p-8 shadow-sm flex-grow">
+              <div className="bg-pride-white text-pride-ink border border-pride-black/10 p-6 shadow-sm flex-grow">
                 <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-pride-rose mb-2 block">Accessible Support</span>
                 <h3 className="font-serif font-bold text-2xl mb-1">Community Partner</h3>
                 <div className="font-serif font-black text-3xl mb-1 text-pride-ink">$150 - $250</div>
-                <p className="font-mono text-[9px] uppercase tracking-widest text-pride-muted mb-4 pb-4 border-b border-pride-black/10">Card checkout includes processing fee</p>
-                <ul className="space-y-2 mb-6 text-sm text-pride-muted">
+                <p className="font-mono text-[9px] uppercase tracking-widest text-pride-muted mb-3 pb-3 border-b border-pride-black/10">Card checkout includes processing fee</p>
+                <ul className="space-y-2 mb-4 text-sm text-pride-muted">
                   <li>&mdash; Program text listing & logo</li>
                   <li>&mdash; Perfect for local small businesses</li>
                   <li>&mdash; Includes basic marketplace booth</li>
@@ -241,6 +242,18 @@ export function Sponsors() {
                   <a href={SPONSOR_COMMUNITY_250_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="font-bold text-sm tracking-widest text-pride-rose hover:text-pride-ink uppercase flex items-center gap-2">Pay $257.78 <ArrowRight size={14}/></a>
                 </div>
                 <a href="mailto:baentertainmentMI@gmail.com?subject=Community%20Partner%20Sponsorship" className="block text-pride-muted hover:text-pride-ink text-xs font-mono uppercase tracking-widest mt-2">Or request an invoice</a>
+              </div>
+
+              <div className="bg-pride-white text-pride-ink border border-pride-black/10 p-6 shadow-sm flex-grow">
+                <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-pride-teal mb-2 flex items-center gap-2"><Megaphone size={12} /> No Booth Required</span>
+                <h3 className="font-serif font-bold text-2xl mb-1">Digital Partner</h3>
+                <div className="font-serif font-black text-3xl mb-1 text-pride-ink">$100</div>
+                <p className="font-mono text-[9px] uppercase tracking-widest text-pride-muted mb-3 pb-3 border-b border-pride-black/10">Card checkout: $103.30 <span className="normal-case">(covers fee)</span></p>
+                <p className="text-sm text-pride-muted mb-4 leading-relaxed">
+                  Logo and link on the website and printed program — an ad placement or a straight-up donation, whichever you'd rather call it. No table needed.
+                </p>
+                <a href={SPONSOR_DIGITAL_100_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="font-bold text-sm tracking-widest text-pride-teal hover:text-pride-ink uppercase flex items-center gap-2">Pay by Card <ArrowRight size={14}/></a>
+                <a href="mailto:baentertainmentMI@gmail.com?subject=Digital%20Partner%20-%20%24100" className="block text-pride-muted hover:text-pride-ink text-xs font-mono uppercase tracking-widest mt-2">Or request an invoice</a>
               </div>
             </motion.div>
           </motion.div>
