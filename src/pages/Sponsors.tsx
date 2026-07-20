@@ -63,7 +63,7 @@ export function Sponsors() {
       <section className="py-24 px-6 max-w-7xl mx-auto">
         <div className="mb-16">
           <h2 className="font-serif font-black text-4xl md:text-5xl mb-6">The Corporate Advantage</h2>
-          <p className="text-pride-muted text-lg max-w-3xl leading-relaxed">As large-scale civic organizations retreat from Pride events nationwide, conscious consumers are shifting their fierce brand loyalty to the companies that show up locally.</p>
+          <p className="text-pride-muted text-lg max-w-3xl leading-relaxed">As large-scale civic organizations retreat from Pride events nationwide — major national sponsorships dropped 40&ndash;50% in 2025 as large brands pulled back — conscious consumers are shifting their fierce brand loyalty to the companies that show up locally. You're not competing with large-box retailers here. You're replacing them.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
