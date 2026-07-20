@@ -190,7 +190,7 @@ export function Home() {
               <p className="text-pride-white/70 text-sm leading-relaxed mb-4">Live drag performances, vendor marketplace featuring LGBTQ+ businesses, rapid testing & health resources, and a massive outdoor courtyard social hub.</p>
             </div>
             <div className="bg-pride-white/5 border border-pride-white/10 p-8 hover:bg-pride-white/10 transition-colors">
-              <span className="inline-block px-3 py-1 bg-pride-gold text-pride-black font-mono text-[9px] uppercase tracking-widest font-bold mb-4">Evening &middot; 21+</span>
+              <span className="inline-block px-3 py-1 bg-pride-gold text-pride-black font-mono text-[9px] uppercase tracking-widest font-bold mb-4">Evening &middot; 18+</span>
               <h3 className="font-serif font-bold text-2xl mb-3">Headlining Show</h3>
               <p className="text-pride-white/70 text-sm leading-relaxed mb-4">Headlined by Unorthodox Drag's verified roster of stage performers. Full DJ sets, massive VIP and reserved seating options, and an unforgettable celebration.</p>
             </div>
