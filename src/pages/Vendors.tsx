@@ -1,5 +1,6 @@
-import { Store, CheckCircle } from "lucide-react";
+import { Store, CheckCircle, CreditCard, ArrowRight } from "lucide-react";
 import { BiStripe } from "../components/BiStripe";
+import { VENDOR_BOOTH_FEE_CHECKOUT_URL } from "../lib/eventLinks";
 
 export function Vendors() {
   return (
@@ -57,6 +58,28 @@ export function Vendors() {
               in immediate removal. BIPOC and Trans/Non-binary owned businesses
               are heavily encouraged to apply.
             </p>
+          </div>
+
+          <div className="bg-pride-cream border border-pride-black/10 p-8">
+            <h3 className="font-serif font-bold text-2xl mb-3">Booth Fee</h3>
+            <div className="flex items-baseline gap-3 mb-1">
+              <span className="font-serif font-black text-4xl text-pride-ink">$35</span>
+              <span className="text-pride-muted text-sm">standard vendor table</span>
+            </div>
+            <p className="font-mono text-[10px] uppercase tracking-widest text-pride-muted mb-6">
+              Card checkout: $36.35 <span className="normal-case tracking-normal">(covers processing fee, so we net the full $35)</span>
+            </p>
+            <p className="text-sm text-pride-muted mb-6 leading-relaxed">
+              Pay your booth fee once your application below is approved. Prefer to avoid the card fee? Bring cash or a check day-of instead.
+            </p>
+            <a
+              href={VENDOR_BOOTH_FEE_CHECKOUT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-pride-teal text-pride-white px-6 py-3 font-bold text-sm uppercase tracking-wider hover:bg-pride-black transition-colors"
+            >
+              <CreditCard size={16} /> Pay Booth Fee <ArrowRight size={14} />
+            </a>
           </div>
         </div>
 
