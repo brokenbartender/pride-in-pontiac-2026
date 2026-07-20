@@ -31,6 +31,11 @@ export const SPONSOR_COMMUNITY_150_CHECKOUT_URL =
 export const SPONSOR_COMMUNITY_250_CHECKOUT_URL =
   "https://buy.stripe.com/4gM14pcsQcfF8jd22H2go04";
 
+// Digital Partner tier ($100, no booth — website/program ad placement or
+// straight donation). Price includes card processing fee.
+export const SPONSOR_DIGITAL_100_CHECKOUT_URL =
+  "https://buy.stripe.com/8x214p1Oc1B1gPJcHl2go06";
+
 // Vendor booth fee checkout — LIVE mode. Listed price includes card
 // processing fee so Pride in Pontiac nets the exact $35 booth fee.
 export const VENDOR_BOOTH_FEE_CHECKOUT_URL =
