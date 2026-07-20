@@ -27,7 +27,7 @@ export function Schedule() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           
           <div className="bg-pride-white/5 border border-pride-white/10 p-10 hover:bg-pride-white/10 transition-colors">
-            <span className="inline-block bg-pride-gold text-pride-black font-mono text-[10px] tracking-widest uppercase font-bold px-4 py-1.5 mb-8">Daytime &middot; 18+</span>
+            <span className="inline-block bg-pride-gold text-pride-black font-mono text-[10px] tracking-widest uppercase font-bold px-4 py-1.5 mb-8">Daytime &middot; All Ages</span>
             <h3 className="font-serif font-bold text-3xl mb-8">Celebration & Community</h3>
             <ul className="space-y-4">
               {[
@@ -104,11 +104,11 @@ export function Schedule() {
           <FAQAccordion faqs={[
             {
               q: "What is the timeline for the day?",
-              a: "The daytime community marketplace runs from 1:00 PM to 6:00 PM. The venue transitions between 6:00 PM and 7:00 PM. Evening 18+ performances begin inside the Pike Room at 8:00 PM."
+              a: "The daytime community marketplace runs from 1:00 PM to 6:00 PM and is open to all ages. The venue transitions between 6:00 PM and 7:00 PM. Evening 18+ performances begin inside the Pike Room at 8:00 PM."
             },
             {
               q: "What are the age restrictions?",
-              a: "The daytime programming (1:00 PM to 6:00 PM) is strictly 18+. The evening headlining show (8:00 PM onwards) is strictly 18+."
+              a: "The daytime programming (1:00 PM to 6:00 PM) is open to all ages. The evening headlining show (8:00 PM onwards) is 18+."
             },
             {
               q: "Where should I park?",
