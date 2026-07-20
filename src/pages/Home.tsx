@@ -122,7 +122,7 @@ export function Home() {
                  <p className="font-mono uppercase tracking-widest text-xs font-bold text-pride-white">The Crofoot &middot; Downtown</p>
                </div>
              </div>
-             <img src="https://cdn.cemah.net/wp-content/themes/the-crofoot-weddings/assets/images/carousel-06.jpg" alt="The Crofoot Patio & Venue" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+             <img src="/images/crofoot-skyline.jpg" alt="Downtown Pontiac skyline with The Crofoot marquee" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
           </div>
         </div>
       </section>
