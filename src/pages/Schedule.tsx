@@ -1,6 +1,6 @@
 import { PrideStripe } from "../components/PrideStripe";
 import { GayMenStripe } from "../components/GayMenStripe";
-import { Clock, MapPin, CheckCircle2 } from "lucide-react";
+import { Clock, MapPin, CheckCircle2, Mic2 } from "lucide-react";
 import { FAQAccordion } from "../components/FAQAccordion";
 
 export function Schedule() {
@@ -16,11 +16,27 @@ export function Schedule() {
           A Full Day <br/>of <span className="italic text-pride-gold-light">Pride.</span>
         </h1>
         <p className="text-xl text-pride-white/80 max-w-2xl leading-relaxed">
-          Held at <a href="https://thecrofoot.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-pride-gold transition-colors">The Crofoot</a> in the heart of Pontiac, the event features a daytime marketplace and an evening mainstage show.
+          Held at <a href="https://thecrofoot.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-pride-gold transition-colors">The Crofoot</a> in the heart of Pontiac, the day opens with a community commencement, moves into an all-ages daytime celebration, and closes out with an 18+ evening show running until 2 AM.
         </p>
       </div>
 
       <GayMenStripe className="w-full h-2 shadow-lg relative z-10" />
+
+      {/* Commencement */}
+      <section className="bg-pride-black/20 py-24 px-6 border-b border-pride-white/10">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-center gap-4 mb-10">
+            <Mic2 size={20} className="text-pride-gold-light" />
+            <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-pride-white/60">Noon–1 PM</span>
+            <div className="flex-1 h-px bg-pride-white/20"></div>
+          </div>
+          <h2 className="font-serif font-black text-3xl md:text-4xl mb-6">Commencement</h2>
+          <p className="text-pride-white/80 leading-relaxed max-w-3xl mb-8">
+            Before the performances begin, Pontiac's first Pride opens with a community commencement — local politicians, organizations, and community leaders take the stage. Michigan's Legislature is presenting Pride in Pontiac with a special state tribute, with Rep. Brenda Carter expected to present it alongside a written message or video from Governor Whitmer. Sen. Jeremy Moss will also be in attendance.
+          </p>
+          <p className="text-pride-white/60 text-sm">Performances begin at 1:00 PM following commencement.</p>
+        </div>
+      </section>
 
       {/* Programming Grid */}
       <section className="bg-pride-black/10 py-24 px-6 border-b border-pride-white/10">
@@ -31,13 +47,13 @@ export function Schedule() {
             <h3 className="font-serif font-bold text-3xl mb-8">Celebration & Community</h3>
             <ul className="space-y-4">
               {[
-                "Drag performances — confirmed Unorthodox Drag roster",
+                "Commencement: politicians, community leaders, and the state tribute presentation",
+                "Drag performances — confirmed Unorthodox Drag roster from 1 PM",
                 "Live music and DJ sets",
                 "Vendor marketplace: LGBTQ+-owned businesses & artisans",
-                "Health resources: rapid HIV testing, mental health info",
+                "Health resources: rapid HIV testing, mental health info (Café)",
                 "Community organization tables & resource booths",
-                "Outdoor courtyard: selfie wall, community message board",
-                "Sponsor activation tables — your brand meets the community"
+                "Outdoor courtyard: selfie wall, community message board"
               ].map((item, i) => (
                 <li key={i} className="flex gap-4 items-start text-[15px] text-pride-white/80">
                   <CheckCircle2 size={18} className="text-pride-gold-light shrink-0 mt-0.5" />
@@ -49,16 +65,16 @@ export function Schedule() {
 
           <div className="bg-pride-white/5 border border-pride-white/10 p-10 hover:bg-pride-white/10 transition-colors">
             <span className="inline-block bg-pride-gold text-pride-black font-mono text-[10px] tracking-widest uppercase font-bold px-4 py-1.5 mb-8">Evening &middot; 18+</span>
-            <h3 className="font-serif font-bold text-3xl mb-8">Headlining Show</h3>
+            <h3 className="font-serif font-bold text-3xl mb-8">Closing the Night</h3>
             <ul className="space-y-4">
               {[
-                "Headlining drag performances — Stela Vulva & full roster",
-                "DJ or live music set closing out the night",
-                "VIP section: reserved seating, drink ticket, meet & greet",
+                "Continued drag performances — Stela Vulva & full roster",
+                "DJ sets through the night",
+                "VIP lounge: reserved seating, drink ticket, meet & greet",
                 <span key="crofoot">Full bar service through <a href="https://thecrofoot.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-pride-gold transition-colors">The Crofoot</a></span>,
-                "Stage recognition for sponsors throughout the evening",
-                "Gold/Title sponsor activation in primary sightlines",
-                "Final ticket push creates urgency — sold-out potential"
+                "$20 walk-up door entry available after 9 PM",
+                "Alise King closes out the night",
+                "Runs until close at 2 AM"
               ].map((item, i) => (
                 <li key={i} className="flex gap-4 items-start text-[15px] text-pride-white/80">
                   <CheckCircle2 size={18} className="text-pride-gold-light shrink-0 mt-0.5" />
@@ -74,21 +90,26 @@ export function Schedule() {
       <section className="py-24 px-6 max-w-7xl mx-auto">
         <h2 className="font-serif font-black text-4xl mb-12 text-center">Confirmed Spaces at <a href="https://thecrofoot.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-pride-gold transition-colors">The Crofoot</a></h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div className="bg-pride-black/20 border border-pride-white/10 p-8 flex flex-col">
             <span className="font-mono text-[10px] text-pride-gold-light tracking-widest uppercase mb-4 flex items-center gap-2"><MapPin size={14}/> 250 Capacity</span>
             <h4 className="font-sans font-bold text-xl mb-2">Pike Room</h4>
-            <p className="text-sm text-pride-white/60 leading-relaxed">Main stage &middot; headlining drag &middot; DJ set &middot; VIP front section &middot; evening anchor</p>
+            <p className="text-sm text-pride-white/60 leading-relaxed">Main stage &middot; commencement &middot; drag performances &middot; DJ sets &middot; evening anchor</p>
+          </div>
+          <div className="bg-pride-black/20 border border-pride-white/10 p-8 flex flex-col">
+            <span className="font-mono text-[10px] text-pride-gold-light tracking-widest uppercase mb-4 flex items-center gap-2"><MapPin size={14}/> ~100 Capacity</span>
+            <h4 className="font-sans font-bold text-xl mb-2">Vernors Room</h4>
+            <p className="text-sm text-pride-white/60 leading-relaxed">Main bar &middot; open all day</p>
           </div>
           <div className="bg-pride-black/20 border border-pride-white/10 p-8 flex flex-col">
             <span className="font-mono text-[10px] text-pride-gold-light tracking-widest uppercase mb-4 flex items-center gap-2"><MapPin size={14}/> 75 Capacity</span>
-            <h4 className="font-sans font-bold text-xl mb-2">Vernors Room</h4>
-            <p className="text-sm text-pride-white/60 leading-relaxed">VIP lounge &middot; health resources &middot; HIV testing &middot; meet & greet</p>
+            <h4 className="font-sans font-bold text-xl mb-2">Café</h4>
+            <p className="text-sm text-pride-white/60 leading-relaxed">Health resource village by day (alcohol-free) &middot; VIP lounge in the evening</p>
           </div>
           <div className="bg-pride-black/20 border border-pride-white/10 p-8 flex flex-col">
-            <span className="font-mono text-[10px] text-pride-gold-light tracking-widest uppercase mb-4 flex items-center gap-2"><MapPin size={14}/> Outdoor</span>
-            <h4 className="font-sans font-bold text-xl mb-2">Courtyard</h4>
-            <p className="text-sm text-pride-white/60 leading-relaxed">Selfie wall &middot; sponsor signage &middot; check-in &middot; daytime social hub</p>
+            <span className="font-mono text-[10px] text-pride-gold-light tracking-widest uppercase mb-4 flex items-center gap-2"><MapPin size={14}/> 75 Capacity</span>
+            <h4 className="font-sans font-bold text-xl mb-2">Patio</h4>
+            <p className="text-sm text-pride-white/60 leading-relaxed">Selfie wall &middot; sponsor signage &middot; daytime social hub &middot; evening chill/smoking area</p>
           </div>
         </div>
       </section>
@@ -104,11 +125,11 @@ export function Schedule() {
           <FAQAccordion faqs={[
             {
               q: "What is the timeline for the day?",
-              a: "The daytime community marketplace runs from 1:00 PM to 6:00 PM and is open to all ages. The venue transitions between 6:00 PM and 7:00 PM. Evening 18+ performances begin inside the Pike Room at 8:00 PM."
+              a: "Doors open at noon with a free, all-ages community commencement — local politicians, organizations, and community leaders speak, including a special state tribute. Performances begin at 1:00 PM. Free entry runs through 3 PM; a GA ticket is required after that. Starting at 7:30 PM the event is 18+. After 9 PM, $20 walk-up door entry is available. The night runs until close at 2 AM, with Alise King closing out the show."
             },
             {
               q: "What are the age restrictions?",
-              a: "The daytime programming (1:00 PM to 6:00 PM) is open to all ages. The evening headlining show (8:00 PM onwards) is 18+."
+              a: "Daytime programming (noon–7:30 PM) is open to all ages. Starting at 7:30 PM, entry requires guests to be 18+ with valid ID."
             },
             {
               q: "Where should I park?",
@@ -116,7 +137,7 @@ export function Schedule() {
             },
             {
               q: "Is The Crofoot accessible?",
-              a: "Yes. The main floor venues including the Pike Room, Vernors Room, and outdoor Courtyard are wheelchair accessible. Accessible restrooms are located on the main floor. Please contact us ahead of time if you need specific accommodations so we can reserve seamless viewing."
+              a: "Yes. The main floor venues including the Pike Room, Vernors Room, Café, and Patio are wheelchair accessible. Accessible restrooms are located on the main floor. Please contact us ahead of time if you need specific accommodations so we can reserve seamless viewing."
             },
             {
               q: "Are there ins and outs?",
