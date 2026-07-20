@@ -204,8 +204,8 @@ export function Home() {
             </div>
             <div className="bg-pride-white/5 border border-pride-white/10 p-8 hover:bg-pride-white/10 transition-colors">
               <span className="inline-block px-3 py-1 bg-pride-gold text-pride-black font-mono text-[9px] uppercase tracking-widest font-bold mb-4">Evening &middot; 18+</span>
-              <h3 className="font-serif font-bold text-2xl mb-3">Headlining Show</h3>
-              <p className="text-pride-white/70 text-sm leading-relaxed mb-4">Headlined by Unorthodox Drag's verified roster of stage performers. Full DJ sets, massive VIP and reserved seating options, and an unforgettable celebration.</p>
+              <h3 className="font-serif font-bold text-2xl mb-3">Closing the Night</h3>
+              <p className="text-pride-white/70 text-sm leading-relaxed mb-4">Unorthodox Drag's full roster of performers, closed out by Alise King. Full DJ sets, VIP lounge, reserved seating, and an unforgettable celebration running until 2 AM.</p>
             </div>
           </div>
         </div>
@@ -244,7 +244,7 @@ export function Home() {
                 <Calendar size={24} />
               </div>
               <h3 className="font-serif font-bold text-2xl mb-3 relative z-10">Attend Pride</h3>
-              <p className="text-sm text-pride-white/60 leading-relaxed mb-8 relative z-10">GA starts at just $15. VIP packages available with reserved seating & meet and greets. Secure your spot at Pontiac's first pride.</p>
+              <p className="text-sm text-pride-white/60 leading-relaxed mb-8 relative z-10">GA starts at $20 (BOGO available). VIP packages available with reserved seating & meet and greets. Secure your spot at Pontiac's first pride.</p>
               <button className="bg-pride-gold text-pride-black px-6 py-3 font-sans font-medium text-sm w-full relative z-10 hover:bg-pride-white transition-colors text-center shadow-lg">
                 Buy Tickets Now
               </button>
