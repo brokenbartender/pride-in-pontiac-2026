@@ -49,7 +49,7 @@ export function Map() {
             <h1 className="font-serif font-black text-5xl md:text-7xl mb-4">Festival Map</h1>
             <p className="text-xl text-pride-muted max-w-2xl">Your real-time navigation hub. Locate stages, accessible spaces, vendors, and safety zones.</p>
           </div>
-          <a href="mailto:baentertainmentMI@gmail.com?subject=Event%20Emergency%20%2F%20Help" className="bg-pride-rose text-pride-white font-bold uppercase tracking-widest py-3 px-6 hover:bg-pride-ink transition-colors flex items-center gap-2 rounded-full whitespace-nowrap shadow-lg">
+          <a href="mailto:prideinpontiac@gmail.com?subject=Event%20Emergency%20%2F%20Help" className="bg-pride-rose text-pride-white font-bold uppercase tracking-widest py-3 px-6 hover:bg-pride-ink transition-colors flex items-center gap-2 rounded-full whitespace-nowrap shadow-lg">
             <Heart size={18} /> Emergency / Help
           </a>
         </div>
@@ -330,7 +330,7 @@ export function Map() {
                           Browse Vendors
                         </Link>
                       )}
-                      <a href="mailto:baentertainmentMI@gmail.com?subject=Issue%20Report%20-%20Festival%20Map" className="w-full text-pride-muted font-bold uppercase tracking-widest py-2 px-4 hover:text-pride-ink transition-colors text-xs flex items-center justify-center gap-1">
+                      <a href="mailto:prideinpontiac@gmail.com?subject=Issue%20Report%20-%20Festival%20Map" className="w-full text-pride-muted font-bold uppercase tracking-widest py-2 px-4 hover:text-pride-ink transition-colors text-xs flex items-center justify-center gap-1">
                         Report Issue in this Area
                       </a>
                     </div>
