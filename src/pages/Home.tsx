@@ -188,12 +188,12 @@ export function Home() {
             <div className="bg-pride-white/5 border border-pride-white/10 p-8 hover:bg-pride-white/10 transition-colors">
               <span className="inline-block px-3 py-1 bg-pride-gold text-pride-black font-mono text-[9px] uppercase tracking-widest font-bold mb-4">Daytime &middot; All Ages</span>
               <h3 className="font-serif font-bold text-2xl mb-3">Celebration & Community</h3>
-              <p className="text-pride-white/70 text-sm leading-relaxed mb-4">Live drag performances, vendor marketplace featuring LGBTQ+ businesses, rapid testing & health resources, and a massive outdoor courtyard social hub.</p>
+              <p className="text-pride-white/70 text-sm leading-relaxed mb-4">Live drag performances through 7 PM, closed out by Alise King, vendor marketplace featuring LGBTQ+ businesses, rapid testing & health resources, and a massive outdoor courtyard social hub.</p>
             </div>
             <div className="bg-pride-white/5 border border-pride-white/10 p-8 hover:bg-pride-white/10 transition-colors">
-              <span className="inline-block px-3 py-1 bg-pride-gold text-pride-black font-mono text-[9px] uppercase tracking-widest font-bold mb-4">Evening &middot; 18+</span>
+              <span className="inline-block px-3 py-1 bg-pride-gold text-pride-black font-mono text-[9px] uppercase tracking-widest font-bold mb-4">After Party &middot; 18+</span>
               <h3 className="font-serif font-bold text-2xl mb-3">Closing the Night</h3>
-              <p className="text-pride-white/70 text-sm leading-relaxed mb-4">Unorthodox Drag's full roster of performers, closed out by Alise King. Full DJ sets, VIP lounge, reserved seating, and an unforgettable celebration running until 2 AM.</p>
+              <p className="text-pride-white/70 text-sm leading-relaxed mb-4">Doors at 9 PM, show at 10 PM. Unorthodox Drag's full roster, hosted by Monica Devereaux. Full DJ sets, VIP lounge, reserved seating, and an unforgettable celebration running until 2 AM.</p>
             </div>
           </div>
         </div>
