@@ -452,7 +452,7 @@ export function Resources() {
             Community submissions help keep it accurate.
           </p>
           <a
-            href="mailto:baentertainmentMI@gmail.com?subject=Resource%20Hub%20Submission&body=Resource%20name%3A%0APhone%2Fwebsite%3A%0AAddress%20%26%20hours%3A%0AWho%20it%20serves%3A%0AWhat%20it%20provides%3A%0A"
+            href="mailto:prideinpontiac@gmail.com?subject=Resource%20Hub%20Submission&body=Resource%20name%3A%0APhone%2Fwebsite%3A%0AAddress%20%26%20hours%3A%0AWho%20it%20serves%3A%0AWhat%20it%20provides%3A%0A"
             className="inline-flex items-center gap-2 bg-pride-black text-pride-white px-8 py-4 font-sans font-bold text-sm uppercase tracking-wider hover:bg-pride-gold hover:text-pride-black transition-colors"
           >
             Submit a Resource
