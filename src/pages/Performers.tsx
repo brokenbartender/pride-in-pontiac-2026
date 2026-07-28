@@ -1,32 +1,94 @@
-import { Mic2, ArrowRight } from "lucide-react";
+import { Mic2, Star, Users } from "lucide-react";
 import { LesbianStripe } from "../components/LesbianStripe";
+
+const DAYTIME_LINEUP = [
+  { time: "1:00 PM", performers: ["Stela", "Miss Biscuits", "Rick Oliver", "King Amari", "Drapperux"] },
+  { time: "2:00 PM", performers: ["Cita Rhode Caliente", "Cocoa Cola Caliente", "Juicee Strabotty", "Jhené Gemini"] },
+  { time: "3:00 PM", performers: ["Raven Divine Cassadine", "Donna Youknowit", "Erton", "Bella Belial", "Jaye"] },
+  { time: "4:00 PM", performers: ["DJ set — no live performers this slot"] },
+  { time: "5:00 PM", performers: ["Ariana Love", "Sapphire Melatonin", "Email", "Ashley Jay Williams", "The Monarch", "Eevie Asthema", "T Bandz"] },
+  { time: "6:00 PM", performers: ["The Tater Tot", "Jordan Michell", "Sir Guy", "Mag N. Cheez", "Johnny Sun"] },
+  { time: "7:00 PM", performers: ["Sirinity Sapphire", "Donnie Love Hunter", "Just Brinxx", "Creme Fraiche", "Alise King"] },
+];
+
+const AFTER_PARTY_LINEUP = [
+  "Donnie Love Hunter",
+  "Stela Vulva",
+  "Just Brinxx",
+  "Lilith Von Tal",
+  "Leafy Green",
+  "Donna YouKnowIt",
+  "Eartha Kitten",
+  "Michael Christian",
+];
 
 export function Performers() {
   return (
     <div className="bg-pride-cream text-pride-ink min-h-screen py-24 px-6">
-      <div className="max-w-4xl mx-auto border border-pride-black/10 bg-pride-white p-10 md:p-16 shadow-xl relative overflow-hidden">
-        <LesbianStripe className="absolute top-0 left-0 w-full h-2" />
-        <h1 className="font-serif font-black text-5xl md:text-6xl mb-6 flex items-center gap-4 mt-2">
-          <Mic2 className="text-pride-violet w-12 h-12" />
-          Performers
-        </h1>
-        <p className="text-lg text-pride-muted mb-12 max-w-2xl">
-          From drag artists and local bands to community speakers—we are looking for diverse talent to fill both our daytime blocks and our evening Mainstage show.
-        </p>
+      <div className="max-w-5xl mx-auto">
+        <div className="border border-pride-black/10 bg-pride-white p-10 md:p-16 shadow-xl relative overflow-hidden mb-12">
+          <LesbianStripe className="absolute top-0 left-0 w-full h-2" />
+          <h1 className="font-serif font-black text-5xl md:text-6xl mb-6 flex items-center gap-4 mt-2">
+            <Mic2 className="text-pride-violet w-12 h-12" />
+            The Lineup
+          </h1>
+          <p className="text-lg text-pride-muted max-w-2xl">
+            Pontiac's first Pride, stacked top to bottom. Daytime performances run 1–7 PM, all ages, closed out by Alise King. Then the After Party takes the stage at 10 PM, hosted by Monica Devereaux.
+          </p>
+        </div>
 
+        {/* Daytime Lineup */}
         <section className="mb-12">
-            <h3 className="font-serif font-bold text-2xl mb-4">Stage Requirements & Info</h3>
-            <p className="text-pride-ink/80 leading-relaxed mb-4">
-              All selected performers will be compensated. We are committed to paying artists for their time and talent. Due to the volume of applications, not everyone will be selected for this year's event.
-            </p>
-            <p className="text-pride-ink/80 leading-relaxed">
-              Curated by Unorthodox Drag, we prioritize artists who uplift the LGBTQ+ community and create inclusive spaces.
-            </p>
+          <div className="flex items-center gap-4 mb-8">
+            <Star className="text-pride-gold" size={24} />
+            <h2 className="font-serif font-black text-3xl md:text-4xl">Daytime — All Ages</h2>
+          </div>
+          <div className="space-y-3">
+            {DAYTIME_LINEUP.map((slot) => (
+              <div key={slot.time} className="bg-pride-white border border-pride-black/10 p-6 flex flex-col md:flex-row md:items-center gap-3 md:gap-8">
+                <span className="font-mono text-sm font-bold text-pride-gold uppercase tracking-widest w-24 shrink-0">{slot.time}</span>
+                <p className="text-pride-ink font-medium leading-relaxed">
+                  {slot.performers.join(" · ")}
+                </p>
+              </div>
+            ))}
+          </div>
         </section>
 
-        <a href="mailto:bookings@unorthodoxdragshow.com?subject=Performer%20Booking" className="inline-flex w-full md:w-auto bg-pride-black text-pride-white px-8 py-4 font-bold uppercase tracking-wider hover:bg-pride-violet transition-colors items-center justify-center gap-3">
-          Submit Booking App <ArrowRight size={18}/>
-        </a>
+        {/* After Party Lineup */}
+        <section className="mb-12">
+          <div className="flex items-center gap-4 mb-8">
+            <Users className="text-pride-violet" size={24} />
+            <h2 className="font-serif font-black text-3xl md:text-4xl">After Party — 18+</h2>
+          </div>
+          <div className="bg-pride-black text-pride-white border border-pride-black p-8 md:p-10">
+            <p className="font-mono text-xs uppercase tracking-widest text-pride-gold-light mb-2">Doors 9 PM · Show 10 PM</p>
+            <p className="font-serif font-bold text-2xl mb-6">
+              Hosted by <span className="text-pride-gold-light">Monica Devereaux</span>
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {AFTER_PARTY_LINEUP.map((name) => (
+                <div key={name} className="bg-pride-white/5 border border-pride-white/10 px-4 py-3 text-center">
+                  <span className="font-serif font-bold text-white/90">{name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Stage Info */}
+        <section className="bg-pride-white border border-pride-black/10 p-10">
+          <h3 className="font-serif font-bold text-2xl mb-4">Stage Requirements & Info</h3>
+          <p className="text-pride-ink/80 leading-relaxed mb-4">
+            All performers are compensated for their time and talent. Curated by Unorthodox Drag, our lineup uplifts the LGBTQ+ community and creates inclusive spaces.
+          </p>
+          <p className="text-pride-ink/80 leading-relaxed">
+            Booking inquiries for future events can be sent to{" "}
+            <a href="mailto:bookings@unorthodoxdragshow.com?subject=Performer%20Booking" className="font-bold underline hover:text-pride-violet transition-colors">
+              bookings@unorthodoxdragshow.com
+            </a>.
+          </p>
+        </section>
       </div>
     </div>
   );
