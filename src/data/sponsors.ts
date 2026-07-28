@@ -10,11 +10,11 @@ export interface Sponsor {
 // Add a `logo` path (under /public/images/sponsors/) as logo files come in —
 // the wall falls back to a text wordmark automatically until then.
 export const CONFIRMED_SPONSORS: Sponsor[] = [
-  { name: "Weiss Distilling Co.", tier: "Gold", amount: "$2,000", logo: "/images/sponsors/weiss.png" },
-  { name: "B. Nektar Meadery", tier: "Gold", amount: "$1,700", logo: "/images/sponsors/b-nektar.jpg" },
+  { name: "Weiss Distilling Co.", tier: "Gold", amount: "$2,000", logo: "/images/sponsors/weiss.png", url: "https://www.thewdc.com/" },
+  { name: "B. Nektar Meadery", tier: "Gold", amount: "$1,700", logo: "/images/sponsors/b-nektar.jpg", url: "https://www.bnektar.com/" },
   { name: "HopCat Auburn Hills", tier: "Gold", amount: "$1,000", logo: "/images/sponsors/hopcat.png", url: "https://hopcat.com/locations/auburn-hills/" },
-  { name: "Joyology of Lake Orion", tier: "Silver", amount: "$1,500", logo: "/images/sponsors/joyology.png" },
-  { name: "The Crofoot", tier: "In-Kind", logo: "/images/sponsors/crofoot.jpg" },
+  { name: "Joyology of Lake Orion", tier: "Silver", amount: "$1,500", logo: "/images/sponsors/joyology.png", url: "https://joyology.com/location/lake-orion/" },
+  { name: "The Crofoot", tier: "In-Kind", logo: "/images/sponsors/crofoot.jpg", url: "https://thecrofoot.com" },
 ];
 
 export const COMMUNITY_PARTNERS: string[] = [
