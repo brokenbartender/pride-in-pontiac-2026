@@ -250,7 +250,11 @@ export function Layout() {
               <h4 className="font-mono text-xs text-pride-gold tracking-widest uppercase mb-6">Contact</h4>
               <ul className="space-y-4 font-sans text-sm text-pride-white/70">
                 <li className="break-words">
-                  <span className="block text-pride-white/40 uppercase text-xs tracking-wider mb-1">General & Sponsorship</span>
+                  <span className="block text-pride-white/40 uppercase text-xs tracking-wider mb-1">General</span>
+                  <a href="mailto:prideinpontiac@gmail.com" className="hover:text-pride-white transition-colors break-all">prideinpontiac@gmail.com</a>
+                </li>
+                <li className="break-words">
+                  <span className="block text-pride-white/40 uppercase text-xs tracking-wider mb-1">Sponsorship</span>
                   <a href="mailto:baentertainmentMI@gmail.com" className="hover:text-pride-white transition-colors break-all">baentertainmentMI@gmail.com</a>
                 </li>
                 <li className="break-words">
