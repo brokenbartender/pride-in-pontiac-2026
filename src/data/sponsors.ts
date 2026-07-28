@@ -12,7 +12,7 @@ export interface Sponsor {
 export const CONFIRMED_SPONSORS: Sponsor[] = [
   { name: "Weiss Distilling Co.", tier: "Gold", amount: "$2,000" },
   { name: "B. Nektar Meadery", tier: "Gold", amount: "$1,700" },
-  { name: "HopCat Auburn Hills", tier: "Gold", amount: "$1,000" },
+  { name: "HopCat Auburn Hills", tier: "Gold", amount: "$1,000", logo: "/images/sponsors/hopcat.png" },
   { name: "Joyology of Lake Orion", tier: "Silver", amount: "$1,500" },
   { name: "The Crofoot", tier: "In-Kind" },
 ];
