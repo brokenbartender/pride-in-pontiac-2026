@@ -3,6 +3,7 @@ import { ArrowRight, BarChart3, Building2, Eye, ShieldCheck, Target, Users, Chec
 import { GenderqueerStripe } from "../components/GenderqueerStripe";
 import { motion } from "motion/react";
 import { Sparkles } from "../components/Sparkles";
+import { ConfirmedPartners } from "../components/ConfirmedPartners";
 import {
   SPONSOR_TITLE_CHECKOUT_URL,
   SPONSOR_GOLD_CHECKOUT_URL,
@@ -66,6 +67,15 @@ export function Sponsors() {
           </div>
         </div>
       </div>
+
+      {/* Confirmed Partners */}
+      <section className="bg-pride-cream py-20 px-6 border-b border-pride-black/10">
+        <div className="max-w-6xl mx-auto text-center">
+          <span className="font-mono text-xs tracking-widest uppercase text-pride-gold mb-4 block">Already Committed</span>
+          <h2 className="font-serif font-black text-3xl md:text-4xl mb-14">Our Confirmed Partners</h2>
+          <ConfirmedPartners theme="light" />
+        </div>
+      </section>
 
       {/* The Corporate Value Proposition */}
       <section className="py-24 px-6 max-w-7xl mx-auto">
