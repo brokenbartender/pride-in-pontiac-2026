@@ -226,9 +226,9 @@ export function Sponsors() {
                 <div className="font-serif font-black text-3xl mb-1 text-pride-ink">$500</div>
                 <p className="font-mono text-[9px] uppercase tracking-widest text-pride-muted mb-3 pb-3 border-b border-pride-black/10">Card checkout: $515.24 <span className="normal-case">(covers fee)</span></p>
                 <ul className="space-y-2 mb-4 text-sm text-pride-muted">
-                  <li>&mdash; Standard logo placement</li>
-                  <li>&mdash; Social media group shoutout</li>
-                  <li>&mdash; Vendor table/footprint</li>
+                  <li className="flex items-start gap-2"><Check size={14} className="text-pride-gold mt-0.5 shrink-0" /> Standard logo placement</li>
+                  <li className="flex items-start gap-2"><Check size={14} className="text-pride-gold mt-0.5 shrink-0" /> Social media group shoutout</li>
+                  <li className="flex items-start gap-2"><Check size={14} className="text-pride-gold mt-0.5 shrink-0" /> Vendor table/footprint</li>
                 </ul>
                 <a href={SPONSOR_SILVER_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="font-bold text-sm tracking-widest text-pride-ink hover:text-pride-gold uppercase flex items-center gap-2">Pay by Card <ArrowRight size={14}/></a>
                 <a href="mailto:baentertainmentMI@gmail.com?subject=Silver%20Sponsorship" className="block text-pride-muted hover:text-pride-ink text-xs font-mono uppercase tracking-widest mt-2">Or request an invoice</a>
@@ -240,13 +240,19 @@ export function Sponsors() {
                 <div className="font-serif font-black text-3xl mb-1 text-pride-ink">$150 - $250</div>
                 <p className="font-mono text-[9px] uppercase tracking-widest text-pride-muted mb-3 pb-3 border-b border-pride-black/10">Card checkout includes processing fee</p>
                 <ul className="space-y-2 mb-4 text-sm text-pride-muted">
-                  <li>&mdash; Program text listing & logo</li>
-                  <li>&mdash; Perfect for local small businesses</li>
-                  <li>&mdash; Includes basic marketplace booth</li>
+                  <li className="flex items-start gap-2"><Check size={14} className="text-pride-gold mt-0.5 shrink-0" /> Program text listing & logo</li>
+                  <li className="flex items-start gap-2"><Check size={14} className="text-pride-gold mt-0.5 shrink-0" /> Perfect for local small businesses</li>
+                  <li className="flex items-start gap-2"><Check size={14} className="text-pride-gold mt-0.5 shrink-0" /> Includes basic marketplace booth</li>
                 </ul>
-                <div className="flex flex-wrap gap-3 mb-2">
-                  <a href={SPONSOR_COMMUNITY_150_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="font-bold text-sm tracking-widest text-pride-rose hover:text-pride-ink uppercase flex items-center gap-2">Pay $154.79 <ArrowRight size={14}/></a>
-                  <a href={SPONSOR_COMMUNITY_250_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="font-bold text-sm tracking-widest text-pride-rose hover:text-pride-ink uppercase flex items-center gap-2">Pay $257.78 <ArrowRight size={14}/></a>
+                <div className="flex flex-wrap gap-4 mb-2">
+                  <div className="flex flex-col gap-1">
+                    <span className="font-mono text-[9px] uppercase tracking-widest text-pride-muted">Basic ($150)</span>
+                    <a href={SPONSOR_COMMUNITY_150_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="font-bold text-sm tracking-widest text-pride-rose hover:text-pride-ink uppercase flex items-center gap-2">Pay $154.79 <ArrowRight size={14}/></a>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <span className="font-mono text-[9px] uppercase tracking-widest text-pride-muted">Expanded Booth ($250)</span>
+                    <a href={SPONSOR_COMMUNITY_250_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="font-bold text-sm tracking-widest text-pride-rose hover:text-pride-ink uppercase flex items-center gap-2">Pay $257.78 <ArrowRight size={14}/></a>
+                  </div>
                 </div>
                 <a href="mailto:baentertainmentMI@gmail.com?subject=Community%20Partner%20Sponsorship" className="block text-pride-muted hover:text-pride-ink text-xs font-mono uppercase tracking-widest mt-2">Or request an invoice</a>
               </div>
