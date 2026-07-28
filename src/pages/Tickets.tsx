@@ -179,7 +179,7 @@ export function Tickets() {
             Get Your<br /><span className="text-[#FFD800]">Tickets.</span>
           </h1>
           <p className="text-white/60 mb-10 max-w-xl text-lg">
-            VIP early access at 11 AM. Free & all ages noon–7 PM, closed out by Alise King. GA $20 from 3 PM (BOGO available). After Party is 18+ starting 7:30 PM, 21+ to drink. $20 door entry after 9 PM. Runs until 2 AM.
+            VIP early access at 11 AM. Doors open free at noon — all ages through 7 PM, closed out by Alise King. GA tickets ($20, BOGO available) required starting 3 PM. Then the After Party takes over: 18+ from 7:30 PM (21+ to drink), with $20 walk-up entry after 9 PM. Runs until 2 AM.
           </p>
           <div className="flex flex-wrap gap-4">
             <a
@@ -218,7 +218,7 @@ export function Tickets() {
             ))}
           </div>
           <p className="text-white/30 text-xs font-mono mt-4">
-            VIP 11 AM · Free & all ages noon–7 PM · GA from 3 PM · After Party 18+ from 7:30 PM (21+ to drink) · $20 door entry after 9 PM · close 2 AM
+            VIP 11 AM · free entry noon–3 PM · GA required 3–7 PM (all ages) · After Party 18+ from 7:30 PM (21+ to drink) · $20 door entry after 9 PM · close 2 AM
           </p>
         </div>
       </section>
