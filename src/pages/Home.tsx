@@ -4,20 +4,8 @@ import { ArrowRight, MapPin, Calendar, Heart, CheckCircle } from "lucide-react";
 import { PrideStripe } from "../components/PrideStripe";
 import { CountdownTimer } from "../components/CountdownTimer";
 import { Sparkles } from "../components/Sparkles";
+import { ConfirmedPartners } from "../components/ConfirmedPartners";
 import { EVENTBRITE_URL } from "../lib/eventLinks";
-
-const PARTNERS = [
-  "B. Nektar Meadery",
-  "HopCat",
-  "The Crofoot",
-  "Weiss Spirits",
-  "Joyology of Lake Orion",
-  "Flagstar Strand Theatre",
-  "Detroit Metro Times",
-  "Oakland County Blog",
-  "Pontiac City Council",
-  "Oakland County Health Division",
-];
 
 export function Home() {
   return (
@@ -258,15 +246,7 @@ export function Home() {
         <div className="max-w-6xl mx-auto text-center">
           <span className="font-mono text-xs tracking-widest uppercase text-pride-gold mb-4 block">Community Backed</span>
           <h2 className="font-serif font-black text-3xl md:text-4xl mb-14">Proudly Backed By</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-x-8 gap-y-10">
-            {PARTNERS.map((name) => (
-              <div key={name} className="flex items-center justify-center px-2">
-                <span className="font-serif font-bold text-lg md:text-xl text-pride-white/80 hover:text-pride-gold transition-colors leading-snug">
-                  {name}
-                </span>
-              </div>
-            ))}
-          </div>
+          <ConfirmedPartners theme="dark" />
         </div>
       </section>
     </div>
