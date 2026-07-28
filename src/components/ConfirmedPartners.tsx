@@ -2,21 +2,43 @@ import { CONFIRMED_SPONSORS, COMMUNITY_PARTNERS, type Sponsor } from "../data/sp
 
 function SponsorMark({ sponsor, size, textColor }: { sponsor: Sponsor; size: "lg" | "md"; textColor: string }) {
   const textSize = size === "lg" ? "text-2xl md:text-3xl" : "text-lg md:text-xl";
-  const logoHeight = size === "lg" ? "h-16 md:h-20" : "h-10 md:h-12";
+  const maxWidth = size === "lg" ? 220 : 160;
+  const maxHeight = size === "lg" ? 140 : 100;
 
-  if (sponsor.logo) {
+  const content = sponsor.logo ? (
+    <div className="flex flex-col items-center gap-3">
+      <img
+        src={sponsor.logo}
+        alt={sponsor.name}
+        className="w-full object-contain"
+        style={{ maxWidth, maxHeight }}
+      />
+      <span className={`font-serif font-bold text-[1.1rem] ${textColor} group-hover:text-pride-gold transition-colors`}>
+        {sponsor.name}
+      </span>
+    </div>
+  ) : (
+    <span className={`font-serif font-bold ${textSize} ${textColor} group-hover:text-pride-gold transition-colors leading-snug`}>
+      {sponsor.name}
+    </span>
+  );
+
+  if (sponsor.url) {
     return (
-      <div className="flex items-center justify-center px-4 py-2">
-        <img src={sponsor.logo} alt={sponsor.name} className={`${logoHeight} object-contain`} />
-      </div>
+      <a
+        href={sponsor.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex items-center justify-center px-4 py-2 text-center"
+      >
+        {content}
+      </a>
     );
   }
 
   return (
-    <div className="flex items-center justify-center px-4 py-2 text-center">
-      <span className={`font-serif font-bold ${textSize} ${textColor} hover:text-pride-gold transition-colors leading-snug`}>
-        {sponsor.name}
-      </span>
+    <div className="group flex items-center justify-center px-4 py-2 text-center">
+      {content}
     </div>
   );
 }
