@@ -58,11 +58,8 @@ export function Sponsors() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6">
-            <a href="mailto:baentertainmentMI@gmail.com?subject=Corporate%20Sponsorship%20Inquiry" className="bg-pride-gold text-pride-black px-10 py-5 font-bold tracking-wide uppercase text-sm hover:bg-pride-white transition-colors flex items-center justify-center gap-3 w-fit">
-              Request a Contract <ArrowRight size={18} />
-            </a>
-            <a href="#tiers" className="bg-transparent border border-pride-white/20 text-pride-white px-10 py-5 font-bold tracking-wide uppercase text-sm hover:bg-pride-white/10 transition-colors flex items-center justify-center w-fit">
-              View Sponsorship Tiers
+            <a href="#tiers" className="bg-pride-gold text-pride-black px-10 py-5 font-bold tracking-wide uppercase text-sm hover:bg-pride-white transition-colors flex items-center justify-center gap-3 w-fit">
+              View Sponsorship Tiers <ArrowRight size={18} />
             </a>
           </div>
         </div>
@@ -274,9 +271,9 @@ export function Sponsors() {
               <h3 className="font-serif font-bold text-2xl mb-2">Need a Custom Corporate Activation?</h3>
               <p className="text-pride-white/70 text-sm max-w-2xl">We excel at building bespoke on-site experiences for enterprise partners. From styling the VIP Vernors Room lounge to branded photo-booth step-and-repeats, our production team can execute custom experiential marketing for your brand.</p>
             </div>
-            <a href="mailto:baentertainmentMI@gmail.com?subject=Custom%20Corporate%20Activation" className="shrink-0 bg-pride-teal text-pride-white px-8 py-4 font-bold text-sm uppercase tracking-wider hover:bg-pride-white hover:text-pride-teal transition-colors whitespace-nowrap">
+            <Link to="/contact" className="shrink-0 bg-pride-teal text-pride-white px-8 py-4 font-bold text-sm uppercase tracking-wider hover:bg-pride-white hover:text-pride-teal transition-colors whitespace-nowrap">
               Discuss Custom Build
-            </a>
+            </Link>
           </div>
 
         </div>
