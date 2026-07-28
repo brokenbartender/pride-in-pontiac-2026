@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { PrideStripe } from "../components/PrideStripe";
 import { GayMenStripe } from "../components/GayMenStripe";
 import { Clock, MapPin, CheckCircle2, Mic2 } from "lucide-react";
@@ -16,7 +17,7 @@ export function Schedule() {
           A Full Day <br/>of <span className="italic text-pride-gold-light">Pride.</span>
         </h1>
         <p className="text-xl text-pride-white/80 max-w-2xl leading-relaxed">
-          Held at <a href="https://thecrofoot.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-pride-gold transition-colors">The Crofoot</a> in the heart of Pontiac, the day opens with a community commencement, moves into an all-ages daytime celebration, and closes out with an 18+ evening show running until 2 AM.
+          Held at <a href="https://thecrofoot.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-pride-gold transition-colors">The Crofoot</a> in the heart of Pontiac, the day opens with a community commencement, moves into an all-ages daytime celebration through 7 PM, and closes out with a separate 18+ After Party — doors at 9 PM, show at 10 PM — running until 2 AM.
         </p>
       </div>
 
@@ -48,7 +49,7 @@ export function Schedule() {
             <ul className="space-y-4">
               {[
                 "Commencement: politicians, community leaders, and the state tribute presentation",
-                "Drag performances — confirmed Unorthodox Drag roster from 1 PM",
+                "Drag performances from 1 PM through 7 PM, closed out by Alise King",
                 "Live music and DJ sets",
                 "Vendor marketplace: LGBTQ+-owned businesses & artisans",
                 "Health resources: rapid HIV testing, mental health info (Café)",
@@ -61,19 +62,23 @@ export function Schedule() {
                 </li>
               ))}
             </ul>
+            <Link to="/performers" className="inline-flex items-center gap-2 text-sm font-bold text-pride-gold-light hover:text-pride-white transition-colors mt-6">
+              See the full daytime lineup by time slot →
+            </Link>
           </div>
 
           <div className="bg-pride-white/5 border border-pride-white/10 p-10 hover:bg-pride-white/10 transition-colors">
-            <span className="inline-block bg-pride-gold text-pride-black font-mono text-[10px] tracking-widest uppercase font-bold px-4 py-1.5 mb-8">Evening &middot; 18+</span>
+            <span className="inline-block bg-pride-gold text-pride-black font-mono text-[10px] tracking-widest uppercase font-bold px-4 py-1.5 mb-8">After Party &middot; 18+</span>
             <h3 className="font-serif font-bold text-3xl mb-8">Closing the Night</h3>
             <ul className="space-y-4">
               {[
-                "Continued drag performances — Stela Vulva & full roster",
+                "Doors at 9 PM · show starts 10 PM",
+                "Hosted by Monica Devereaux",
+                "Full performer roster — see the Performers page for names",
                 "DJ sets through the night",
                 "VIP lounge: reserved seating, drink ticket, meet & greet",
                 <span key="crofoot">Full bar service through <a href="https://thecrofoot.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-pride-gold transition-colors">The Crofoot</a></span>,
-                "$20 walk-up door entry available after 9 PM",
-                "Alise King closes out the night",
+                "$20 walk-up door entry at 9 PM · 18+ with valid ID",
                 "Runs until close at 2 AM"
               ].map((item, i) => (
                 <li key={i} className="flex gap-4 items-start text-[15px] text-pride-white/80">
@@ -125,11 +130,11 @@ export function Schedule() {
           <FAQAccordion faqs={[
             {
               q: "What is the timeline for the day?",
-              a: "Doors open at noon with a free, all-ages community commencement — local politicians, organizations, and community leaders speak, including a special state tribute. Performances begin at 1:00 PM. Free entry runs through 3 PM; a GA ticket is required after that. Starting at 7:30 PM the event is 18+. After 9 PM, $20 walk-up door entry is available. The night runs until close at 2 AM, with Alise King closing out the show."
+              a: "Doors open at noon with a free, all-ages community commencement — local politicians, organizations, and community leaders speak, including a special state tribute. Performances begin at 1:00 PM. Free entry runs through 3 PM; a GA ticket is required after that, still all ages through 7 PM. Alise King closes the daytime program at 7 PM. Free wristbands expire at that point — the After Party is a separate show with its own doors at 9 PM (show at 10 PM), 18+, hosted by Monica Devereaux, running until close at 2 AM."
             },
             {
               q: "What are the age restrictions?",
-              a: "Daytime programming (noon–7:30 PM) is open to all ages. Starting at 7:30 PM, entry requires guests to be 18+ with valid ID."
+              a: "Daytime programming (noon–7 PM) is open to all ages. The After Party, starting at 9 PM doors, requires guests to be 18+ with valid ID. 21+ guests get an additional wristband to drink, checked when ordering at the bar."
             },
             {
               q: "Where should I park?",
