@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, MessageSquare, ArrowRight, CheckCircle } from "lucide-react";
+import { Mail, MessageSquare, Briefcase, ArrowRight, CheckCircle } from "lucide-react";
 import { AsexualStripe } from "../components/AsexualStripe";
 import { WEB3FORMS_KEY, FormStatus, submitForm } from "../lib/web3forms";
 
@@ -30,20 +30,38 @@ export function Contact() {
           message directly.
         </p>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
           <div className="bg-pride-white border border-pride-black/10 p-8 shadow-sm hover:shadow-md transition-shadow">
             <div className="w-12 h-12 bg-pride-teal/10 flex items-center justify-center rounded-full mb-6 text-pride-teal">
               <Mail size={24} />
             </div>
             <h3 className="font-serif font-bold text-2xl mb-2">
-              General Inquiries & Sponsorship
+              General Inquiries
             </h3>
             <p className="text-pride-muted text-sm mb-6">
-              For media, operations, or connecting on sponsorship tiers.
+              Questions, media, accessibility, or anything not covered by the categories below.
+            </p>
+            <a
+              href="mailto:prideinpontiac@gmail.com"
+              className="font-bold flex items-center gap-2 hover:text-pride-teal transition-colors"
+            >
+              prideinpontiac@gmail.com <ArrowRight size={16} />
+            </a>
+          </div>
+
+          <div className="bg-pride-white border border-pride-black/10 p-8 shadow-sm hover:shadow-md transition-shadow">
+            <div className="w-12 h-12 bg-pride-gold/10 flex items-center justify-center rounded-full mb-6 text-pride-gold">
+              <Briefcase size={24} />
+            </div>
+            <h3 className="font-serif font-bold text-2xl mb-2">
+              Sponsorship
+            </h3>
+            <p className="text-pride-muted text-sm mb-6">
+              For sponsorship tiers, invoices, or corporate partnership questions.
             </p>
             <a
               href="mailto:baentertainmentMI@gmail.com"
-              className="font-bold flex items-center gap-2 hover:text-pride-teal transition-colors"
+              className="font-bold flex items-center gap-2 hover:text-pride-gold transition-colors"
             >
               baentertainmentMI@gmail.com <ArrowRight size={16} />
             </a>
@@ -163,7 +181,7 @@ export function Contact() {
 
               {status === "error" && (
                 <p className="text-sm text-red-500">
-                  Something went wrong. Please email baentertainmentMI@gmail.com
+                  Something went wrong. Please email prideinpontiac@gmail.com
                   directly.
                 </p>
               )}
