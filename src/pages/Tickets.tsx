@@ -294,7 +294,7 @@ export function Tickets() {
       <section className="bg-pride-white py-20 px-6 border-t border-pride-black/10">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-serif font-black text-4xl mb-12 text-center">Ticketing FAQ</h2>
-          <FAQAccordion faqs={faqs.map((faq) => ({ q: faq.question, a: faq.answer }))} />
+          <FAQAccordion theme="light" faqs={faqs.map((faq) => ({ q: faq.question, a: faq.answer }))} />
         </div>
       </section>
     </div>
