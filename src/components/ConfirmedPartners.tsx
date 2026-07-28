@@ -101,14 +101,26 @@ export function ConfirmedPartners({ theme = "dark" }: { theme?: "dark" | "light"
       <div>
         <p className={`font-mono text-[10px] tracking-[0.2em] uppercase ${labelColor} text-center mb-6`}>Community & Media Partners</p>
         <div className="flex flex-wrap justify-center gap-3">
-          {COMMUNITY_PARTNERS.map((name) => (
-            <span
-              key={name}
-              className={`font-sans text-sm font-medium px-4 py-2 rounded-full transition-colors ${pillClass}`}
-            >
-              {name}
-            </span>
-          ))}
+          {COMMUNITY_PARTNERS.map((partner) =>
+            partner.url ? (
+              <a
+                key={partner.name}
+                href={partner.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`font-sans text-sm font-medium px-4 py-2 rounded-full transition-colors ${pillClass}`}
+              >
+                {partner.name}
+              </a>
+            ) : (
+              <span
+                key={partner.name}
+                className={`font-sans text-sm font-medium px-4 py-2 rounded-full transition-colors ${pillClass}`}
+              >
+                {partner.name}
+              </span>
+            )
+          )}
         </div>
       </div>
     </div>
