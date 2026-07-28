@@ -34,7 +34,7 @@ export function Accessibility() {
         </div>
 
         <p className="text-sm text-pride-muted border-t border-pride-black/10 pt-6">
-          If you have specific accessibility needs not outlined here, please email us directly at <a href="mailto:baentertainmentMI@gmail.com" className="font-bold border-b border-pride-ink hover:text-pride-gold transition-colors">baentertainmentMI@gmail.com</a>.
+          If you have specific accessibility needs not outlined here, please email us directly at <a href="mailto:prideinpontiac@gmail.com" className="font-bold border-b border-pride-ink hover:text-pride-gold transition-colors">prideinpontiac@gmail.com</a>.
         </p>
       </div>
     </div>
