@@ -17,10 +17,15 @@ export const CONFIRMED_SPONSORS: Sponsor[] = [
   { name: "The Crofoot", tier: "In-Kind", logo: "/images/sponsors/crofoot.jpg", url: "https://thecrofoot.com" },
 ];
 
-export const COMMUNITY_PARTNERS: string[] = [
-  "Oakland County Health Division",
-  "Pontiac City Council",
-  "Oakland County Blog",
-  "Oakland University Gender & Sexuality Center",
-  "Neo Oakland Indivisible",
+export interface CommunityPartner {
+  name: string;
+  url?: string;
+}
+
+export const COMMUNITY_PARTNERS: CommunityPartner[] = [
+  { name: "Oakland County Health Division", url: "http://www.oakgov.com/health" },
+  { name: "Pontiac City Council", url: "https://www.pontiac.mi.us/government/city_council/index.php" },
+  { name: "Oakland County Blog", url: "https://oaklandcountyblog.com/" },
+  { name: "Oakland University Gender & Sexuality Center", url: "http://www.oakland.edu/gsc" },
+  { name: "NE Oakland Indivisible", url: "https://www.mobilize.us/neoaklandindivisible/event/903733/" },
 ];
