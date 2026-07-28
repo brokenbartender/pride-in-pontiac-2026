@@ -1,18 +1,26 @@
 import { CONFIRMED_SPONSORS, COMMUNITY_PARTNERS, type Sponsor } from "../data/sponsors";
 
-function SponsorMark({ sponsor, size, textColor }: { sponsor: Sponsor; size: "lg" | "md"; textColor: string }) {
+function SponsorMark({ sponsor, size, textColor, theme }: { sponsor: Sponsor; size: "lg" | "md"; textColor: string; theme: "dark" | "light" }) {
   const textSize = size === "lg" ? "text-2xl md:text-3xl" : "text-lg md:text-xl";
   const maxWidth = size === "lg" ? 220 : 160;
   const maxHeight = size === "lg" ? 140 : 100;
 
+  const logoImg = (
+    <img
+      src={sponsor.logo}
+      alt={sponsor.name}
+      className="w-full object-contain"
+      style={{ maxWidth, maxHeight }}
+    />
+  );
+
   const content = sponsor.logo ? (
     <div className="flex flex-col items-center gap-3">
-      <img
-        src={sponsor.logo}
-        alt={sponsor.name}
-        className="w-full object-contain"
-        style={{ maxWidth, maxHeight }}
-      />
+      {theme === "dark" ? (
+        <div className="bg-white rounded-lg px-4 py-3 shadow-sm">{logoImg}</div>
+      ) : (
+        logoImg
+      )}
       <span className={`font-serif font-bold text-[1.1rem] ${textColor} group-hover:text-pride-gold transition-colors`}>
         {sponsor.name}
       </span>
@@ -59,7 +67,7 @@ export function ConfirmedPartners({ theme = "dark" }: { theme?: "dark" | "light"
           <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-pride-gold text-center mb-8">Gold Sponsors</p>
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
             {gold.map((s) => (
-              <SponsorMark key={s.name} sponsor={s} size="lg" textColor={textColor} />
+              <SponsorMark key={s.name} sponsor={s} size="lg" textColor={textColor} theme={theme} />
             ))}
           </div>
         </div>
@@ -70,7 +78,7 @@ export function ConfirmedPartners({ theme = "dark" }: { theme?: "dark" | "light"
           <p className={`font-mono text-[10px] tracking-[0.2em] uppercase ${labelColor} text-center mb-8`}>Silver Sponsors</p>
           <div className="flex flex-wrap justify-center gap-x-10 gap-y-6">
             {silver.map((s) => (
-              <SponsorMark key={s.name} sponsor={s} size="md" textColor={textColor} />
+              <SponsorMark key={s.name} sponsor={s} size="md" textColor={textColor} theme={theme} />
             ))}
           </div>
         </div>
@@ -81,7 +89,7 @@ export function ConfirmedPartners({ theme = "dark" }: { theme?: "dark" | "light"
           <p className={`font-mono text-[10px] tracking-[0.2em] uppercase ${labelColor} text-center mb-8`}>Host Venue Partner</p>
           <div className="flex flex-wrap justify-center gap-x-10 gap-y-6">
             {inKind.map((s) => (
-              <SponsorMark key={s.name} sponsor={s} size="md" textColor={textColor} />
+              <SponsorMark key={s.name} sponsor={s} size="md" textColor={textColor} theme={theme} />
             ))}
           </div>
         </div>
