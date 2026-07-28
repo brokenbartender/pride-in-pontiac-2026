@@ -7,11 +7,11 @@ export function Tickets() {
   const faqs = [
     {
       question: "What time does the event start?",
-      answer: "Doors open at noon for a free, all-ages daytime celebration running through 7 PM — no ticket needed to walk up before 3 PM. After 3 PM, entry requires a GA ticket ($20, or two for the price of one with our BOGO deal), still all ages through 7 PM. At 7 PM the daytime program ends and the venue transitions to the After Party, which is 18+ starting at 7:30 PM."
+      answer: "Doors open at noon for a free, all-ages daytime celebration running through 7 PM — no ticket needed to walk up before 3 PM. After 3 PM, entry requires a GA ticket ($20, or two for the price of one with our BOGO deal), still all ages through 7 PM. Alise King closes the daytime program at 7 PM. The After Party is a separate show: doors at 9 PM, show starts at 10 PM, 18+."
     },
     {
       question: "I got a free wristband at noon — do I have to leave at 7 PM?",
-      answer: "If you're 18 or older, no — you're welcome to stay for the After Party. If you're under 18, the daytime block is all ages, but the After Party starting at 7:30 PM is 18+, so anyone under 18 needs to exit during the 7–7:30 PM transition."
+      answer: "Free wristbands are valid for the daytime program only, through 7 PM. If you want to stay for the After Party, you'll need a GA ticket (buy in advance or upgrade before 7 PM) or pay the $20 door price starting at 9 PM. Free wristbands don't carry over into the After Party."
     },
     {
       question: "What's the BOGO deal?",
@@ -19,15 +19,15 @@ export function Tickets() {
     },
     {
       question: "What does GA get me?",
-      answer: "GA is $20 and gets you in from 3 PM through close at 2 AM — covering the rest of the all-ages daytime program and the 18+ After Party. Once you're inside, you're in for the night — no re-purchase, no sweep (unless you're under 18, in which case you'll need to exit at the 7 PM transition)."
+      answer: "GA is $20 and gets you in from 3 PM through close at 2 AM — the rest of the all-ages daytime program plus the entire After Party. Once you're inside on a GA ticket, you're in for the night — no re-purchase, no re-entry line at 9 PM."
     },
     {
       question: "Do I need to be 21 to attend the After Party?",
-      answer: "No — the After Party is 18+ with valid ID checked at the door. If you're 21 or older, you'll also get a separate wristband so you can drink, also checked by ID at the door."
+      answer: "No — the After Party is 18+ with valid ID checked at the door. If you're 21 or older, you'll also get a separate wristband when you order a drink at the bar so you can drink — that's checked separately from general entry."
     },
     {
       question: "Can I come just for the evening?",
-      answer: "Yes. Anyone arriving after 9 PM without a pre-purchased ticket can pay $20 at the door. The After Party is 18+ with valid ID required starting at 7:30 PM. You can also buy GA online in advance on Eventbrite to skip the door."
+      answer: "Yes. The After Party has its own doors at 9 PM (show starts 10 PM). Anyone without a pre-purchased ticket can pay $20 at the door starting at 9 PM. 18+ with valid ID required. You can also buy GA online in advance on Eventbrite to skip the door."
     },
     {
       question: "What does VIP include?",
@@ -39,7 +39,7 @@ export function Tickets() {
     },
     {
       question: "What time does the event end, and who closes it out?",
-      answer: "Alise King closes the all-ages daytime program at 7 PM. The After Party runs 7:30 PM to close at 2 AM, with Stela Vulva giving closing remarks and sponsor thank-yous before last call."
+      answer: "Alise King closes the all-ages daytime program at 7 PM. The After Party runs 9 PM doors / 10 PM show through close at 2 AM, hosted by Monica Devereaux."
     },
     {
       question: "My button isn't opening Eventbrite — what do I do?",
@@ -58,7 +58,7 @@ export function Tickets() {
     {
       time: "12:00 PM",
       label: "Doors Open — All Ages",
-      detail: "Free entry · all ages · free wristband at door · daytime performances begin",
+      detail: "Free entry · all ages · free wristband at door · valid for the daytime program only",
       color: "text-[#21B1FF]",
       border: "border-[#21B1FF]",
     },
@@ -72,35 +72,28 @@ export function Tickets() {
     {
       time: "7:00 PM",
       label: "Daytime Program Ends — Alise King Closes",
-      detail: "Alise King closes out the all-ages daytime block",
+      detail: "Free wristbands expire here — GA/VIP ticket holders stay, everyone else needs a ticket or the 9 PM door to continue",
       color: "text-[#FF218C]",
       border: "border-[#FF218C]",
     },
     {
-      time: "7:00–7:30 PM",
-      label: "Transition to the After Party",
-      detail: "Building sweep · anyone under 18 must exit · 21+ ID check begins for drinking wristbands",
-      color: "text-purple-400",
-      border: "border-purple-400",
-    },
-    {
-      time: "7:30 PM",
-      label: "After Party Begins — 18+",
-      detail: "New wristband color · 18+ entry with valid ID · 21+ additionally get a wristband to drink",
-      color: "text-purple-400",
-      border: "border-purple-400",
-    },
-    {
       time: "9:00 PM",
-      label: "Door Entry Opens — $20",
-      detail: "Walk-up entry at the door for $20 for anyone without a pre-purchased ticket · 18+ required",
-      color: "text-pride-gold",
-      border: "border-pride-gold",
+      label: "After Party Doors — 18+",
+      detail: "New wristband color · 18+ entry with valid ID · $20 walk-up available · 21+ get a drink wristband at the bar",
+      color: "text-purple-400",
+      border: "border-purple-400",
+    },
+    {
+      time: "10:00 PM",
+      label: "After Party Show Starts",
+      detail: "Hosted by Monica Devereaux",
+      color: "text-purple-400",
+      border: "border-purple-400",
     },
     {
       time: "2:00 AM",
       label: "Close",
-      detail: "Stela Vulva closes out the night with remarks and thank-yous · last call · doors close",
+      detail: "Last call · doors close",
       color: "text-pride-gold",
       border: "border-pride-gold",
     },
@@ -113,12 +106,12 @@ export function Tickets() {
       wasPrice: null,
       badge: "BOGO Available",
       sub: "Online or at door · entry from 3 PM",
-      desc: "Entry from 3 PM through close at 2 AM — the rest of the all-ages daytime program plus the 18+ After Party. Once inside, you're in for the night. Buy one, get one free while supplies last.",
+      desc: "Entry from 3 PM through close at 2 AM — the rest of the all-ages daytime program plus the entire 18+ After Party. Once inside, you're in for the night. Buy one, get one free while supplies last.",
       perks: [
         "Entry from 3 PM through 2 AM",
-        "Full festival & vendor access",
+        "Covers daytime program and the After Party",
         "BOGO — two tickets for the price of one",
-        "No re-purchase or sweep (18+)",
+        "No re-purchase or re-entry line at 9 PM",
       ],
       cta: "Get GA — $20",
       href: EVENTBRITE_URL,
@@ -131,11 +124,11 @@ export function Tickets() {
       price: "$20",
       wasPrice: null,
       badge: null,
-      sub: "18+ only · ID required · after 9 PM",
-      desc: "Come for the After Party. Walk-up entry at the door for anyone arriving after 9 PM without a pre-purchased ticket. 18+ required, 21+ get a wristband to drink.",
+      sub: "18+ only · ID required · 9 PM doors",
+      desc: "Come for the After Party. Walk-up entry at the door starting at 9 PM (show starts 10 PM), for anyone without a pre-purchased ticket. 18+ required, 21+ get a wristband to drink.",
       perks: [
-        "Entry from 9 PM through 2 AM",
-        "After Party performances",
+        "Entry from 9 PM doors through 2 AM",
+        "After Party performances, hosted by Monica Devereaux",
         "18+ required · valid ID checked",
       ],
       cta: "Buy GA in Advance — $20",
@@ -179,7 +172,7 @@ export function Tickets() {
             Get Your<br /><span className="text-[#FFD800]">Tickets.</span>
           </h1>
           <p className="text-white/60 mb-10 max-w-xl text-lg">
-            VIP early access at 11 AM. Doors open free at noon — all ages through 7 PM, closed out by Alise King. GA tickets ($20, BOGO available) required starting 3 PM. Then the After Party takes over: 18+ from 7:30 PM (21+ to drink), with $20 walk-up entry after 9 PM. Runs until 2 AM.
+            VIP early access at 11 AM. Doors open free at noon — all ages through 7 PM, closed out by Alise King. GA tickets ($20, BOGO available) required starting 3 PM. The After Party is a separate show: 9 PM doors, 10 PM show, 18+ entry, $20 at the door. Runs until 2 AM.
           </p>
           <div className="flex flex-wrap gap-4">
             <a
@@ -218,7 +211,7 @@ export function Tickets() {
             ))}
           </div>
           <p className="text-white/30 text-xs font-mono mt-4">
-            VIP 11 AM · free entry noon–3 PM · GA required 3–7 PM (all ages) · After Party 18+ from 7:30 PM (21+ to drink) · $20 door entry after 9 PM · close 2 AM
+            VIP 11 AM · free entry noon–3 PM · GA required 3–7 PM (all ages) · free wristbands expire 7 PM · After Party 9 PM doors / 10 PM show (18+) · close 2 AM
           </p>
         </div>
       </section>
