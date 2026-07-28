@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ShieldCheck, ArrowRight, Star, Clock, ExternalLink, Users, Building2 } from "lucide-react";
 import { TransgenderStripe } from "../components/TransgenderStripe";
@@ -6,8 +5,6 @@ import { FAQAccordion } from "../components/FAQAccordion";
 import { EVENTBRITE_URL } from "../lib/eventLinks";
 
 export function Tickets() {
-  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
-
   const faqs = [
     {
       question: "What time does the event start?",
@@ -370,17 +367,7 @@ export function Tickets() {
       <section className="bg-pride-white py-20 px-6 border-t border-pride-black/10">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-serif font-black text-4xl mb-12 text-center">Ticketing FAQ</h2>
-          <div className="space-y-2">
-            {faqs.map((faq, index) => (
-              <FAQAccordion
-                key={index}
-                question={faq.question}
-                answer={faq.answer}
-                isOpen={openFAQ === index}
-                onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
-              />
-            ))}
-          </div>
+          <FAQAccordion faqs={faqs.map((faq) => ({ q: faq.question, a: faq.answer }))} />
         </div>
       </section>
     </div>
