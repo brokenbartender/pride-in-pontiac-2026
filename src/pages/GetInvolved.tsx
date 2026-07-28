@@ -99,10 +99,10 @@ export function GetInvolved() {
                 Email Us Directly
               </span>
               <a
-                href="mailto:baentertainmentMI@gmail.com"
+                href="mailto:prideinpontiac@gmail.com"
                 className="text-sm font-medium hover:text-pride-gold transition-colors"
               >
-                baentertainmentMI
+                prideinpontiac
                 <br />
                 @gmail.com
               </a>
