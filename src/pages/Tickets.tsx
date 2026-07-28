@@ -1,18 +1,17 @@
-import { Link } from "react-router-dom";
-import { ShieldCheck, ArrowRight, Star, Clock, ExternalLink, Users, Building2 } from "lucide-react";
-import { TransgenderStripe } from "../components/TransgenderStripe";
+import { ShieldCheck, ArrowRight, Clock, ExternalLink } from "lucide-react";
 import { FAQAccordion } from "../components/FAQAccordion";
+import { TransgenderStripe } from "../components/TransgenderStripe";
 import { EVENTBRITE_URL } from "../lib/eventLinks";
 
 export function Tickets() {
   const faqs = [
     {
       question: "What time does the event start?",
-      answer: "Doors open at noon. Entry is free from 12–3 PM — no ticket needed, just walk up. All ages welcome during this window. After 3 PM, entry requires a GA ticket ($20, or two for the price of one with our BOGO deal). Starting at 7:30 PM, entry is 18+. After 9 PM, walk-up door entry is available for $20 for anyone without a pre-purchased ticket."
+      answer: "Doors open at noon for a free, all-ages daytime celebration running through 7 PM — no ticket needed to walk up before 3 PM. After 3 PM, entry requires a GA ticket ($20, or two for the price of one with our BOGO deal), still all ages through 7 PM. At 7 PM the daytime program ends and the venue transitions to the After Party, which is 18+ starting at 7:30 PM."
     },
     {
-      question: "I got a free wristband at noon — do I have to leave at 3 PM?",
-      answer: "No. Free wristband holders are welcome to stay all night. The 3 PM cutoff is for new admissions only — anyone arriving after 3 PM needs a GA ticket. If you're already in, you're in."
+      question: "I got a free wristband at noon — do I have to leave at 7 PM?",
+      answer: "If you're 18 or older, no — you're welcome to stay for the After Party. If you're under 18, the daytime block is all ages, but the After Party starting at 7:30 PM is 18+, so anyone under 18 needs to exit during the 7–7:30 PM transition."
     },
     {
       question: "What's the BOGO deal?",
@@ -20,23 +19,27 @@ export function Tickets() {
     },
     {
       question: "What does GA get me?",
-      answer: "GA is $20 and gets you in from 3 PM through close at 2 AM. Once you're inside, you're in for the night — no re-purchase, no sweep."
+      answer: "GA is $20 and gets you in from 3 PM through close at 2 AM — covering the rest of the all-ages daytime program and the 18+ After Party. Once you're inside, you're in for the night — no re-purchase, no sweep (unless you're under 18, in which case you'll need to exit at the 7 PM transition)."
+    },
+    {
+      question: "Do I need to be 21 to attend the After Party?",
+      answer: "No — the After Party is 18+ with valid ID checked at the door. If you're 21 or older, you'll also get a separate wristband so you can drink, also checked by ID at the door."
     },
     {
       question: "Can I come just for the evening?",
-      answer: "Yes. Anyone arriving after 9 PM without a pre-purchased ticket can pay $20 at the door. Starting at 7:30 PM, entry is 18+ with valid ID. You can also buy GA online in advance on Eventbrite to skip the door."
+      answer: "Yes. Anyone arriving after 9 PM without a pre-purchased ticket can pay $20 at the door. The After Party is 18+ with valid ID required starting at 7:30 PM. You can also buy GA online in advance on Eventbrite to skip the door."
     },
     {
       question: "What does VIP include?",
-      answer: "VIP is $40 and presale only — no VIP at the door. Includes 11 AM early access (one hour before general doors), reserved VIP lounge seating, one complimentary drink ticket, and meet & greet access with performers. Extremely limited, and eligible for the BOGO deal."
+      answer: "VIP is $40 and presale only — no VIP at the door. Includes 11 AM early access (one hour before general doors), reserved VIP lounge seating, one complimentary drink ticket (21+), and meet & greet access with performers. Extremely limited, and eligible for the BOGO deal."
     },
     {
       question: "Is there re-entry?",
       answer: "Yes, with a valid wristband matching your ticket tier. Wristbands are checked at re-entry."
     },
     {
-      question: "What time does the event end?",
-      answer: "The event runs until 2 AM. Alise King closes out the night."
+      question: "What time does the event end, and who closes it out?",
+      answer: "Alise King closes the all-ages daytime program at 7 PM. The After Party runs 7:30 PM to close at 2 AM, with Stela Vulva giving closing remarks and sponsor thank-yous before last call."
     },
     {
       question: "My button isn't opening Eventbrite — what do I do?",
@@ -54,36 +57,50 @@ export function Tickets() {
     },
     {
       time: "12:00 PM",
-      label: "Official Kickoff — Doors Open",
-      detail: "General doors open · free entry · all ages · free wristband at door",
+      label: "Doors Open — All Ages",
+      detail: "Free entry · all ages · free wristband at door · daytime performances begin",
       color: "text-[#21B1FF]",
       border: "border-[#21B1FF]",
     },
     {
       time: "3:00 PM",
       label: "Free Admission Closes",
-      detail: "New arrivals need a GA ticket ($20, BOGO available) · free wristband holders stay all night",
+      detail: "New arrivals need a GA ticket ($20, BOGO available) · still all ages through 7 PM",
       color: "text-[#FFD800]",
       border: "border-[#FFD800]",
     },
     {
-      time: "7:30 PM",
-      label: "Evening Transition — 18+",
-      detail: "New arrivals must be 18+ with valid ID from this point forward",
+      time: "7:00 PM",
+      label: "Daytime Program Ends — Alise King Closes",
+      detail: "Alise King closes out the all-ages daytime block",
       color: "text-[#FF218C]",
       border: "border-[#FF218C]",
+    },
+    {
+      time: "7:00–7:30 PM",
+      label: "Transition to the After Party",
+      detail: "Building sweep · anyone under 18 must exit · 21+ ID check begins for drinking wristbands",
+      color: "text-purple-400",
+      border: "border-purple-400",
+    },
+    {
+      time: "7:30 PM",
+      label: "After Party Begins — 18+",
+      detail: "New wristband color · 18+ entry with valid ID · 21+ additionally get a wristband to drink",
+      color: "text-purple-400",
+      border: "border-purple-400",
     },
     {
       time: "9:00 PM",
       label: "Door Entry Opens — $20",
       detail: "Walk-up entry at the door for $20 for anyone without a pre-purchased ticket · 18+ required",
-      color: "text-purple-400",
-      border: "border-purple-400",
+      color: "text-pride-gold",
+      border: "border-pride-gold",
     },
     {
       time: "2:00 AM",
       label: "Close",
-      detail: "Alise King closes out the night · last call · event ends",
+      detail: "Stela Vulva closes out the night with remarks and thank-yous · last call · doors close",
       color: "text-pride-gold",
       border: "border-pride-gold",
     },
@@ -96,12 +113,12 @@ export function Tickets() {
       wasPrice: null,
       badge: "BOGO Available",
       sub: "Online or at door · entry from 3 PM",
-      desc: "Entry from 3 PM through close at 2 AM. Once inside, you're in for the night — no re-purchase, no sweep. Buy one, get one free while supplies last.",
+      desc: "Entry from 3 PM through close at 2 AM — the rest of the all-ages daytime program plus the 18+ After Party. Once inside, you're in for the night. Buy one, get one free while supplies last.",
       perks: [
         "Entry from 3 PM through 2 AM",
         "Full festival & vendor access",
         "BOGO — two tickets for the price of one",
-        "No re-purchase or sweep",
+        "No re-purchase or sweep (18+)",
       ],
       cta: "Get GA — $20",
       href: EVENTBRITE_URL,
@@ -115,10 +132,10 @@ export function Tickets() {
       wasPrice: null,
       badge: null,
       sub: "18+ only · ID required · after 9 PM",
-      desc: "Come for the evening. Walk-up entry at the door for anyone arriving after 9 PM without a pre-purchased ticket. 18+ required.",
+      desc: "Come for the After Party. Walk-up entry at the door for anyone arriving after 9 PM without a pre-purchased ticket. 18+ required, 21+ get a wristband to drink.",
       perks: [
         "Entry from 9 PM through 2 AM",
-        "Evening performances",
+        "After Party performances",
         "18+ required · valid ID checked",
       ],
       cta: "Buy GA in Advance — $20",
@@ -133,11 +150,11 @@ export function Tickets() {
       wasPrice: null,
       badge: "BOGO Available",
       sub: "Presale only · extremely limited",
-      desc: "The full experience. 11 AM early access before general doors, reserved VIP lounge, drink ticket, and meet & greet. No VIP at the door. Buy one, get one free while supplies last.",
+      desc: "The full experience. 11 AM early access before general doors, reserved VIP lounge, drink ticket (21+), and meet & greet. No VIP at the door. Buy one, get one free while supplies last.",
       perks: [
         "11 AM early access — 1 hr before general doors",
         "Reserved VIP lounge seating",
-        "1 complimentary drink ticket",
+        "1 complimentary drink ticket (21+)",
         "Meet & greet with performers",
         "BOGO — two tickets for the price of one",
         "Presale only — no door VIP",
@@ -162,7 +179,7 @@ export function Tickets() {
             Get Your<br /><span className="text-[#FFD800]">Tickets.</span>
           </h1>
           <p className="text-white/60 mb-10 max-w-xl text-lg">
-            VIP early access at 11 AM. Free & all ages noon–3 PM. GA $20 from 3 PM (BOGO available). 18+ starting 7:30 PM. $20 door entry after 9 PM. Runs until 2 AM.
+            VIP early access at 11 AM. Free & all ages noon–7 PM, closed out by Alise King. GA $20 from 3 PM (BOGO available). After Party is 18+ starting 7:30 PM, 21+ to drink. $20 door entry after 9 PM. Runs until 2 AM.
           </p>
           <div className="flex flex-wrap gap-4">
             <a
@@ -201,7 +218,7 @@ export function Tickets() {
             ))}
           </div>
           <p className="text-white/30 text-xs font-mono mt-4">
-            VIP 11 AM · Free & all ages 12–3 PM · GA from 3 PM · 18+ starting 7:30 PM · $20 door entry after 9 PM · close 2 AM
+            VIP 11 AM · Free & all ages noon–7 PM · GA from 3 PM · After Party 18+ from 7:30 PM (21+ to drink) · $20 door entry after 9 PM · close 2 AM
           </p>
         </div>
       </section>
@@ -270,96 +287,6 @@ export function Tickets() {
           <p className="text-center text-gray-400 text-xs font-mono mt-8">
             All tickets on Eventbrite. Trouble with the button? Go to eventbrite.com and search "Pride in Pontiac 2026".
           </p>
-        </div>
-      </section>
-
-      {/* Community Partnership */}
-      <section className="py-20 px-6 bg-[#0A0A0A] text-white">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex items-center gap-4 mb-10">
-            <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-white/40">For Organizations</span>
-            <div className="flex-1 h-px bg-white/10" />
-          </div>
-          <h2 className="font-serif font-black text-4xl md:text-5xl mb-4">Become a Community Partner.</h2>
-          <p className="text-white/60 max-w-2xl mb-12 text-lg">
-            Nonprofits, community groups, and advocacy organizations: partner with Pride in Pontiac and get your work in front of our audience. No cash required — just bring your presence.
-          </p>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="border border-white/10 p-8 hover:border-pride-gold/40 transition-colors">
-              <Users size={28} className="text-pride-gold mb-4" />
-              <h3 className="font-serif font-bold text-xl mb-2">Tabling Partner</h3>
-              <p className="text-white/60 text-sm mb-4 leading-relaxed">
-                Set up a table at the event and connect directly with attendees. You bring your materials — we bring the audience.
-              </p>
-              <ul className="space-y-2 mb-6">
-                {["Listed on our website as a Community Partner", "Table space at the event", "Mentioned in event announcements", "Added to our Resources page"].map(p => (
-                  <li key={p} className="flex items-start gap-2 text-sm text-white/70">
-                    <ShieldCheck size={14} className="shrink-0 mt-0.5 text-pride-gold" />
-                    {p}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="mailto:baentertainmentMI@gmail.com?subject=Community%20Tabling%20Partner%20Application&body=Organization%20name%3A%0AContact%20name%3A%0AWhat%20you%20do%3A%0AHow%20you%27d%20promote%20the%20event%20to%20your%20network%3A%0A"
-                className="inline-flex items-center gap-2 bg-pride-gold text-pride-black px-6 py-3 font-bold text-sm uppercase tracking-wider hover:bg-white transition-colors"
-              >
-                Apply to Table <ArrowRight size={14} />
-              </a>
-            </div>
-            <div className="border border-white/10 p-8 hover:border-pride-gold/40 transition-colors">
-              <Building2 size={28} className="text-pride-gold mb-4" />
-              <h3 className="font-serif font-bold text-xl mb-2">Media & Outreach Partner</h3>
-              <p className="text-white/60 text-sm mb-4 leading-relaxed">
-                Promote Pride in Pontiac to your community. In exchange, we promote you to ours. No table, no cost, pure reach exchange.
-              </p>
-              <ul className="space-y-2 mb-6">
-                {["Listed on our website as a Community Partner", "Cross-promoted on our social channels", "Added to our Resources page", "Featured in our event program"].map(p => (
-                  <li key={p} className="flex items-start gap-2 text-sm text-white/70">
-                    <ShieldCheck size={14} className="shrink-0 mt-0.5 text-pride-gold" />
-                    {p}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="mailto:baentertainmentMI@gmail.com?subject=Media%20%26%20Outreach%20Partner%20Application&body=Organization%20name%3A%0AContact%20name%3A%0AYour%20audience%20size%20%26%20channels%3A%0AHow%20you%27d%20promote%20the%20event%3A%0A"
-                className="inline-flex items-center gap-2 bg-pride-gold text-pride-black px-6 py-3 font-bold text-sm uppercase tracking-wider hover:bg-white transition-colors"
-              >
-                Apply to Partner <ArrowRight size={14} />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Staff / Vendors / Sponsors */}
-      <section className="py-20 px-6 bg-pride-cream border-t border-pride-black/10">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex items-center gap-4 mb-10">
-            <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-pride-muted">Participating in the Event</span>
-            <div className="flex-1 h-px bg-pride-black/10" />
-          </div>
-          <h2 className="font-serif font-bold text-3xl mb-2">Are You Part of the Team?</h2>
-          <p className="text-pride-muted mb-10">Registration and applications for everyone helping make this happen.</p>
-          <div className="grid md:grid-cols-3 gap-6">
-            <Link to="/volunteers" className="block bg-pride-white hover:shadow-md transition-shadow p-8 border border-pride-black/10 group">
-              <Star size={24} className="text-pride-gold mb-4" />
-              <h4 className="font-serif font-bold text-xl mb-2 group-hover:text-pride-gold transition-colors">Volunteers</h4>
-              <p className="text-sm text-pride-muted mb-4">Sign up to volunteer. You'll receive shift details and check-in instructions by email before the event.</p>
-              <span className="inline-flex items-center gap-1 text-sm font-bold text-pride-gold">Volunteer Sign-Up <ArrowRight size={14} /></span>
-            </Link>
-            <Link to="/vendors" className="block bg-pride-white hover:shadow-md transition-shadow p-8 border border-pride-black/10 group">
-              <Building2 size={24} className="text-pride-gold mb-4" />
-              <h4 className="font-serif font-bold text-xl mb-2 group-hover:text-pride-gold transition-colors">Vendors</h4>
-              <p className="text-sm text-pride-muted mb-4">Apply for a marketplace booth. Approved vendors will be contacted with setup times, load-in details, and payment.</p>
-              <span className="inline-flex items-center gap-1 text-sm font-bold text-pride-gold">Vendor Application <ArrowRight size={14} /></span>
-            </Link>
-            <Link to="/sponsors" className="block bg-pride-white hover:shadow-md transition-shadow p-8 border border-pride-black/10 group">
-              <ShieldCheck size={24} className="text-pride-gold mb-4" />
-              <h4 className="font-serif font-bold text-xl mb-2 group-hover:text-pride-gold transition-colors">Sponsors</h4>
-              <p className="text-sm text-pride-muted mb-4">View sponsorship tiers and benefits. Contact us directly to discuss your package and what we can offer your brand.</p>
-              <span className="inline-flex items-center gap-1 text-sm font-bold text-pride-gold">Sponsorship Info <ArrowRight size={14} /></span>
-            </Link>
-          </div>
         </div>
       </section>
 
