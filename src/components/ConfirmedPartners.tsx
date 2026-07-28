@@ -54,7 +54,10 @@ function SponsorMark({ sponsor, size, textColor, theme }: { sponsor: Sponsor; si
 export function ConfirmedPartners({ theme = "dark" }: { theme?: "dark" | "light" }) {
   const textColor = theme === "dark" ? "text-pride-white/90" : "text-pride-ink/90";
   const labelColor = theme === "dark" ? "text-pride-white/50" : "text-pride-muted";
-  const communyColor = theme === "dark" ? "text-pride-white/60" : "text-pride-muted";
+  const pillClass =
+    theme === "dark"
+      ? "bg-pride-white/5 border border-pride-white/15 text-pride-white/70 hover:border-pride-gold/40 hover:text-pride-white"
+      : "bg-pride-black/[0.03] border border-pride-black/10 text-pride-muted hover:border-pride-gold/40 hover:text-pride-ink";
 
   const gold = CONFIRMED_SPONSORS.filter((s) => s.tier === "Gold");
   const silver = CONFIRMED_SPONSORS.filter((s) => s.tier === "Silver");
@@ -97,9 +100,12 @@ export function ConfirmedPartners({ theme = "dark" }: { theme?: "dark" | "light"
 
       <div>
         <p className={`font-mono text-[10px] tracking-[0.2em] uppercase ${labelColor} text-center mb-6`}>Community & Media Partners</p>
-        <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
+        <div className="flex flex-wrap justify-center gap-3">
           {COMMUNITY_PARTNERS.map((name) => (
-            <span key={name} className={`font-sans text-sm ${communyColor}`}>
+            <span
+              key={name}
+              className={`font-sans text-sm font-medium px-4 py-2 rounded-full transition-colors ${pillClass}`}
+            >
               {name}
             </span>
           ))}
