@@ -73,12 +73,12 @@ export function Home() {
           </motion.div>
         </div>
 
-        {/* Info Bar at Bottom of Hero */}
+        {/* Info Bar — normal flow on mobile, pinned to the bottom of the hero at md+ */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
-          className="absolute bottom-0 left-0 w-full max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 bg-pride-black/40 border-t border-pride-white/10 backdrop-blur-md"
+          className="relative md:absolute md:bottom-0 md:left-0 mt-10 md:mt-0 w-full max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 bg-pride-black/40 border-t border-pride-white/10 backdrop-blur-md"
         >
           <div className="py-6 border-b md:border-b-0 md:border-r border-pride-white/10">
             <span className="block text-pride-gold font-mono text-[9px] tracking-widest uppercase mb-1">Daytime Attendance</span>
