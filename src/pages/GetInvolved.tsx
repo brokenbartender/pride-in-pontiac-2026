@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, Info, CheckCircle } from "lucide-react";
+import { ArrowRight, Info, CheckCircle, Mail, Briefcase, MessageSquare } from "lucide-react";
 import { WEB3FORMS_KEY, FormStatus, submitForm } from "../lib/web3forms";
 
 function InputField({
@@ -85,18 +85,18 @@ export function GetInvolved() {
 
           <h1 className="font-serif font-black text-5xl md:text-7xl mb-8 leading-tight">
             Let's Build <br />
-            <em className="text-pride-teal">Something Together.</em>
+            <em className="text-pride-teal">2027 Together.</em>
           </h1>
           <p className="text-lg text-pride-muted leading-relaxed mb-12 max-w-lg">
             Whether you want to vend your LGBTQ+ owned business, partner as a
-            community health resource, sponsor the event, or volunteer — we want
-            you here.
+            community health resource, sponsor the event, volunteer, or just
+            have a question — we want you here.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
             <div className="bg-pride-white p-6 border border-pride-black/10">
               <span className="font-mono text-[9px] uppercase tracking-widest text-pride-gold mb-2 block font-bold">
-                Email Us Directly
+                <Mail size={12} className="inline mr-1.5 -mt-0.5" /> General Inquiries
               </span>
               <a
                 href="mailto:prideinpontiac@gmail.com"
@@ -109,7 +109,7 @@ export function GetInvolved() {
             </div>
             <div className="bg-pride-white p-6 border border-pride-black/10">
               <span className="font-mono text-[9px] uppercase tracking-widest text-pride-violet mb-2 block font-bold">
-                Performer Booking
+                <MessageSquare size={12} className="inline mr-1.5 -mt-0.5" /> Performer Booking
               </span>
               <a
                 href="mailto:bookings@unorthodoxdragshow.com"
@@ -118,6 +118,17 @@ export function GetInvolved() {
                 bookings
                 <br />
                 @unorthodoxdragshow.com
+              </a>
+            </div>
+            <div className="bg-pride-white p-6 border border-pride-black/10 sm:col-span-2">
+              <span className="font-mono text-[9px] uppercase tracking-widest text-pride-teal mb-2 block font-bold">
+                <Briefcase size={12} className="inline mr-1.5 -mt-0.5" /> Sponsorship, Invoices & Corporate Partnerships
+              </span>
+              <a
+                href="mailto:baentertainmentMI@gmail.com"
+                className="text-sm font-medium hover:text-pride-teal transition-colors"
+              >
+                baentertainmentMI@gmail.com
               </a>
             </div>
           </div>
@@ -140,8 +151,7 @@ export function GetInvolved() {
                 Get in Touch
               </h3>
               <p className="text-sm text-pride-muted mb-10">
-                Use this form to express your interest in vending, volunteering,
-                or partnering.
+                Use this form for vending, volunteering, sponsorship, media, accessibility questions, or anything else — we'll route it to the right person.
               </p>
 
               <form className="space-y-8" onSubmit={handleSubmit}>
@@ -149,7 +159,7 @@ export function GetInvolved() {
                 <input
                   type="hidden"
                   name="subject"
-                  value="New Inquiry — Pride in Pontiac 2026"
+                  value="New Inquiry — Pride in Pontiac"
                 />
                 <input
                   type="hidden"
@@ -179,10 +189,12 @@ export function GetInvolved() {
                   type="select"
                   required
                   options={[
-                    "Sponsorship ($150 – $2500+)",
+                    "Sponsorship — 2027",
                     "Vending (Marketplace)",
                     "Community / Health Partner Booth",
                     "Volunteering",
+                    "Media / Press Inquiry",
+                    "Accessibility Question",
                     "Other Inquiry",
                   ]}
                 />

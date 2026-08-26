@@ -9,18 +9,16 @@ type NavItem = NavLink | { label: string; children: NavLink[] };
 const navItems: NavItem[] = [
   { label: "Home", path: "/" },
   {
-    label: "Event Info",
+    label: "About the Event",
     children: [
       { label: "About", path: "/about" },
-      { label: "Schedule", path: "/schedule" },
-      { label: "Map", path: "/map" },
+      { label: "Operations", path: "/operations" },
       { label: "Accessibility", path: "/accessibility" },
     ],
   },
-  { label: "Tickets", path: "/tickets" },
   { label: "Performers", path: "/performers" },
   {
-    label: "Get Involved",
+    label: "Thank You",
     children: [
       { label: "Sponsors", path: "/sponsors" },
       { label: "Vendors", path: "/vendors" },
@@ -61,11 +59,11 @@ export function Layout() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Top Banner indicating date/location */}
+      {/* Top Banner — post-event thank you */}
       <div className="bg-pride-black text-pride-white py-2 px-6 flex justify-between items-center text-xs font-mono uppercase tracking-widest hidden md:flex">
-        <span>August 14, 2026</span>
+        <span>Thank You, Pontiac — August 14, 2026</span>
         <span>
-          <a href="https://thecrofoot.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-pride-gold transition-colors">The Crofoot</a> · Pontiac, MI
+          2027 date coming soon · <Link to="/get-involved" className="underline hover:text-pride-gold transition-colors">Get on the list</Link>
         </span>
       </div>
 
@@ -87,7 +85,7 @@ export function Layout() {
               to="/get-involved"
               className="bg-pride-black text-pride-white px-6 py-2.5 font-sans font-bold uppercase tracking-wider text-xs hover:bg-pride-gold hover:text-pride-black transition-colors shrink-0"
             >
-              Take Action
+              Stay in the Loop
             </Link>
           </div>
 
@@ -209,7 +207,7 @@ export function Layout() {
               to="/get-involved"
               className="w-fit mt-6 bg-pride-black text-pride-white px-8 py-4 font-sans font-bold uppercase tracking-wider text-sm hover:bg-pride-gold hover:text-pride-black transition-colors flex items-center gap-2"
             >
-              Take Action <ArrowRight size={16} />
+              Stay in the Loop <ArrowRight size={16} />
             </Link>
           </div>
         )}
@@ -262,7 +260,7 @@ export function Layout() {
                   <a href="mailto:bookings@unorthodoxdragshow.com" className="hover:text-pride-white transition-colors break-all">bookings@unorthodoxdragshow.com</a>
                 </li>
                 <li>
-                  <Link to="/contact" className="hover:text-pride-white transition-colors">Contact Form →</Link>
+                  <Link to="/get-involved" className="hover:text-pride-white transition-colors">Contact Form →</Link>
                 </li>
               </ul>
             </div>
@@ -271,14 +269,10 @@ export function Layout() {
               <h4 className="font-mono text-xs text-pride-gold tracking-widest uppercase mb-6">Quick Links</h4>
               <div className="grid grid-cols-2 gap-4 font-sans text-sm text-pride-white/70">
                 <div className="flex flex-col space-y-3">
-                  <Link to="/tickets" className="hover:text-pride-white transition-colors w-fit">Tickets</Link>
                   <Link to="/about" className="hover:text-pride-white transition-colors w-fit">About Us</Link>
-                  <Link to="/event-info" className="hover:text-pride-white transition-colors w-fit">Event Info</Link>
-                  <Link to="/schedule" className="hover:text-pride-white transition-colors w-fit">Schedule</Link>
-                  <Link to="/map" className="hover:text-pride-white transition-colors w-fit">Map</Link>
+                  <Link to="/operations" className="hover:text-pride-white transition-colors w-fit">Operations</Link>
                   <Link to="/resources" className="hover:text-pride-white transition-colors w-fit">Resources</Link>
                   <Link to="/accessibility" className="hover:text-pride-white transition-colors w-fit">Accessibility</Link>
-                  <Link to="/operations" className="hover:text-pride-white transition-colors w-fit">Operations</Link>
                 </div>
                 <div className="flex flex-col space-y-3">
                   <Link to="/sponsors" className="hover:text-pride-white transition-colors w-fit">Sponsors</Link>

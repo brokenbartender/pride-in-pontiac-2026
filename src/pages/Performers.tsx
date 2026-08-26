@@ -32,8 +32,11 @@ export function Performers() {
             <Mic2 className="text-pride-violet w-12 h-12" />
             The Lineup
           </h1>
-          <p className="text-lg text-pride-muted max-w-2xl">
-            Pontiac's first Pride, stacked top to bottom. Daytime performances run 1–7 PM, all ages, closed out by Alise King. Then the After Party takes the stage at 10 PM, hosted by Monica Devereaux.
+          <p className="text-lg text-pride-muted max-w-2xl mb-6">
+            Pontiac's first Pride, stacked top to bottom. The day opened at noon with a community commencement &mdash; local politicians, organizations, and a special Michigan Legislature tribute presented by Rep. Brenda Carter. Performances ran 1–7 PM, all ages, closed out by Alise King. The After Party took the stage at 10 PM, hosted by Monica Devereaux, running until close at 2 AM.
+          </p>
+          <p className="text-sm text-pride-muted/80 max-w-2xl">
+            Held across The Crofoot's Pike Room (main stage), Vernors Room (bar), Café (health resources by day, VIP lounge by night), and Patio (courtyard social hub).
           </p>
         </div>
 
@@ -78,12 +81,12 @@ export function Performers() {
 
         {/* Stage Info */}
         <section className="bg-pride-white border border-pride-black/10 p-10">
-          <h3 className="font-serif font-bold text-2xl mb-4">Stage Requirements & Info</h3>
+          <h3 className="font-serif font-bold text-2xl mb-4">Thank You to Our Performers</h3>
           <p className="text-pride-ink/80 leading-relaxed mb-4">
-            All performers are compensated for their time and talent. Curated by Unorthodox Drag, our lineup uplifts the LGBTQ+ community and creates inclusive spaces.
+            Every performer above was compensated for their time and talent. Curated by Unorthodox Drag, this lineup uplifted the LGBTQ+ community and made Pontiac's first Pride one to remember.
           </p>
           <p className="text-pride-ink/80 leading-relaxed">
-            Booking inquiries for future events can be sent to{" "}
+            Booking inquiries for 2027 or other events can be sent to{" "}
             <a href="mailto:bookings@unorthodoxdragshow.com?subject=Performer%20Booking" className="font-bold underline hover:text-pride-violet transition-colors">
               bookings@unorthodoxdragshow.com
             </a>.

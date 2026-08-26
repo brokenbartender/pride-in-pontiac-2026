@@ -2,10 +2,8 @@ import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Calendar, Heart, CheckCircle } from "lucide-react";
 import { PrideStripe } from "../components/PrideStripe";
-import { CountdownTimer } from "../components/CountdownTimer";
 import { Sparkles } from "../components/Sparkles";
 import { ConfirmedPartners } from "../components/ConfirmedPartners";
-import { EVENTBRITE_URL } from "../lib/eventLinks";
 
 export function Home() {
   return (
@@ -14,9 +12,9 @@ export function Home() {
       <section className="relative w-full overflow-hidden bg-pride-black text-pride-white min-h-[90vh] flex flex-col justify-center px-6 lg:px-12 py-20">
         <PrideStripe className="absolute right-0 top-0 bottom-0 w-2 md:w-3" orientation="vertical" />
         <Sparkles count={25} colors={["#C8922A", "#FFF", "#FFD700", "#FFED00"]} />
-        
+
         <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col items-start gap-8">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -26,71 +24,73 @@ export function Home() {
             <div className="w-8 md:w-12 h-px bg-pride-gold opacity-60"></div>
           </motion.div>
 
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
             className="font-serif leading-[1] tracking-tighter"
           >
-            <span className="font-black text-rainbow text-7xl sm:text-8xl md:text-9xl block pb-2">Pride</span>
+            <span className="font-black text-rainbow text-7xl sm:text-8xl md:text-9xl block pb-2">Thank You,</span>
             <div className="flex items-center gap-3 md:gap-5 mt-2 flex-wrap">
-              <span className="font-light text-4xl sm:text-5xl md:text-6xl text-pride-white/70">in</span> 
-              <em className="font-bold text-pride-white text-6xl sm:text-7xl md:text-[100px]">Pontiac</em>
+              <em className="font-bold text-pride-white text-6xl sm:text-7xl md:text-[100px]">Pontiac.</em>
             </div>
           </motion.h1>
 
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.4 }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="inline-flex items-center gap-3 border border-pride-gold/40 px-4 py-2 mt-2"
           >
-            <CountdownTimer targetDate="2026-08-14T12:00:00-04:00" />
+            <span className="w-1.5 h-1.5 rounded-full bg-pride-gold animate-pulse"></span>
+            <span className="font-mono text-xs md:text-sm tracking-[0.15em] uppercase text-pride-gold-light">
+              Pride in Pontiac 2027 &middot; Date Coming Soon
+            </span>
           </motion.div>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="font-sans font-light text-pride-white/60 text-lg md:text-xl max-w-[500px] leading-relaxed mt-4"
+            className="font-sans font-light text-pride-white/60 text-lg md:text-xl max-w-[560px] leading-relaxed mt-4"
           >
-            Michigan's newest LGBTQ+ Pride celebration. <br />
-            August 14, 2026 &middot; <a href="https://thecrofoot.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-pride-gold transition-colors pointer-events-auto">The Crofoot</a>, Pontiac MI. <br />
+            On August 14, 2026, Pontiac held its first-ever Pride celebration at <a href="https://thecrofoot.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-pride-gold transition-colors pointer-events-auto">The Crofoot</a> &mdash; roughly 400 people through the day and another 90 at the After Party. <br />
             <span className="text-pride-white font-medium">Still Here. Still Proud.</span>
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
             className="flex flex-col sm:flex-row gap-4 mt-8"
           >
-            <a href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer" className="bg-pride-gold text-pride-black px-8 py-4 font-sans font-semibold text-sm hover:bg-pride-white transition-colors flex items-center justify-center gap-2 group shadow-xl">
-              Get Tickets <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-            <Link to="/sponsors" className="bg-pride-white/10 text-pride-white border border-pride-white/20 px-8 py-4 font-sans font-medium text-sm hover:bg-pride-white hover:text-pride-black transition-colors flex items-center justify-center gap-2">
-              Become a Sponsor
+            <Link to="/performers" className="bg-pride-gold text-pride-black px-8 py-4 font-sans font-semibold text-sm hover:bg-pride-white transition-colors flex items-center justify-center gap-2 group shadow-xl">
+              Relive the Lineup <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link to="/get-involved" className="bg-pride-white/10 text-pride-white border border-pride-white/20 px-8 py-4 font-sans font-medium text-sm hover:bg-pride-white hover:text-pride-black transition-colors flex items-center justify-center gap-2">
+              Get on the List for 2027
             </Link>
           </motion.div>
         </div>
 
         {/* Info Bar at Bottom of Hero */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
           className="absolute bottom-0 left-0 w-full max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 bg-pride-black/40 border-t border-pride-white/10 backdrop-blur-md"
         >
           <div className="py-6 border-b md:border-b-0 md:border-r border-pride-white/10">
-            <span className="block text-pride-gold font-mono text-[9px] tracking-widest uppercase mb-1">Date</span>
-            <span className="text-pride-white font-medium text-[15px]">August 14, 2026</span>
+            <span className="block text-pride-gold font-mono text-[9px] tracking-widest uppercase mb-1">Daytime Attendance</span>
+            <span className="text-pride-white font-medium text-[15px]">~400 people</span>
           </div>
           <div className="py-6 border-b md:border-b-0 md:border-r border-pride-white/10 md:px-6">
-            <span className="block text-pride-gold font-mono text-[9px] tracking-widest uppercase mb-1">Venue</span>
-            <span className="text-pride-white font-medium text-[15px]"><a href="https://thecrofoot.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-pride-gold transition-colors">The Crofoot</a> <span className="opacity-50">&middot; Pontiac, MI</span></span>
+            <span className="block text-pride-gold font-mono text-[9px] tracking-widest uppercase mb-1">After Party</span>
+            <span className="text-pride-white font-medium text-[15px]">~90 people</span>
           </div>
           <div className="py-6 md:px-6">
-            <span className="block text-pride-gold font-mono text-[9px] tracking-widest uppercase mb-1">Organizers</span>
-            <span className="text-pride-white font-medium text-[15px]">Broken Arrow Ent. &times; Unorthodox Drag</span>
+            <span className="block text-pride-gold font-mono text-[9px] tracking-widest uppercase mb-1">Venue</span>
+            <span className="text-pride-white font-medium text-[15px]"><a href="https://thecrofoot.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-pride-gold transition-colors">The Crofoot</a> <span className="opacity-50">&middot; Pontiac, MI</span></span>
           </div>
         </motion.div>
       </section>
@@ -163,24 +163,24 @@ export function Home() {
         </div>
       </section>
 
-      {/* The Event Teaser */}
+      {/* The Event Recap */}
       <section className="bg-pride-violet text-pride-white py-32 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-16">
           <div className="md:w-1/2">
              <div className="flex items-center gap-4 mb-10">
-               <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-pride-gold-light">The Solution</span>
+               <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-pride-gold-light">What Happened</span>
                <div className="flex-1 h-px bg-pride-white/20"></div>
              </div>
-             
+
              <h2 className="font-serif font-black text-4xl md:text-5xl lg:text-[64px] leading-tight mb-8">
                A Full Day of <br />Pride in Pontiac
              </h2>
              <p className="text-lg text-pride-white/80 leading-relaxed mb-10 max-w-xl">
-               A day-and-night LGBTQ+ Pride celebration designed from day one as an annual Pontiac tradition. Hosted at <a href="https://thecrofoot.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-pride-gold transition-colors">The Crofoot</a>, Pontiac's anchor entertainment complex.
+               A day-and-night LGBTQ+ Pride celebration, hosted at <a href="https://thecrofoot.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-pride-gold transition-colors">The Crofoot</a>, Pontiac's anchor entertainment complex &mdash; and the first of what's now an annual tradition.
              </p>
 
-             <Link to="/schedule" className="w-fit bg-pride-gold text-pride-black px-8 py-3 font-sans font-semibold text-sm hover:bg-pride-white transition-colors flex items-center gap-3">
-               View Schedule & Venues <ArrowRight size={16} />
+             <Link to="/performers" className="w-fit bg-pride-gold text-pride-black px-8 py-3 font-sans font-semibold text-sm hover:bg-pride-white transition-colors flex items-center gap-3">
+               See the Full Lineup <ArrowRight size={16} />
              </Link>
           </div>
 
@@ -188,12 +188,12 @@ export function Home() {
             <div className="bg-pride-white/5 border border-pride-white/10 p-8 hover:bg-pride-white/10 transition-colors">
               <span className="inline-block px-3 py-1 bg-pride-gold text-pride-black font-mono text-[9px] uppercase tracking-widest font-bold mb-4">Daytime &middot; All Ages</span>
               <h3 className="font-serif font-bold text-2xl mb-3">Celebration & Community</h3>
-              <p className="text-pride-white/70 text-sm leading-relaxed mb-4">Live drag performances through 7 PM, closed out by Alise King, vendor marketplace featuring LGBTQ+ businesses, rapid testing & health resources, and a massive outdoor courtyard social hub.</p>
+              <p className="text-pride-white/70 text-sm leading-relaxed mb-4">Live drag performances through 7 PM, closed out by Alise King, a vendor marketplace of LGBTQ+ businesses, rapid testing & health resources, and a packed outdoor courtyard social hub.</p>
             </div>
             <div className="bg-pride-white/5 border border-pride-white/10 p-8 hover:bg-pride-white/10 transition-colors">
               <span className="inline-block px-3 py-1 bg-pride-gold text-pride-black font-mono text-[9px] uppercase tracking-widest font-bold mb-4">After Party &middot; 18+</span>
               <h3 className="font-serif font-bold text-2xl mb-3">Closing the Night</h3>
-              <p className="text-pride-white/70 text-sm leading-relaxed mb-4">Doors at 9 PM, show at 10 PM. Unorthodox Drag's full roster, hosted by Monica Devereaux. Full DJ sets, VIP lounge, reserved seating, and an unforgettable celebration running until 2 AM.</p>
+              <p className="text-pride-white/70 text-sm leading-relaxed mb-4">Doors at 9 PM, show at 10 PM. Unorthodox Drag's full roster, hosted by Monica Devereaux. DJ sets, VIP lounge, and a celebration that ran until 2 AM.</p>
             </div>
           </div>
         </div>
@@ -202,17 +202,17 @@ export function Home() {
       {/* Call to Actions */}
       <section className="py-32 px-6">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="font-serif font-black text-4xl md:text-6xl mb-12">How You Can Help</h2>
-          
+          <h2 className="font-serif font-black text-4xl md:text-6xl mb-12">Keep Pride Going</h2>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
             <Link to="/sponsors" className="group block bg-pride-white p-10 border border-pride-black/10 hover:border-pride-gold hover:shadow-xl transition-all">
               <div className="w-12 h-12 bg-pride-cream rounded-full flex items-center justify-center text-pride-gold mb-6 group-hover:scale-110 transition-transform">
                 <Heart size={24} />
               </div>
-              <h3 className="font-serif font-bold text-2xl mb-3">Sponsor the Event</h3>
-              <p className="text-sm text-pride-muted leading-relaxed mb-6">Invest in the community with full promotional runway exposure starting today. View our transparent budget & sponsor deck.</p>
+              <h3 className="font-serif font-bold text-2xl mb-3">Thank Our Sponsors</h3>
+              <p className="text-sm text-pride-muted leading-relaxed mb-6">See who invested in Pontiac's first Pride, and how to get in early on 2027.</p>
               <span className="font-mono text-xs text-pride-black uppercase tracking-widest flex items-center gap-2 font-bold group-hover:text-pride-gold transition-colors">
-                View Deck <ArrowRight size={14} />
+                View Sponsors <ArrowRight size={14} />
               </span>
             </Link>
 
@@ -220,10 +220,10 @@ export function Home() {
 <div className="w-12 h-12 bg-pride-cream rounded-full flex items-center justify-center text-pride-teal mb-6 group-hover:scale-110 transition-transform">
                 <MapPin size={24} />
               </div>
-              <h3 className="font-serif font-bold text-2xl mb-3">Become a Vendor</h3>
-              <p className="text-sm text-pride-muted leading-relaxed mb-6">Are you an LGBTQ+ owned business, artisan, or community resource? Secure a space in our daytime marketplace.</p>
+              <h3 className="font-serif font-bold text-2xl mb-3">Our Vendors</h3>
+              <p className="text-sm text-pride-muted leading-relaxed mb-6">Thank you to the LGBTQ+-owned businesses and artisans who filled the marketplace.</p>
               <span className="font-mono text-xs text-pride-black uppercase tracking-widest flex items-center gap-2 font-bold group-hover:text-pride-teal transition-colors">
-                Apply to Vend <ArrowRight size={14} />
+                See Vendors <ArrowRight size={14} />
               </span>
             </Link>
 
@@ -231,11 +231,11 @@ export function Home() {
               <div className="w-12 h-12 bg-pride-white/10 rounded-full flex items-center justify-center text-pride-gold mb-6 relative z-10">
                 <Calendar size={24} />
               </div>
-              <h3 className="font-serif font-bold text-2xl mb-3 relative z-10">Attend Pride</h3>
-              <p className="text-sm text-pride-white/60 leading-relaxed mb-8 relative z-10">GA starts at $20 (BOGO available). VIP packages available with reserved seating & meet and greets. Secure your spot at Pontiac's first pride.</p>
-              <button className="bg-pride-gold text-pride-black px-6 py-3 font-sans font-medium text-sm w-full relative z-10 hover:bg-pride-white transition-colors text-center shadow-lg">
-                Buy Tickets Now
-              </button>
+              <h3 className="font-serif font-bold text-2xl mb-3 relative z-10">Pride in Pontiac 2027</h3>
+              <p className="text-sm text-pride-white/60 leading-relaxed mb-8 relative z-10">We're doing it again. Date's not locked yet, but get on the list to hear first.</p>
+              <Link to="/get-involved" className="bg-pride-gold text-pride-black px-6 py-3 font-sans font-medium text-sm w-full relative z-10 hover:bg-pride-white transition-colors text-center shadow-lg block">
+                Get On the List
+              </Link>
             </div>
           </div>
         </div>
@@ -245,7 +245,7 @@ export function Home() {
       <section className="bg-pride-black text-pride-white py-24 px-6 border-y border-pride-black/10">
         <div className="max-w-6xl mx-auto text-center">
           <span className="font-mono text-xs tracking-widest uppercase text-pride-gold mb-4 block">Community Backed</span>
-          <h2 className="font-serif font-black text-3xl md:text-4xl mb-14">Proudly Backed By</h2>
+          <h2 className="font-serif font-black text-3xl md:text-4xl mb-14">Thank You to Our 2026 Partners</h2>
           <ConfirmedPartners theme="dark" />
         </div>
       </section>

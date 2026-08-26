@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Ticket, HeartHandshake, Building2, Gift } from "lucide-react";
+import { ArrowRight, Mic2, HeartHandshake, Building2, Gift } from "lucide-react";
 import { PrideStripe } from "../components/PrideStripe";
-import { EVENTBRITE_URL } from "../lib/eventLinks";
 
 export function About() {
   return (
@@ -96,26 +95,26 @@ export function About() {
             <div className="w-12 h-px bg-pride-white/20"></div>
           </div>
 
-          <h2 className="font-serif font-black text-4xl md:text-6xl mb-6">Stand with Pontiac.</h2>
+          <h2 className="font-serif font-black text-4xl md:text-6xl mb-6">Still Standing with Pontiac.</h2>
           <p className="text-lg text-pride-white/90 max-w-2xl mx-auto leading-relaxed mb-16">
-            This event runs because people show up for it — as attendees, volunteers, vendors, sponsors, and donors. However you want in, here's your next step.
+            Pride in Pontiac 2026 happened because people showed up for it — as attendees, volunteers, vendors, sponsors, and donors. We're already building 2027. However you want in, here's your next step.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-left">
-            <a href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer" className="group bg-pride-black/20 hover:bg-pride-black/30 border border-pride-white/10 p-6 transition-colors flex flex-col gap-4">
-              <Ticket size={22} className="text-pride-gold-light" />
+            <Link to="/performers" className="group bg-pride-black/20 hover:bg-pride-black/30 border border-pride-white/10 p-6 transition-colors flex flex-col gap-4">
+              <Mic2 size={22} className="text-pride-gold-light" />
               <div>
-                <h3 className="font-serif font-bold text-lg mb-1">Get Tickets</h3>
-                <p className="text-sm text-pride-white/70">Secure your spot at Pontiac's first Pride.</p>
+                <h3 className="font-serif font-bold text-lg mb-1">Relive the Lineup</h3>
+                <p className="text-sm text-pride-white/70">See who performed at Pontiac's first Pride.</p>
               </div>
-              <span className="mt-auto font-mono text-[10px] uppercase tracking-widest text-pride-gold-light flex items-center gap-2 group-hover:gap-3 transition-all">Buy Now <ArrowRight size={12} /></span>
-            </a>
+              <span className="mt-auto font-mono text-[10px] uppercase tracking-widest text-pride-gold-light flex items-center gap-2 group-hover:gap-3 transition-all">View Lineup <ArrowRight size={12} /></span>
+            </Link>
 
             <Link to="/volunteers" className="group bg-pride-black/20 hover:bg-pride-black/30 border border-pride-white/10 p-6 transition-colors flex flex-col gap-4">
               <HeartHandshake size={22} className="text-pride-gold-light" />
               <div>
-                <h3 className="font-serif font-bold text-lg mb-1">Volunteer</h3>
-                <p className="text-sm text-pride-white/70">Help us run a safe, accessible event.</p>
+                <h3 className="font-serif font-bold text-lg mb-1">Volunteer in 2027</h3>
+                <p className="text-sm text-pride-white/70">Get on the list for next year's event.</p>
               </div>
               <span className="mt-auto font-mono text-[10px] uppercase tracking-widest text-pride-gold-light flex items-center gap-2 group-hover:gap-3 transition-all">Sign Up <ArrowRight size={12} /></span>
             </Link>
@@ -123,17 +122,17 @@ export function About() {
             <Link to="/sponsors" className="group bg-pride-black/20 hover:bg-pride-black/30 border border-pride-white/10 p-6 transition-colors flex flex-col gap-4">
               <Building2 size={22} className="text-pride-gold-light" />
               <div>
-                <h3 className="font-serif font-bold text-lg mb-1">Sponsor</h3>
-                <p className="text-sm text-pride-white/70">Put your brand behind the community.</p>
+                <h3 className="font-serif font-bold text-lg mb-1">Sponsor 2027</h3>
+                <p className="text-sm text-pride-white/70">Put your brand behind the community, early.</p>
               </div>
-              <span className="mt-auto font-mono text-[10px] uppercase tracking-widest text-pride-gold-light flex items-center gap-2 group-hover:gap-3 transition-all">View Tiers <ArrowRight size={12} /></span>
+              <span className="mt-auto font-mono text-[10px] uppercase tracking-widest text-pride-gold-light flex items-center gap-2 group-hover:gap-3 transition-all">Learn More <ArrowRight size={12} /></span>
             </Link>
 
             <Link to="/donate" className="group bg-pride-black/20 hover:bg-pride-black/30 border border-pride-white/10 p-6 transition-colors flex flex-col gap-4">
               <Gift size={22} className="text-pride-gold-light" />
               <div>
                 <h3 className="font-serif font-bold text-lg mb-1">Donate</h3>
-                <p className="text-sm text-pride-white/70">Every dollar closes the gap to the finish line.</p>
+                <p className="text-sm text-pride-white/70">Every dollar helps fund next year's event.</p>
               </div>
               <span className="mt-auto font-mono text-[10px] uppercase tracking-widest text-pride-gold-light flex items-center gap-2 group-hover:gap-3 transition-all">Give Now <ArrowRight size={12} /></span>
             </Link>

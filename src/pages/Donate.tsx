@@ -5,16 +5,16 @@ export function Donate() {
   return (
     <div className="bg-pride-black text-pride-white min-h-screen py-24 px-6 relative overflow-hidden">
       <div className="max-w-4xl mx-auto relative z-10">
-        <h1 className="font-serif font-black text-5xl md:text-7xl mb-6 text-rainbow block w-fit">Support Pride.</h1>
+        <h1 className="font-serif font-black text-5xl md:text-7xl mb-6 text-rainbow block w-fit">Fund 2027.</h1>
         <p className="text-xl text-pride-white/80 mb-12 max-w-2xl">
-          Your donation keeps Pride accessible, funds safety programs, and ensures our artists are paid fairly. Every dollar stays local.
+          Pride in Pontiac 2026 happened because people like you closed the funding gap. Your donation keeps next year's Pride accessible, funds safety programs, and ensures our artists are paid fairly. Every dollar stays local.
         </p>
 
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           <div className="bg-pride-white/10 border border-pride-white/20 p-8 hover:bg-pride-white/15 transition-colors">
             <h3 className="font-serif font-bold text-2xl mb-4">One-Time Donation</h3>
             <p className="text-pride-white/70 mb-6 font-sans text-sm">
-              Make a direct impact today. Help us lock down essential logistics and infrastructure.
+              Make a direct impact today. Help us lock down essential logistics and infrastructure for 2027.
             </p>
             <a
               href={DONATE_ONCE_URL}
@@ -31,7 +31,7 @@ export function Donate() {
             </div>
             <h3 className="font-serif font-bold text-2xl mb-4">Monthly Partner</h3>
             <p className="text-pride-white/70 mb-6 font-sans text-sm">
-              Become a monthly sustainer to help us plan year-round community events.
+              Become a monthly sustainer to help us plan year-round community events on the way to 2027.
             </p>
             <a
               href={DONATE_MONTHLY_URL}
