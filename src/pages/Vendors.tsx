@@ -13,9 +13,11 @@ export function Vendors() {
           <Store className="text-pride-teal w-12 h-12" />
           Thank You, Vendors
         </h1>
-        <p className="text-lg text-pride-muted mb-12 max-w-2xl">
+        <p className="text-lg text-pride-muted mb-8 max-w-2xl">
           The outdoor marketplace at Pride in Pontiac 2026 was filled with LGBTQ+-owned businesses, food trucks, and community organizations. Thank you for showing up and showing out.
         </p>
+
+        <img src="/images/events/vendor-bnektar-product.jpg" alt="B. Nektar Meadery's alcohol-free Sober craft mocktail cans on ice at their Pride in Pontiac marketplace booth" className="w-full h-72 object-cover rounded-sm shadow-lg mb-12" />
 
         <div className="space-y-8 mb-4">
           <div>

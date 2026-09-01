@@ -95,6 +95,41 @@ export function Home() {
         </motion.div>
       </section>
 
+      {/* State Tribute */}
+      <section id="tribute" className="bg-pride-ink text-pride-white py-32 px-6 border-b border-pride-white/10">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center gap-4 mb-10">
+            <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-pride-gold-light">A Historic First</span>
+            <div className="flex-1 h-px bg-pride-white/20"></div>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-16 mb-16">
+            <div className="md:w-1/2">
+              <h2 className="font-serif font-black text-4xl md:text-5xl lg:text-6xl leading-tight mb-8">
+                Recognized by the<br />State of Michigan.
+              </h2>
+              <p className="text-lg text-pride-white/80 leading-relaxed mb-6 max-w-xl">
+                Pride in Pontiac received two Special Tribute proclamations at the inaugural event &mdash; one from the Michigan LGBTQ+ Legislative Caucus, one from state House and Senate leadership &mdash; both signed by Governor Gretchen Whitmer, Lt. Governor Garlin Gilchrist II, State Senate President Pro Tempore Jeremy Moss, and State Representative Brenda Carter, recognizing the city's first-ever grassroots LGBTQ+ Pride celebration.
+              </p>
+              <p className="text-pride-white/60 leading-relaxed max-w-xl mb-8">
+                Presented live during the day's community commencement, in front of the crowd that made it real.
+              </p>
+              <Link to="/about" className="w-fit bg-pride-gold text-pride-black px-8 py-3 font-sans font-semibold text-sm hover:bg-pride-white transition-colors flex items-center gap-3">
+                Read the Full Story <ArrowRight size={16} />
+              </Link>
+            </div>
+            <div className="md:w-1/2 grid grid-cols-2 gap-4">
+              <img src="/images/events/tribute-caucus.jpg" alt="Michigan LGBTQ+ Legislative Caucus Special Tribute to Pride in Pontiac, signed by Governor Whitmer and state legislators" className="w-full h-full object-cover rounded-sm shadow-2xl border border-pride-white/10" />
+              <img src="/images/events/tribute-legislature.jpg" alt="Michigan House and Senate Special Tribute to Pride in Pontiac, signed by Governor Whitmer, Lt. Governor Gilchrist, and Rep. Brenda Carter" className="w-full h-full object-cover rounded-sm shadow-2xl border border-pride-white/10" />
+            </div>
+          </div>
+
+          <div className="rounded-sm overflow-hidden border border-pride-white/10 shadow-2xl">
+            <img src="/images/events/tribute-group-photo.jpg" alt="Rep. Brenda Carter presenting the State of Michigan Special Tribute to Pride in Pontiac organizers" className="w-full max-h-[600px] object-cover object-top" />
+          </div>
+        </div>
+      </section>
+
       {/* Corporate / Venue Partnership Callout */}
       <section className="bg-pride-white py-24 px-6 border-b border-pride-black/5">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
@@ -184,17 +219,11 @@ export function Home() {
              </Link>
           </div>
 
-          <div className="md:w-5/12 grid grid-cols-1 gap-4">
-            <div className="bg-pride-white/5 border border-pride-white/10 p-8 hover:bg-pride-white/10 transition-colors">
-              <span className="inline-block px-3 py-1 bg-pride-gold text-pride-black font-mono text-[9px] uppercase tracking-widest font-bold mb-4">Daytime &middot; All Ages</span>
-              <h3 className="font-serif font-bold text-2xl mb-3">Celebration & Community</h3>
-              <p className="text-pride-white/70 text-sm leading-relaxed mb-4">Live drag performances through 7 PM, closed out by Alise King, a vendor marketplace of LGBTQ+ businesses, rapid testing & health resources, and a packed outdoor courtyard social hub.</p>
-            </div>
-            <div className="bg-pride-white/5 border border-pride-white/10 p-8 hover:bg-pride-white/10 transition-colors">
-              <span className="inline-block px-3 py-1 bg-pride-gold text-pride-black font-mono text-[9px] uppercase tracking-widest font-bold mb-4">After Party &middot; 18+</span>
-              <h3 className="font-serif font-bold text-2xl mb-3">Closing the Night</h3>
-              <p className="text-pride-white/70 text-sm leading-relaxed mb-4">Doors at 9 PM, show at 10 PM. Unorthodox Drag's full roster, hosted by Monica Devereaux. DJ sets, VIP lounge, and a celebration that ran until 2 AM.</p>
-            </div>
+          <div className="md:w-5/12 grid grid-cols-2 gap-4">
+            <img src="/images/events/atmosphere-01.jpg" alt="Crowd at Pride in Pontiac 2026 watching a drag performance" className="w-full h-full object-cover rounded-sm shadow-xl" />
+            <img src="/images/events/performer-01.jpg" alt="A drag performer on stage at Pride in Pontiac 2026" className="w-full h-full object-cover rounded-sm shadow-xl" />
+            <img src="/images/events/performer-03.jpg" alt="A drag performer at Pride in Pontiac 2026" className="w-full h-full object-cover rounded-sm shadow-xl" />
+            <img src="/images/events/atmosphere-02.jpg" alt="Attendees celebrating at Pride in Pontiac 2026" className="w-full h-full object-cover rounded-sm shadow-xl" />
           </div>
         </div>
       </section>

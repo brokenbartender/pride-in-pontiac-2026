@@ -37,15 +37,22 @@ export function Layout() {
   const [isOpen, setIsOpen] = useState(false);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const [mobileGroup, setMobileGroup] = useState<string | null>(null);
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Close mobile menu on route change
+  // Close mobile menu on route change; scroll to a #hash target if present, else top
   useEffect(() => {
     setIsOpen(false);
     setMobileGroup(null);
+    if (hash) {
+      const el = document.getElementById(hash.slice(1));
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+    }
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, hash]);
 
   const openDesktopGroup = (label: string) => {
     if (closeTimer.current) clearTimeout(closeTimer.current);

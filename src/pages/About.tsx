@@ -84,6 +84,20 @@ export function About() {
             "For decades Pontiac had its own queer bars and gathering spaces. They are gone. We are restoring what was lost. We are not pitching a dream. We are executing an event that is ready to run."
           </p>
         </blockquote>
+
+        {/* State Tribute */}
+        <div className="mt-16 max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10 bg-pride-white border border-pride-black/10 p-10 shadow-sm">
+          <img src="/images/events/tribute-group-photo.jpg" alt="Rep. Brenda Carter presenting the State of Michigan Special Tribute to Pride in Pontiac organizers" className="w-full md:w-2/5 rounded-sm shadow-lg object-cover max-h-[360px]" />
+          <div className="md:w-3/5">
+            <span className="font-mono text-[10px] tracking-widest uppercase text-pride-gold mb-3 block">State Recognition</span>
+            <p className="text-pride-ink/80 leading-relaxed mb-4">
+              The State of Michigan issued two Special Tribute proclamations recognizing Pride in Pontiac as "the city's first-ever grassroots LGBTQ+ Pride celebration" &mdash; signed by Governor Gretchen Whitmer, Lt. Governor Garlin Gilchrist II, State Senate President Pro Tempore Jeremy Moss, and State Representative Brenda Carter, presented live at the commencement.
+            </p>
+            <Link to="/#tribute" className="text-sm font-bold uppercase tracking-widest text-pride-ink hover:text-pride-gold transition-colors flex items-center gap-2">
+              See the Full Tribute <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
       </section>
 
       {/* Stand with Pontiac — multi-path CTA */}

@@ -46,6 +46,20 @@ export function Sponsors() {
         </div>
       </section>
 
+      {/* Sponsor Spotlight */}
+      <section className="bg-pride-white py-20 px-6 border-b border-pride-black/10">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
+          <img src="/images/events/vendor-bnektar.jpg" alt="B. Nektar Meadery pouring their alcohol-free Sober craft mocktail line at their Pride in Pontiac booth" className="w-full md:w-1/2 rounded-sm shadow-xl object-cover max-h-[500px]" />
+          <div className="md:w-1/2">
+            <span className="font-mono text-xs tracking-widest uppercase text-pride-gold mb-4 block">Gold Sponsor Spotlight</span>
+            <h3 className="font-serif font-black text-3xl mb-4">B. Nektar Meadery</h3>
+            <p className="text-pride-muted leading-relaxed">
+              One of our Gold sponsors, pouring their alcohol-free "Sober" craft mocktail line at the daytime marketplace &mdash; exactly the kind of local, hands-on partnership that made this event work.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* 2027 Soft CTA */}
       <section className="py-24 px-6 max-w-4xl mx-auto text-center">
         <h2 className="font-serif font-black text-4xl md:text-5xl mb-6">Sponsoring in 2027?</h2>

@@ -40,6 +40,15 @@ export function Performers() {
           </p>
         </div>
 
+        {/* Commencement Photos */}
+        <section className="mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <img src="/images/events/commencement-01.jpg" alt="A community leader celebrating during the Pride in Pontiac commencement" className="w-full h-64 object-cover rounded-sm shadow-lg" />
+            <img src="/images/events/commencement-02.jpg" alt="A speaker addressing the crowd during the Pride in Pontiac commencement" className="w-full h-64 object-cover rounded-sm shadow-lg" />
+            <img src="/images/events/commencement-03.jpg" alt="A community organization representative speaking at Pride in Pontiac" className="w-full h-64 object-cover rounded-sm shadow-lg" />
+          </div>
+        </section>
+
         {/* Daytime Lineup */}
         <section className="mb-12">
           <div className="flex items-center gap-4 mb-8">
@@ -77,6 +86,23 @@ export function Performers() {
               ))}
             </div>
           </div>
+        </section>
+
+        {/* Moments from the Lineup */}
+        <section className="mb-12">
+          <div className="flex items-center gap-4 mb-8">
+            <Mic2 className="text-pride-violet" size={24} />
+            <h2 className="font-serif font-black text-3xl md:text-4xl">Moments from the Lineup</h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <img src="/images/events/performer-01.jpg" alt="A drag performer on stage at Pride in Pontiac 2026" className="w-full h-72 object-cover object-top rounded-sm shadow-lg" />
+            <img src="/images/events/performer-02.jpg" alt="A drag performer on stage at Pride in Pontiac 2026" className="w-full h-72 object-cover object-top rounded-sm shadow-lg" />
+            <img src="/images/events/performer-03.jpg" alt="A drag performer on stage at Pride in Pontiac 2026" className="w-full h-72 object-cover object-top rounded-sm shadow-lg" />
+            <img src="/images/events/performer-04.jpg" alt="A drag performer singing on stage at Pride in Pontiac 2026" className="w-full h-72 object-cover object-top rounded-sm shadow-lg" />
+            <img src="/images/events/performer-05.jpg" alt="A drag performer on stage at Pride in Pontiac 2026" className="w-full h-72 object-cover object-top rounded-sm shadow-lg" />
+            <img src="/images/events/performer-06.jpg" alt="A drag performer on stage at Pride in Pontiac 2026" className="w-full h-72 object-cover object-top rounded-sm shadow-lg" />
+          </div>
+          <p className="text-xs text-pride-muted mt-4">Performer names to be added to individual photos soon.</p>
         </section>
 
         {/* Stage Info */}
