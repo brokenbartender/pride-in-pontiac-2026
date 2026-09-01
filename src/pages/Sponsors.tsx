@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles as SparklesIcon } from "lucide-react";
 import { GenderqueerStripe } from "../components/GenderqueerStripe";
 import { motion } from "motion/react";
 import { Sparkles } from "../components/Sparkles";
@@ -56,6 +56,57 @@ export function Sponsors() {
             <p className="text-pride-muted leading-relaxed">
               One of our Gold sponsors, pouring their alcohol-free "Sober" craft mocktail line at the daytime marketplace &mdash; exactly the kind of local, hands-on partnership that made this event work.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* KimChi Chic Beauty Spotlight */}
+      <section className="bg-pride-ink text-pride-white py-24 px-6 border-b border-pride-black/10">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-12 mb-12">
+            <div className="w-full md:w-1/3 flex justify-center">
+              <img src="/images/sponsors/kimchi-chic.png" alt="KimChi Chic Beauty logo" className="w-48 md:w-full max-w-[220px] object-contain" />
+            </div>
+            <div className="md:w-2/3">
+              <span className="font-mono text-xs tracking-widest uppercase text-pride-gold-light mb-4 flex items-center gap-2">
+                <SparklesIcon size={14} /> Official Backstage Glam Partner
+              </span>
+              <h3 className="font-serif font-black text-3xl md:text-4xl mb-4">A Special Thanks to KimChi Chic Beauty</h3>
+              <p className="text-pride-white/70 leading-relaxed mb-6">
+                KimChi Chic Beauty stocked our entire backstage vanity and sent every performer home with product &mdash; the kind of in-kind support that keeps a stage running and a lineup looking flawless.
+              </p>
+              <a
+                href="https://kimchichicbeauty.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-pride-gold-light hover:text-pride-white transition-colors"
+              >
+                Visit KimChi Chic Beauty <ArrowRight size={16} />
+              </a>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-pride-white/10">
+            <div>
+              <h4 className="font-mono text-[10px] uppercase tracking-widest text-pride-white/50 mb-4">Backstage Vanity &middot; ~49 Pieces</h4>
+              <ul className="space-y-2 text-sm text-pride-white/80">
+                <li className="flex justify-between border-b border-pride-white/5 pb-2"><span>That White Powder</span><span className="text-pride-white/50">6</span></li>
+                <li className="flex justify-between border-b border-pride-white/5 pb-2"><span>Stage Proof Matte Setting Spray</span><span className="text-pride-white/50">8</span></li>
+                <li className="flex justify-between border-b border-pride-white/5 pb-2"><span>Stage Proof Liquid Liner, felt tip</span><span className="text-pride-white/50">8</span></li>
+                <li className="flex justify-between border-b border-pride-white/5 pb-2"><span>Undercover Hoe Corrector</span><span className="text-pride-white/50">6</span></li>
+                <li className="flex justify-between border-b border-pride-white/5 pb-2"><span>The Most Concealers, all shades</span><span className="text-pride-white/50">~6</span></li>
+                <li className="flex justify-between border-b border-pride-white/5 pb-2"><span>Puff Puff Pass, all shades</span><span className="text-pride-white/50">~9</span></li>
+                <li className="flex justify-between border-b border-pride-white/5 pb-2"><span>Glitter Sharts</span><span className="text-pride-white/50">~6</span></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-mono text-[10px] uppercase tracking-widest text-pride-white/50 mb-4">Take-Home & VIP Product</h4>
+              <ul className="space-y-2 text-sm text-pride-white/80">
+                <li className="flex justify-between border-b border-pride-white/5 pb-2"><span>Performer take-home lippies, assorted shades</span><span className="text-pride-white/50">40</span></li>
+                <li className="flex justify-between border-b border-pride-white/5 pb-2"><span>Mini setting sprays for VIP bags</span><span className="text-pride-white/50">60</span></li>
+                <li className="flex justify-between border-b border-pride-white/5 pb-2"><span>Super Bish Lash pairs, six styles</span><span className="text-pride-white/50">40</span></li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>

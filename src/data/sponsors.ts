@@ -4,6 +4,8 @@ export interface Sponsor {
   amount?: string;
   logo?: string;
   url?: string;
+  /** In-Kind only: overrides the section heading for this sponsor's group (e.g. "Official Backstage Glam Partner"). */
+  label?: string;
 }
 
 // Confirmed in Airtable Sponsor Pipeline (appK6kssWuF49FxwJ) as of 2026-07-27.
@@ -13,8 +15,8 @@ export const CONFIRMED_SPONSORS: Sponsor[] = [
   { name: "Weiss Distilling Co.", tier: "Gold", amount: "$2,000", logo: "/images/sponsors/weiss.png", url: "https://www.thewdc.com/" },
   { name: "B. Nektar Meadery", tier: "Gold", amount: "$1,700", logo: "/images/sponsors/b-nektar.jpg", url: "https://www.bnektar.com/" },
   { name: "HopCat Auburn Hills", tier: "Gold", amount: "$1,000", logo: "/images/sponsors/hopcat.png", url: "https://hopcat.com/locations/auburn-hills/" },
-  { name: "Joyology of Lake Orion", tier: "Silver", amount: "$1,500", logo: "/images/sponsors/joyology.png", url: "https://joyology.com/location/lake-orion/" },
-  { name: "The Crofoot", tier: "In-Kind", logo: "/images/sponsors/crofoot.jpg", url: "https://thecrofoot.com" },
+  { name: "The Crofoot", tier: "In-Kind", label: "Host Venue Partner", logo: "/images/sponsors/crofoot.jpg", url: "https://thecrofoot.com" },
+  { name: "KimChi Chic Beauty", tier: "In-Kind", label: "Official Backstage Glam Partner", logo: "/images/sponsors/kimchi-chic.png", url: "https://kimchichicbeauty.com" },
 ];
 
 export interface CommunityPartner {

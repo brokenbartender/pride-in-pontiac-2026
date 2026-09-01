@@ -62,6 +62,9 @@ export function ConfirmedPartners({ theme = "dark" }: { theme?: "dark" | "light"
   const gold = CONFIRMED_SPONSORS.filter((s) => s.tier === "Gold");
   const silver = CONFIRMED_SPONSORS.filter((s) => s.tier === "Silver");
   const inKind = CONFIRMED_SPONSORS.filter((s) => s.tier === "In-Kind");
+  const inKindGroups = Array.from(new Set(inKind.map((s) => s.label || "In-Kind Partner"))).map(
+    (label) => ({ label, sponsors: inKind.filter((s) => (s.label || "In-Kind Partner") === label) })
+  );
 
   return (
     <div>
@@ -87,16 +90,16 @@ export function ConfirmedPartners({ theme = "dark" }: { theme?: "dark" | "light"
         </div>
       )}
 
-      {inKind.length > 0 && (
-        <div className="mb-12">
-          <p className={`font-mono text-[10px] tracking-[0.2em] uppercase ${labelColor} text-center mb-8`}>Host Venue Partner</p>
+      {inKindGroups.map(({ label, sponsors }) => (
+        <div key={label} className="mb-12">
+          <p className={`font-mono text-[10px] tracking-[0.2em] uppercase ${labelColor} text-center mb-8`}>{label}</p>
           <div className="flex flex-wrap justify-center gap-x-10 gap-y-6">
-            {inKind.map((s) => (
+            {sponsors.map((s) => (
               <SponsorMark key={s.name} sponsor={s} size="md" textColor={textColor} theme={theme} />
             ))}
           </div>
         </div>
-      )}
+      ))}
 
       <div>
         <p className={`font-mono text-[10px] tracking-[0.2em] uppercase ${labelColor} text-center mb-6`}>Community & Media Partners</p>
