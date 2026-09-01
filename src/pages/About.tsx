@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Mic2, HeartHandshake, Building2, Gift } from "lucide-react";
 import { PrideStripe } from "../components/PrideStripe";
+import { Lightbox, LightboxTrigger } from "../components/Lightbox";
 
 export function About() {
+  const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null);
+
   return (
     <div className="bg-pride-cream text-pride-ink min-h-screen pb-32">
       {/* Header */}
@@ -87,11 +91,17 @@ export function About() {
 
         {/* State Tribute */}
         <div className="mt-16 max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10 bg-pride-white border border-pride-black/10 p-10 shadow-sm">
-          <img src="/images/events/tribute-group-photo.jpg" alt="Rep. Brenda Carter presenting the State of Michigan Special Tribute to Pride in Pontiac organizers" className="w-full md:w-2/5 rounded-sm shadow-lg object-cover max-h-[360px]" />
+          <LightboxTrigger
+            src="/images/events/tribute-group-photo.jpg"
+            alt="Rep. Brenda Carter presenting the State of Michigan Special Tribute to Pride in Pontiac organizers"
+            className="w-full md:w-2/5 rounded-sm shadow-lg h-[280px]"
+            imgClassName="object-top"
+            onOpen={(src, alt) => setLightboxImage({ src, alt })}
+          />
           <div className="md:w-3/5">
             <span className="font-mono text-[10px] tracking-widest uppercase text-pride-gold mb-3 block">State Recognition</span>
             <p className="text-pride-ink/80 leading-relaxed mb-4">
-              The State of Michigan issued two Special Tribute proclamations recognizing Pride in Pontiac as "the city's first-ever grassroots LGBTQ+ Pride celebration" &mdash; signed by Governor Gretchen Whitmer, Lt. Governor Garlin Gilchrist II, State Senate President Pro Tempore Jeremy Moss, and State Representative Brenda Carter, presented live at the commencement.
+              The State of Michigan issued three official recognitions of Pride in Pontiac 2026: two Special Tribute proclamations calling it "the city's first-ever grassroots LGBTQ+ Pride celebration," plus a personal welcome letter from the Governor's office &mdash; signed by Governor Gretchen Whitmer, Lt. Governor Garlin Gilchrist II, State Senate President Pro Tempore Jeremy Moss, and State Representative Brenda Carter, presented live at the commencement.
             </p>
             <Link to="/#tribute" className="text-sm font-bold uppercase tracking-widest text-pride-ink hover:text-pride-gold transition-colors flex items-center gap-2">
               See the Full Tribute <ArrowRight size={16} />
@@ -99,6 +109,8 @@ export function About() {
           </div>
         </div>
       </section>
+
+      <Lightbox image={lightboxImage} onClose={() => setLightboxImage(null)} />
 
       {/* Stand with Pontiac — multi-path CTA */}
       <section className="bg-pride-rose text-pride-white py-24 px-6 mt-12 w-full">

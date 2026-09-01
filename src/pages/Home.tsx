@@ -1,11 +1,16 @@
+import { useState } from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Calendar, Heart, CheckCircle } from "lucide-react";
 import { PrideStripe } from "../components/PrideStripe";
 import { Sparkles } from "../components/Sparkles";
 import { ConfirmedPartners } from "../components/ConfirmedPartners";
+import { Lightbox, LightboxTrigger } from "../components/Lightbox";
 
 export function Home() {
+  const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null);
+  const openLightbox = (src: string, alt: string) => setLightboxImage({ src, alt });
+
   return (
     <div className="bg-pride-cream text-pride-ink w-full">
       {/* Hero Section */}
@@ -103,32 +108,74 @@ export function Home() {
             <div className="flex-1 h-px bg-pride-white/20"></div>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-16 mb-16">
-            <div className="md:w-1/2">
-              <h2 className="font-serif font-black text-4xl md:text-5xl lg:text-6xl leading-tight mb-8">
-                Recognized by the<br />State of Michigan.
-              </h2>
-              <p className="text-lg text-pride-white/80 leading-relaxed mb-6 max-w-xl">
-                Pride in Pontiac received two Special Tribute proclamations at the inaugural event &mdash; one from the Michigan LGBTQ+ Legislative Caucus, one from state House and Senate leadership &mdash; both signed by Governor Gretchen Whitmer, Lt. Governor Garlin Gilchrist II, State Senate President Pro Tempore Jeremy Moss, and State Representative Brenda Carter, recognizing the city's first-ever grassroots LGBTQ+ Pride celebration.
-              </p>
-              <p className="text-pride-white/60 leading-relaxed max-w-xl mb-8">
-                Presented live during the day's community commencement, in front of the crowd that made it real.
+          <h2 className="font-serif font-black text-4xl md:text-5xl lg:text-6xl leading-tight mb-10 max-w-4xl">
+            Recognized by the State of Michigan.
+          </h2>
+
+          <blockquote className="border-l-4 border-pride-gold pl-6 md:pl-10 mb-12 max-w-4xl">
+            <p className="font-serif italic font-bold text-2xl md:text-4xl leading-snug text-pride-white">
+              &ldquo;Let it be known&hellip; we recognize the inaugural Pride in Pontiac celebration as a historic milestone&hellip; the city's first-ever grassroots LGBTQ+ Pride celebration.&rdquo;
+            </p>
+          </blockquote>
+
+          <div className="grid md:grid-cols-2 gap-12 mb-16">
+            <p className="text-lg text-pride-white/80 leading-relaxed">
+              Three official State of Michigan documents recognized Pride in Pontiac 2026: Special Tribute proclamations from the Michigan LGBTQ+ Legislative Caucus and from state House and Senate leadership, plus a personal welcome letter from the Governor's office &mdash; signed by Governor Gretchen Whitmer, Lt. Governor Garlin Gilchrist II, State Senate President Pro Tempore Jeremy Moss, and State Representative Brenda Carter.
+            </p>
+            <div className="flex flex-col justify-between">
+              <p className="text-pride-white/60 leading-relaxed mb-6">
+                Presented live during the day's community commencement, in front of the crowd that made it real. Tap any document to read the full text.
               </p>
               <Link to="/about" className="w-fit bg-pride-gold text-pride-black px-8 py-3 font-sans font-semibold text-sm hover:bg-pride-white transition-colors flex items-center gap-3">
                 Read the Full Story <ArrowRight size={16} />
               </Link>
             </div>
-            <div className="md:w-1/2 grid grid-cols-2 gap-4">
-              <img src="/images/events/tribute-caucus.jpg" alt="Michigan LGBTQ+ Legislative Caucus Special Tribute to Pride in Pontiac, signed by Governor Whitmer and state legislators" className="w-full h-full object-cover rounded-sm shadow-2xl border border-pride-white/10" />
-              <img src="/images/events/tribute-legislature.jpg" alt="Michigan House and Senate Special Tribute to Pride in Pontiac, signed by Governor Whitmer, Lt. Governor Gilchrist, and Rep. Brenda Carter" className="w-full h-full object-cover rounded-sm shadow-2xl border border-pride-white/10" />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+            <div>
+              <LightboxTrigger
+                src="/images/events/tribute-caucus.jpg"
+                alt="Michigan LGBTQ+ Legislative Caucus Special Tribute to Pride in Pontiac, signed by Governor Whitmer and state legislators"
+                className="aspect-[3/4] rounded-sm shadow-2xl border border-pride-white/10"
+                onOpen={openLightbox}
+              />
+              <p className="font-mono text-[9px] uppercase tracking-widest text-pride-white/40 mt-3 text-center">LGBTQ+ Legislative Caucus</p>
+            </div>
+            <div>
+              <LightboxTrigger
+                src="/images/events/tribute-legislature.jpg"
+                alt="Michigan House and Senate Special Tribute to Pride in Pontiac, signed by Governor Whitmer, Lt. Governor Gilchrist, and Rep. Brenda Carter"
+                className="aspect-[3/4] rounded-sm shadow-2xl border border-pride-white/10"
+                onOpen={openLightbox}
+              />
+              <p className="font-mono text-[9px] uppercase tracking-widest text-pride-white/40 mt-3 text-center">House & Senate Leadership</p>
+            </div>
+            <div>
+              <LightboxTrigger
+                src="/images/events/tribute-whitmer-letter.jpg"
+                alt="Personal welcome letter from Governor Gretchen Whitmer's office to Pride in Pontiac, dated August 14, 2026"
+                className="aspect-[3/4] rounded-sm shadow-2xl border border-pride-white/10"
+                onOpen={openLightbox}
+              />
+              <p className="font-mono text-[9px] uppercase tracking-widest text-pride-white/40 mt-3 text-center">Governor's Welcome Letter</p>
             </div>
           </div>
 
-          <div className="rounded-sm overflow-hidden border border-pride-white/10 shadow-2xl">
-            <img src="/images/events/tribute-group-photo.jpg" alt="Rep. Brenda Carter presenting the State of Michigan Special Tribute to Pride in Pontiac organizers" className="w-full max-h-[600px] object-cover object-top" />
+          <div>
+            <LightboxTrigger
+              src="/images/events/tribute-group-photo.jpg"
+              alt="Rep. Brenda Carter presenting the State of Michigan Special Tribute to Pride in Pontiac organizers on stage"
+              className="rounded-sm overflow-hidden border border-pride-white/10 shadow-2xl h-[320px] md:h-[520px]"
+              imgClassName="object-top"
+              onOpen={openLightbox}
+            />
+            <p className="font-mono text-[9px] uppercase tracking-widest text-pride-white/40 mt-3 text-center">State Rep. Brenda Carter presents the tribute on stage &middot; August 14, 2026</p>
           </div>
         </div>
       </section>
+
+      <Lightbox image={lightboxImage} onClose={() => setLightboxImage(null)} />
 
       {/* Corporate / Venue Partnership Callout */}
       <section className="bg-pride-white py-24 px-6 border-b border-pride-black/5">

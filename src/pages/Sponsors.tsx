@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Sparkles as SparklesIcon } from "lucide-react";
+import { ArrowRight, Sparkles as SparklesIcon, Download } from "lucide-react";
 import { GenderqueerStripe } from "../components/GenderqueerStripe";
 import { motion } from "motion/react";
 import { Sparkles } from "../components/Sparkles";
@@ -126,6 +126,14 @@ export function Sponsors() {
         <p className="text-pride-muted/70 text-sm mt-6">
           Or use the <Link to="/get-involved" className="underline hover:text-pride-gold transition-colors">general inquiry form</Link>.
         </p>
+        <a
+          href="/documents/pride-in-pontiac-2026-impact-report.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-pride-ink hover:text-pride-gold transition-colors mt-10"
+        >
+          <Download size={16} /> Download the 2026 Impact Report (PDF)
+        </a>
       </section>
     </div>
   );
