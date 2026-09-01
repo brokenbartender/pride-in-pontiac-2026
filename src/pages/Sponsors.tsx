@@ -86,27 +86,16 @@ export function Sponsors() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-pride-white/10">
-            <div>
-              <h4 className="font-mono text-[10px] uppercase tracking-widest text-pride-white/50 mb-4">Backstage Vanity &middot; ~49 Pieces</h4>
-              <ul className="space-y-2 text-sm text-pride-white/80">
-                <li className="flex justify-between border-b border-pride-white/5 pb-2"><span>That White Powder</span><span className="text-pride-white/50">6</span></li>
-                <li className="flex justify-between border-b border-pride-white/5 pb-2"><span>Stage Proof Matte Setting Spray</span><span className="text-pride-white/50">8</span></li>
-                <li className="flex justify-between border-b border-pride-white/5 pb-2"><span>Stage Proof Liquid Liner, felt tip</span><span className="text-pride-white/50">8</span></li>
-                <li className="flex justify-between border-b border-pride-white/5 pb-2"><span>Undercover Hoe Corrector</span><span className="text-pride-white/50">6</span></li>
-                <li className="flex justify-between border-b border-pride-white/5 pb-2"><span>The Most Concealers, all shades</span><span className="text-pride-white/50">~6</span></li>
-                <li className="flex justify-between border-b border-pride-white/5 pb-2"><span>Puff Puff Pass, all shades</span><span className="text-pride-white/50">~9</span></li>
-                <li className="flex justify-between border-b border-pride-white/5 pb-2"><span>Glitter Sharts</span><span className="text-pride-white/50">~6</span></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-mono text-[10px] uppercase tracking-widest text-pride-white/50 mb-4">Take-Home & VIP Product</h4>
-              <ul className="space-y-2 text-sm text-pride-white/80">
-                <li className="flex justify-between border-b border-pride-white/5 pb-2"><span>Performer take-home lippies, assorted shades</span><span className="text-pride-white/50">40</span></li>
-                <li className="flex justify-between border-b border-pride-white/5 pb-2"><span>Mini setting sprays for VIP bags</span><span className="text-pride-white/50">60</span></li>
-                <li className="flex justify-between border-b border-pride-white/5 pb-2"><span>Super Bish Lash pairs, six styles</span><span className="text-pride-white/50">40</span></li>
-              </ul>
-            </div>
+          <div className="pt-8 border-t border-pride-white/10">
+            <h4 className="font-serif font-bold text-2xl mb-4">The Backstage Experience</h4>
+            <p className="text-pride-white/70 leading-relaxed mb-6 max-w-2xl">
+              KimChi Chic Beauty didn't just support our show, they equipped it. They fully stocked our dressing rooms with professional cosmetics and sent home products for our entire performer roster, so every artist felt taken care of the moment they walked backstage.
+            </p>
+            <ul className="space-y-3 text-sm text-pride-white/80 max-w-2xl">
+              <li><span className="font-bold text-pride-white">Full Backstage Vanity</span> &mdash; Professional makeup and setting supplies for the entire performer lineup</li>
+              <li><span className="font-bold text-pride-white">Performer Take-Homes</span> &mdash; Shade-matched, take-home lip products for 40+ artists and drag performers</li>
+              <li><span className="font-bold text-pride-white">VIP Bags</span> &mdash; Luxury mini setting sprays included in every VIP swag bag</li>
+            </ul>
           </div>
         </div>
       </section>
